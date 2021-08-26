@@ -23,10 +23,10 @@ const Feature = ({ features, index, setFeatures }) => {
         <span style={{ marginTop: "auto", marginBottom: "auto" }}>
           {features[index].text}
         </span>
-        <span style={{ marginTop: "auto", marginBottom: "auto", marginLeft: "auto", marginRight: "1rem" }}>
+        <span style={{ marginTop: "auto", marginBottom: "auto", marginLeft: "auto", marginRight: "1rem", userSelect: "none"}}>
           {features[index].votes}
         </span>
-        <span className="container" style={{ marginRight: "0px" }}>
+        <span className="container" style={{ marginRight: "0px", userSelect: "none"}}>
           <FontAwesomeIcon icon={faChevronUp} size="lg" className={features[index].voted <= 0? "voteup" : "votedUp"} onClick={() => { updateVotes(1) }} />
           <FontAwesomeIcon icon={faChevronDown} size="lg" className={features[index].voted >= 0? "votedown" : "votedDown"} onClick={() => { updateVotes(-1) }} />
         </span>
