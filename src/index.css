@@ -33,9 +33,26 @@ code {
   margin-bottom: 1rem;
 }
 
+.inputContainer {
+  padding: 0.3rem 0rem 0.3rem 0rem;
+  margin-bottom: 1rem;
+}
+
+.inputBar {
+  width: 96%;
+  border-radius: 0.3rem;
+  border: 1px solid;
+  height: 2rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+
 .feature p {
   text-align: center;
   display: flex;
+}
+
+.feature:hover {
+  box-shadow: 4px 4px 4px #9999a5;
 }
 
 .container h1 {
@@ -43,11 +60,21 @@ code {
 }
 
 .feature .voteup:hover {
-  color: green;
+  color: gray;
   cursor: pointer;
 }
 
 .feature .votedown:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+.feature .votedDown {
   color: red;
+  cursor: pointer;
+}
+
+.feature .votedUp {
+  color: green;
   cursor: pointer;
 }
