@@ -3,10 +3,25 @@ import { useParams } from "react-router-dom";
 import Feature from './Feature';
 
 const Product = () => {
-  let { id } = useParams();
+  const { id } = useParams();
   const [newFeature, setNewFeature] = useState('');
   const handleNewFeatureChange = (event) => {
     setNewFeature(event.target.value);
+  }
+  const addFeature = (event) => {
+    event.preventDefault();
+    if (newFeature === "")
+      return;
+    else {
+      const addedFeature = {
+        "id": features.length + 1,
+        "text": newFeature,
+        "votes": 1,
+        "voted": 1
+      }
+      setFeatures(features.concat(addedFeature));
+      setNewFeature('')
+    }
   }
   const [features, setFeatures] = useState([
     {
@@ -34,7 +49,9 @@ const Product = () => {
         <h1>{id.toUpperCase()}</h1>
       </div>
       <div className="child inputContainer">
-        <input className="inputBar" value={newFeature} onChange={handleNewFeatureChange} placeholder="Enter a feature that you'd love to see"></input>
+        <form onSubmit={addFeature}>
+          <input className="inputBar" value={newFeature} onChange={handleNewFeatureChange} placeholder="Enter a feature that you'd love to see"></input>
+        </form>
       </div>
       {features.sort((f1, f2) => f2.votes - f1.votes).map(
         (feature, index) => <Feature key={feature.id} features={features} index={index} setFeatures={setFeatures} />
