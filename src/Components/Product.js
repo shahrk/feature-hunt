@@ -1,46 +1,34 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import Feature from './Feature';
 
 const Product = () => {
   let { id } = useParams();
-  let features = [
+  const [features, setFeatures] = useState([
     {
+      "id": 1,
       "text": "Improve UI",
       "votes": 100
     },
     {
+      "id": 2,
       "text": "Add textbox to submit new feature",
-      "votes": 50
+      "votes": 99
     },
     {
+      "id": 3,
       "text": "Add upvote/downvote",
       "votes": 10
     }
-  ]
+  ]);
   return (
-    <div class="container">
-      <div class="child">
+    <div className="container">
+      <div className="child">
         <h1>{id.toUpperCase()}</h1>
       </div>
-      {features.sort((f1, f2) => f2.votes - f1.votes).map((feature) =>
-        <>
-          <div class="child feature">
-            <p>
-              <span style={{ marginTop: "auto", marginBottom: "auto" }}>
-                {feature.text}
-              </span>
-              <span style={{ marginTop: "auto", marginBottom: "auto", marginLeft: "auto", marginRight: "1rem"}}>
-                {feature.votes}
-              </span>
-              <span class="container" style={{ marginRight: "0px"}}>
-                <FontAwesomeIcon icon={faChevronUp} size="lg" className="voteup" />
-                <FontAwesomeIcon icon={faChevronDown} size="lg" className="votedown" />
-              </span>
-            </p>
-          </div>
-        </>
-      )}
+      {features.sort((f1, f2) => f2.votes - f1.votes).map(
+        (feature, index) => <Feature key={feature.id} features={features} index={index} setFeatures={setFeatures} />
+        , setFeatures)}
     </div>
   )
 }

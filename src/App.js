@@ -20,7 +20,7 @@ function App() {
       <Switch>
         <Route path="/:id" children={<Product />} />
       </Switch>
-      <div class="container">
+      <div className="container">
         <div style={{position: "absolute", bottom:"0px"}}>
           <p>The current time is {currentTime}.</p>
         </div>
