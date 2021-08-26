@@ -2,19 +2,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const Feature = ({ features, index, setFeatures }) => {
-  const updateVotes = (votes) => {
+  const upVote = () => {
     const updatedFeature = { ...features[index] };
-    let change = votes;
-    if (updatedFeature.voted === change) {
-      updatedFeature.voted = 0;
-      updatedFeature.votes = updatedFeature.votes - votes;
-    } else if (updatedFeature.voted !== 0) {
-      updatedFeature.voted = change;
-      updatedFeature.votes = updatedFeature.votes + votes + votes;
-    } else {
-      updatedFeature.voted = change;
-      updatedFeature.votes = updatedFeature.votes + votes;
-    }
+    let currentVote = updatedFeature.upVoted ? 1 : (updatedFeature.downVoted ? -1 : 0);
+    updatedFeature.upVoted = !updatedFeature.upVoted;
+    updatedFeature.downVoted = false;
+    let newVote = updatedFeature.upVoted ? 1 : (updatedFeature.downVoted ? -1 : 0);
+    updatedFeature.votes = updatedFeature.votes - currentVote + newVote;
+    setFeatures(features.map((feature) => feature.id === features[index].id ? updatedFeature : feature));
+  }
+  const downVote = () => {
+    const updatedFeature = { ...features[index] };
+    let currentVote = updatedFeature.upVoted ? 1 : (updatedFeature.downVoted ? -1 : 0);
+    updatedFeature.downVoted = !updatedFeature.downVoted;
+    updatedFeature.upVoted = false;
+    let newVote = updatedFeature.upVoted ? 1 : (updatedFeature.downVoted ? -1 : 0);
+    updatedFeature.votes = updatedFeature.votes - currentVote + newVote;
     setFeatures(features.map((feature) => feature.id === features[index].id ? updatedFeature : feature));
   }
   return (
@@ -27,8 +30,8 @@ const Feature = ({ features, index, setFeatures }) => {
           {features[index].votes}
         </span>
         <span className="container" style={{ marginRight: "0px", userSelect: "none"}}>
-          <FontAwesomeIcon icon={faChevronUp} size="lg" className={features[index].voted <= 0? "voteup" : "votedUp"} onClick={() => { updateVotes(1) }} />
-          <FontAwesomeIcon icon={faChevronDown} size="lg" className={features[index].voted >= 0? "votedown" : "votedDown"} onClick={() => { updateVotes(-1) }} />
+          <FontAwesomeIcon icon={faChevronUp} size="lg" className={features[index].upVoted? "votedUp" : "voteup"} onClick={upVote} />
+          <FontAwesomeIcon icon={faChevronDown} size="lg" className={features[index].downVoted? "votedDown" : "votedown"} onClick={downVote} />
         </span>
       </p>
     </div>

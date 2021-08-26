@@ -17,7 +17,7 @@ const Product = () => {
         "id": features.length + 1,
         "text": newFeature,
         "votes": 1,
-        "voted": 1
+        "upVoted": true
       }
       setFeatures(features.concat(addedFeature));
       setNewFeature('')
@@ -28,19 +28,22 @@ const Product = () => {
       "id": 1,
       "text": "Improve UI",
       "votes": 100,
-      "voted": 0
+      "upVoted": false,
+      "downVoted": false
     },
     {
       "id": 2,
       "text": "Add textbox to submit new feature",
       "votes": 100,
-      "voted": 0
+      "upVoted": false,
+      "downVoted": false
     },
     {
       "id": 3,
       "text": "Add upvote/downvote",
       "votes": 10,
-      "voted": 0
+      "upVoted": false,
+      "downVoted": false
     }
   ]);
   return (
