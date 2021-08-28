@@ -21,9 +21,9 @@ function App() {
         <Route path="/:id" children={<Product />} />
       </Switch>
       <div className="container">
-        <div style={{position: "fixed", bottom:"0px"}}>
+        <div style={{ position: "fixed", bottom: "0px" }}>
           <p>The current time is {currentTime}.</p>
-        </div>
+        </div> 
       </div>
     </Router>
   );
