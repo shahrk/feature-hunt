@@ -5,6 +5,7 @@ import {
   Switch, Route
 } from 'react-router-dom'
 import Product from './Components/Product';
+import Comments from './Components/Comments';
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -18,7 +19,7 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/:id" children={<Product />} />
+        <Route path="/:id" children={<><Product /><br/><br/><Comments/></>} />
       </Switch>
       <div className="container">
         <div style={{ position: "fixed", bottom: "0px" }}>

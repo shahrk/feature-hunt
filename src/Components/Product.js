@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Feature from './Feature';
-import Comments from "./Comments";
 
 const Product = () => {
   const { id } = useParams();
@@ -60,9 +59,6 @@ const Product = () => {
       {features.sort((f1, f2) => f2.votes - f1.votes).map(
         (feature, index) => <Feature key={feature.id} features={features} index={index} setFeatures={setFeatures} />
         , setFeatures)}
-      <br />
-      <br />
-      <Comments style={{ maxWidth: "300px" }} />
     </div>
   )
 }
