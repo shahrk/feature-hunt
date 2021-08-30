@@ -14,6 +14,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+###  `yarn start-api`
+
+Runs the flask API in development mode.\
+The API runs on [http://localhost:5000](http://localhost:5000).
+
+Requests made to [http://localhost:3000](http://localhost:3000) that don't exist on the react server are automatically forwarded to this API
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\

@@ -11,3 +11,91 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+}
+
+.child {
+  display: block;
+  width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.feature {
+  padding: 0.3rem 1rem 0.3rem 1rem;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.inputContainer {
+  padding: 0.3rem 0rem 0.3rem 0rem;
+  margin-bottom: 1rem;
+}
+
+.inputBar {
+  width: 96%;
+  border-radius: 0.3rem;
+  border: 1px solid;
+  height: 2rem;
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+}
+
+.feature p {
+  text-align: center;
+  display: flex;
+}
+
+.feature:hover {
+  box-shadow: 4px 4px 4px #9999a5;
+}
+
+.container h1 {
+  text-align: center
+}
+
+.feature .voteup:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+.feature .votedown:hover {
+  color: gray;
+  cursor: pointer;
+}
+
+.feature .votedDown {
+  color: red;
+  cursor: pointer;
+}
+
+.feature .votedUp {
+  color: green;
+  cursor: pointer;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
