@@ -10,7 +10,7 @@
       name: Move to In Progress Column
       steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
       - name: Move to In Progress
         uses: kin/gh-action-move-issue-to-column@1.0
         with:
@@ -30,7 +30,7 @@
       name: Move to To Do Column
       steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@master
       - name: Move to To Do
         uses: kin/gh-action-move-issue-to-column@1.0
         with:
