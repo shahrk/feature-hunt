@@ -14,7 +14,7 @@
       - name: Move to In Progress
         uses: kin/gh-action-move-issues-to-column@v1.0
         with:
-          access-token: "#{{ secrets.GITHUB_TOKEN }}"
+          access-token: ${{ secrets.GITHUB_TOKEN }}
           project-name: "Roadmap"
           target-column: "In progress"
 
