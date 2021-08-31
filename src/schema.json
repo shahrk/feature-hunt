@@ -1,0 +1,31 @@
+{
+    "id": 1,
+    "name": "DBZ",
+    "tagline": "DBZ IS AN ANIME",
+    "votes_count": 10000,
+    "created_at": "2021-08-31T01:30:00.000-07:00",
+    "current_user": {
+        "voted_for_post": false
+    },
+    "discussion_url": "OUR DBZ PAGE URL",
+    "platforms": [],
+    "product_url": "DBZ.COM",
+    "thumbnail": {
+        "thumbnailid": 1566405,
+        "media_type": "image",
+        "image_url": "DBZ IMAGE URL",
+        "metadata": {}
+    },
+    "topics": [
+        {
+            "topicid": 1,
+            "name": "ANIME",
+            "slug": "ANIME LOVERS"
+        },
+        {
+            "topicid": 2,
+            "name": "ADVENTURE",
+            "slug": "ADEVENTURE LOVERS"
+        }
+    ]
+}
