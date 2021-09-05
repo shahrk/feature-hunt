@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 import Product from './Components/Product';
 import Comments from './Components/Comments';
+import Header from './Components/Header';
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -19,13 +20,13 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/:id" children={<><Product /><br/><br/><Comments/></>} />
+        <Route path="/:id" children={<><Header/><Product /><br/><br/><Comments/></>} />
       </Switch>
-      <div className="container">
+      {/* <div className="container">
         <div style={{ position: "fixed", bottom: "0px" }}>
           <p>The current time is {currentTime}.</p>
         </div> 
-      </div>
+      </div> */}
     </Router>
   );
 }
