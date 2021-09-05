@@ -3,8 +3,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing : antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color       : #F3F3F3;
 }
 
 code {
@@ -13,46 +14,68 @@ code {
 }
 
 .container {
-  display: flex;
+  display        : flex;
   justify-content: center;
-  flex-direction: column;
-  align-self: center;
+  flex-direction : column;
+  align-self     : center;
+  margin-top: 1.5rem;
 }
 
 .child {
-  display: block;
-  width: 30rem;
-  margin-left: auto;
-  margin-right: auto;
+  display    : block;
+  width      : 45rem;
+  margin-left: 10rem;
 }
 
 .feature {
-  padding: 0.3rem 1rem 0.3rem 1rem;
-  border: 1px solid;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  padding         : 0.3rem 1rem 0.3rem 1rem;
+  border          : 0px solid;
+  border-radius   : 0.3rem;
+  margin-bottom   : 0.5rem;
+  background-color: white;
 }
 
 .inputContainer {
-  padding: 0.3rem 0rem 0.3rem 0rem;
+  padding      : 0.3rem 0rem 0.3rem 0rem;
   margin-bottom: 1rem;
 }
 
 .inputBar {
-  width: 96%;
+  width        : 102.5%;
   border-radius: 0.3rem;
-  border: 1px solid;
-  height: 2rem;
-  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  border       : 0px solid;
+  height       : 2rem;
+  padding      : 0.3rem 0.5rem 0.3rem 0.5rem;
 }
 
-.feature p {
+.feature .feature-container {
   text-align: center;
+  display   : flex;
+  padding   : 1rem;
+}
+
+.feature-container .content {
+  display       : flex;
+  flex-direction: column;
+  align-items   : flex-start;
+}
+
+.feature-content {
+  font-weight: 600;
+  color: #3e3e3e;
+}
+
+.feature-container .tag-container {
+  font-size     : 11px;
+  text-transform: capitalize;
+  color         : #6f6f6f;
+  padding       : 0;
+  margin-right  : 12px;
   display: flex;
 }
 
 .feature:hover {
-  box-shadow: 4px 4px 4px #9999a5;
+  box-shadow: 5px 2px 5px 1px #9999a5;
 }
 
 .container h1 {
@@ -60,42 +83,101 @@ code {
 }
 
 .feature .voteup:hover {
-  color: gray;
+  color : gray;
   cursor: pointer;
 }
 
 .feature .votedown:hover {
-  color: gray;
+  color : gray;
   cursor: pointer;
 }
 
 .feature .votedDown {
-  color: red;
+  color : red;
   cursor: pointer;
 }
 
 .feature .votedUp {
-  color: green;
+  color : green;
   cursor: pointer;
 }
 
 .loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
+  border           : 16px solid #f3f3f3;
+  border-radius    : 50%;
+  border-top       : 16px solid #3498db;
+  width            : 120px;
+  height           : 120px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation        : spin 2s linear infinite;
 }
 
 /* Safari */
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.utterances {
+  margin-left: 10rem;
+}
+
+.product-title {
+  display: flex;
+}
+
+.product-title p {
+  margin: auto 0.2rem auto 0.2rem;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.product-title .sort {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.tag-container {
+  margin-top: 1.5rem;
+}
+
+.tag-container .tag {
+  background-color: #EFEFEF;
+  margin: 0 0.5rem 0 0;
+  color: #333333;
+}
+
+.container.votes {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.votes-container {
+  margin-left: auto;
+  display: flex;
+  border: 1px solid #e8e8e8;
+  border-radius   : 0.3rem;
+  padding: 0.5rem;
+  min-width: 4rem;
+}
+
+.votes-container:hover {
+  background-color: #F3F3F3;
 }

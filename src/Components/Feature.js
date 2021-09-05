@@ -20,20 +20,37 @@ const Feature = ({ features, index, setFeatures }) => {
     updatedFeature.votes = updatedFeature.votes - currentVote + newVote;
     setFeatures(features.map((feature) => feature.id === features[index].id ? updatedFeature : feature));
   }
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   return (
     <div className="child feature">
-      <p>
-        <span style={{ marginTop: "auto", marginBottom: "auto" }}>
-          {features[index].text}
-        </span>
-        <span style={{ marginTop: "auto", marginBottom: "auto", marginLeft: "auto", marginRight: "1rem", userSelect: "none" }}>
-          {features[index].votes}
-        </span>
-        <span className="container" style={{ marginRight: "0px", userSelect: "none" }}>
-          <FontAwesomeIcon icon={faChevronUp} size="lg" className={features[index].upVoted ? "votedUp" : "voteup"} onClick={upVote} />
-          <FontAwesomeIcon icon={faChevronDown} size="lg" className={features[index].downVoted ? "votedDown" : "votedown"} onClick={downVote} />
-        </span>
-      </p>
+      <div className="feature-container">
+        <div className="content">
+          <div className="feature-content">
+            <span style={{ marginTop: "auto", marginBottom: "auto" }}>
+              {capitalizeFirstLetter(features[index].text)}
+            </span>
+          </div>
+          <div className="tag-container">
+            {features[index]['tags'].map(tag =>
+              <div key={tag}>
+                <span className="tag">{tag.toUpperCase()}</span>
+                <div>&nbsp;</div>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="votes-container">
+          <span style={{ marginTop: "auto", marginBottom: "auto", marginLeft: "auto", marginRight: "1rem", userSelect: "none" }}>
+            {features[index].votes}
+          </span>
+          <span className="container votes" style={{ marginRight: "0px", userSelect: "none" }}>
+            <FontAwesomeIcon icon={faChevronUp} size="lg" className={features[index].upVoted ? "votedUp" : "voteup"} onClick={upVote} />
+            <FontAwesomeIcon icon={faChevronDown} size="lg" className={features[index].downVoted ? "votedDown" : "votedown"} onClick={downVote} />
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
