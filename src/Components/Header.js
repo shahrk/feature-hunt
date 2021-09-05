@@ -11,7 +11,7 @@ function Header() {
       <div className="header_container">
         <header className="header">
           <div className="nav">
-            <div className="logo">
+            <div onClick={goTo('')} className="logo">
               <img src="../logo512.png" alt="" />
             </div>
             <div className="search_box">
