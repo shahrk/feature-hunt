@@ -35,6 +35,14 @@ code {
   background-color: white;
 }
 
+.product {
+  padding         : 0.3rem 1rem 0.3rem 1rem;
+  border          : 0px solid;
+  border-radius   : 0.3rem;
+  margin-bottom   : 0.5rem;
+  background-color: white;
+}
+
 .inputContainer {
   padding      : 0.3rem 0rem 0.3rem 0rem;
   margin-bottom: 1rem;
@@ -54,10 +62,23 @@ code {
   padding   : 1rem;
 }
 
+.product .product-container {
+  text-align: center;
+  display   : flex;
+  padding   : 1rem;
+}
+
 .feature-container .content {
   display       : flex;
   flex-direction: column;
   align-items   : flex-start;
+}
+
+.product-container .content {
+  display       : flex;
+  flex-direction: column;
+  align-items   : flex-start;
+  text-align: start;
 }
 
 .feature-content {
@@ -65,7 +86,20 @@ code {
   color: #3e3e3e;
 }
 
+.product-content {
+  cursor: pointer;
+}
+
 .feature-container .tag-container {
+  font-size     : 11px;
+  text-transform: capitalize;
+  color         : #6f6f6f;
+  padding       : 0;
+  margin-right  : 12px;
+  display: flex;
+}
+
+.product-container .tag-container {
   font-size     : 11px;
   text-transform: capitalize;
   color         : #6f6f6f;
@@ -78,26 +112,30 @@ code {
   box-shadow: 5px 2px 5px 1px #9999a5;
 }
 
+.product:hover {
+  box-shadow: 5px 2px 5px 1px #9999a5;
+}
+
 .container h1 {
   text-align: center
 }
 
-.feature .voteup:hover {
+.voteup:hover {
   color : gray;
   cursor: pointer;
 }
 
-.feature .votedown:hover {
+.votedown:hover {
   color : gray;
   cursor: pointer;
 }
 
-.feature .votedDown {
+.votedDown {
   color : red;
   cursor: pointer;
 }
 
-.feature .votedUp {
+.votedUp {
   color : green;
   cursor: pointer;
 }
@@ -140,6 +178,18 @@ code {
 
 .product-title {
   display: flex;
+  font-weight: 600;
+  color: #3e3e3e;
+}
+
+.product-description {
+  font-size: 11px;
+  padding-right: 4.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
 }
 
 .product-title p {
@@ -172,12 +222,18 @@ code {
 .votes-container {
   margin-left: auto;
   display: flex;
+  flex-direction: column;
   border: 1px solid #e8e8e8;
   border-radius   : 0.3rem;
-  padding: 0.5rem;
-  min-width: 4rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  min-width: fit-content;
+  height: fit-content;
 }
 
 .votes-container:hover {
   background-color: #F3F3F3;
+}
+
+p.highlight {
+  color: #218888;
 }
