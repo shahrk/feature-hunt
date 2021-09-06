@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProductTile from "./ProductTile";
 
 const Home = ({query}) => {
-  const [sortBy, setSortBy] = useState('votes');
+  const [sortBy, setSortBy] = useState('timestamp');
   const [products, setProducts] = useState([
     {
       "id": 1,
