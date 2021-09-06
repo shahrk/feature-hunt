@@ -1,10 +1,17 @@
 import React from "react";
 import "../styles/header.scss";
-import { useHistory } from "react-router-dom";
-function Header() {
+import { useHistory, useLocation } from "react-router-dom";
+function Header({setQuery}) {
   const history = useHistory();
   const goTo = (page) => () => {
     history.push("/"+page)
+  }
+  const location = useLocation();
+  const inputPlaceholder = location.pathname === '/' ? "Discover Projects..." : "Search Features...";
+  const search = (event) => {
+    if (event.key === 'Enter') {
+      setQuery(event.target.value)
+    }
   }
   return (
     <div className="header_div">
@@ -30,7 +37,8 @@ function Header() {
               </span>
               <input
                 type="text"
-                placeholder="Discover Projects..."
+                placeholder={inputPlaceholder}
+                onKeyPress={search}
               />
             </div>
             <div className="links">

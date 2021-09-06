@@ -1,9 +1,8 @@
-import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Feature from './Feature';
 
-const Product = () => {
+const Product = ({query}) => {
   const { id } = useParams();
   const [newFeature, setNewFeature] = useState('');
   const [sortBy, setSortBy] = useState('votes');
@@ -62,9 +61,9 @@ const Product = () => {
         <div className="product-title">
           <h3>{id.toUpperCase()}</h3>
           <div className="sort">
-            <p onClick={() => setSortBy('votes')}>POPULAR</p>
+            <p class={sortBy === 'votes' ? "highlight" : ""} onClick={() => setSortBy('votes')}>POPULAR</p>
             <p> | </p>
-            <p onClick={() => setSortBy('timestamp')}>LATEST</p>
+            <p class={sortBy === 'timestamp' ? "highlight" : ""} onClick={() => setSortBy('timestamp')}>LATEST</p>
           </div>
         </div>
       </div>
@@ -73,8 +72,8 @@ const Product = () => {
           <input className="inputBar" value={newFeature} onChange={handleNewFeatureChange} placeholder="Enter a feature that you'd love to see"></input>
         </form>
       </div>
-      {features.sort((f1, f2) => f2[sortBy] - f1[sortBy]).map(
-        (feature, index) => <Feature key={feature.id} features={features} index={index} setFeatures={setFeatures} />
+      {features.map((f,index)=>{f['index']=index; return f}).filter(f => query ? f.tags.includes(query.toLowerCase()) || f.text.toLowerCase().includes(query.toLowerCase()) : true).sort((f1, f2) => f2[sortBy] - f1[sortBy]).map(
+        (feature) => <Feature key={feature.id} features={features} index={feature.index} setFeatures={setFeatures} />
         , setFeatures)}
     </div>
   )
