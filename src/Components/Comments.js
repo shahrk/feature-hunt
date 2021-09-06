@@ -1,7 +1,6 @@
 const Comments = () => {
   return <section
     ref={elem => {
-      console.log(elem);
       if (!elem) {
         return;
       }

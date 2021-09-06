@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { useHistory } from 'react-router';
 
 const ProductTile = ({ products, index, setProducts }) => {
+  const history = useHistory()
   const upVote = () => {
     const updatedProduct = { ...products[index] };
     let currentVote = updatedProduct.upVoted ? 1 : (updatedProduct.downVoted ? -1 : 0);
@@ -20,6 +22,9 @@ const ProductTile = ({ products, index, setProducts }) => {
     updatedProduct.votes = updatedProduct.votes - currentVote + newVote;
     setProducts(products.map((product) => product.id === products[index].id ? updatedProduct : product));
   }
+  const goTo = (product) => () => {
+    history.push(`/${product}`)
+  }
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
@@ -28,7 +33,7 @@ const ProductTile = ({ products, index, setProducts }) => {
       <div className="product-container">
         <div className="content">
           <div className="product-content">
-            <span className="product-title" style={{ marginTop: "auto", marginBottom: "auto" }}>
+            <span className="product-title" onClick={goTo(products[index].name)} style={{ marginTop: "auto", marginBottom: "auto" }}>
               {capitalizeFirstLetter(products[index].name)}
             </span>
             <p className="product-description">

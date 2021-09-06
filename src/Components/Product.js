@@ -61,9 +61,9 @@ const Product = ({query}) => {
         <div className="product-title">
           <h3>{id.toUpperCase()}</h3>
           <div className="sort">
-            <p class={sortBy === 'votes' ? "highlight" : ""} onClick={() => setSortBy('votes')}>POPULAR</p>
+            <p className={sortBy === 'votes' ? "highlight" : ""} onClick={() => setSortBy('votes')}>POPULAR</p>
             <p> | </p>
-            <p class={sortBy === 'timestamp' ? "highlight" : ""} onClick={() => setSortBy('timestamp')}>LATEST</p>
+            <p className={sortBy === 'timestamp' ? "highlight" : ""} onClick={() => setSortBy('timestamp')}>LATEST</p>
           </div>
         </div>
       </div>

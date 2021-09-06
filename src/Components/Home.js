@@ -3,7 +3,6 @@ import ProductTile from "./ProductTile";
 
 const Home = ({query}) => {
   const [sortBy, setSortBy] = useState('votes');
-  console.log(query);
   const [products, setProducts] = useState([
     {
       "id": 1,
@@ -90,9 +89,9 @@ const Home = ({query}) => {
         <div className="product-title">
           <h3>PRODUCTS</h3>
           <div className="sort">
-            <p class={sortBy === 'votes' ? "highlight" : ""}  onClick={() => setSortBy('votes')}>POPULAR</p>
+            <p className={sortBy === 'votes' ? "highlight" : ""}  onClick={() => setSortBy('votes')}>POPULAR</p>
             <p> | </p>
-            <p class={sortBy === 'timestamp' ? "highlight" : ""} onClick={() => setSortBy('timestamp')}>LATEST</p>
+            <p className={sortBy === 'timestamp' ? "highlight" : ""} onClick={() => setSortBy('timestamp')}>LATEST</p>
           </div>
         </div>
       </div>
