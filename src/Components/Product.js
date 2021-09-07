@@ -27,37 +27,7 @@ const Product = ({query}) => {
       setNewFeature('')
     }
   }
-  const [features, setFeatures] = useState([
-    /*
-    {
-      "id": 1,
-      "text": "Improve UI",
-      "votes": 100,
-      "upVoted": false,
-      "downVoted": false,
-      "timestamp": 1530815581293,
-      "tags" : ["aesthetic", "enhancement"]
-    },
-    {
-      "id": 2,
-      "text": "Add textbox to submit new feature",
-      "votes": 100,
-      "upVoted": false,
-      "downVoted": false,
-      "timestamp": 1530814681293,
-      "tags" : ["enhancement"]
-    },
-    {
-      "id": 3,
-      "text": "fix upvote/downvote",
-      "votes": 10,
-      "upVoted": false,
-      "downVoted": false,
-      "timestamp": 1530814981293,
-      "tags": ["bug fix", "enhancement"]
-    }
-    */
-  ]);
+  const [features, setFeatures] = useState([]);
 
   useEffect(() => {
     console.log(window.location.pathname);
