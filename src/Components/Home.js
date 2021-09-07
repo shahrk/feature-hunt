@@ -1,88 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductTile from "./ProductTile";
+import Service from "../Service";
 
 const Home = ({query}) => {
   const [sortBy, setSortBy] = useState('timestamp');
-  const [products, setProducts] = useState([
-    {
-      "id": 1,
-      "name": "feature-hunt",
-      "description": "Feature Hunt is a platform where users can share, vote, and discuss feature requests and product owners can organize (categorize/prioritize) these requests. Instead of each product having it's own feature request page/portal we create a central hub where any product can interact with its users.",
-      "votes": 2,
-      "features": [
-        {
-          "id": 1,
-          "text": "Create dashboard for product owners",
-          "votes": 1,
-          "timestamp": 1530815581293,
-          "tags": [
-            "enhancement"
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Create product page",
-          "votes": 1,
-          "timestamp": 1530814681293,
-          "tags": [
-            "enhancement"
-          ]
-        },
-        {
-          "id": 3,
-          "text": "Make likes consistent",
-          "votes": 3,
-          "timestamp": 1530814981293,
-          "tags": [
-            "bug fix"
-          ]
-        }
-      ],
-      "tags": [
-        "productivity",
-        "web app"
-      ]
-    },
-    {
-      "id": 2,
-      "name": "disentry",
-      "description": "Disentry is a discord bot that can help you organize & easily search messages in any discord server.",
-      "votes": 1,
-      "features": [
-        {
-          "id": 1,
-          "text": "Enable scheduling/reminders",
-          "votes": 1,
-          "timestamp": 1530815581293,
-          "tags": [
-            "enhancement"
-          ]
-        },
-        {
-          "id": 2,
-          "text": "Enable playing music",
-          "votes": 2,
-          "timestamp": 1530814681293,
-          "tags": [
-            "enhancement"
-          ]
-        },
-        {
-          "id": 3,
-          "text": "Add feature for moderating chats",
-          "votes": 0,
-          "timestamp": 1530814981293,
-          "tags": [
-            "enhancement"
-          ]
-        }
-      ],
-      "tags": [
-        "bot",
-        "fun"
-      ]
-    }
-  ]);
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    Service.get('products').then(products => setProducts(products));
+  }, []);
   return (
     <div className="container">
       <div className="child">
