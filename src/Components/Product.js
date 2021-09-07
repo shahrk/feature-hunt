@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Feature from './Feature';
+import Service from "../Service";
 
 const Product = ({query}) => {
   const { id } = useParams();
@@ -27,6 +28,7 @@ const Product = ({query}) => {
     }
   }
   const [features, setFeatures] = useState([
+    /*
     {
       "id": 1,
       "text": "Improve UI",
@@ -54,7 +56,14 @@ const Product = ({query}) => {
       "timestamp": 1530814981293,
       "tags": ["bug fix", "enhancement"]
     }
+    */
   ]);
+
+  useEffect(() => {
+    console.log(window.location.pathname);
+    Service.get(window.location.pathname).then(data => setFeatures(data[0].features));
+  }, []);
+
   return (
     <div className="container">
       <div className="child">
