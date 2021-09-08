@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Setup
+
+Make sure you run npm install before trying to run the any of the [available scripts](#available-scripts).
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -16,10 +20,14 @@ You will also see any lint errors in the console.
 
 ###  `yarn start-api`
 
-Runs the flask API in development mode.\
+Runs the flask API in development mode (for MAC users only, Windows users see [below](#yarn-start-api-win)).\
 The API runs on [http://localhost:5000](http://localhost:5000).
 
 Requests made to [http://localhost:3000](http://localhost:3000) that don't exist on the react server are automatically forwarded to this API
+
+###  `yarn start-api-win`
+
+Does the same thing as 'yarn start-api' but for windows users.
 
 ### `yarn test`
 
