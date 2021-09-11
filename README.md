@@ -66,16 +66,14 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Deployment
+## Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
+## Team Members
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[Raj Shah](https://www.github.com/shahrk)  
+[Parth Kanakiya](https://www.github.com/Parth59)  
+[Nirav Patel](https://www.github.com/Nirav1929)  
+[Mithil Dave](https://www.github.com/mithildave)  
+[Bhargav Jethwa](https://www.github.com/BhargavJethwa)
