@@ -1,0 +1,27 @@
+version: '3'
+services:
+ backend:
+  build: ./modules
+  ports:
+   - "4000:4000"
+  volumes:
+   - .:/modules/app
+  environment:
+   - ENV=development
+   - PORT=4000
+   - DB=mongodb+srv://bot:bot123@feature-hunt.6gqvj.mongodb.net/feature-hunt?retryWrites=true&w=majority
+   #- DB=mongodb://mongodb:27017/todoDev
+   
+
+ frontend:
+  build: .
+  volumes:
+    - '/usr/src/app'
+  ports:
+    - 8080:3000
+  stdin_open: true
+
+
+networks:
+ default:
+  name: web_dev
