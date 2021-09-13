@@ -6,7 +6,6 @@
 # it wants to stop the commit.
 #
 # To enable this hook, rename this file to "pre-commit".
-echo $(pwd)
 pip freeze > ./api/requirements_check.txt
 cmp --silent ./api/requirements_check.txt ./api/requirements.txt
 
