@@ -26,6 +26,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Setup
 
+In the project directory run `git config --local core.hooksPath hooks` to make sure you have access to the Git Hooks
+
 Make sure you run `npm install` before trying to run any of the [available scripts](#available-scripts).
 
 ## Available Scripts
