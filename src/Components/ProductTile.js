@@ -31,6 +31,9 @@ const ProductTile = ({ products, index, setProducts }) => {
   return (
     <div className="child product">
       <div className="product-container">
+        <div className="image-container">
+             <img src={products[index].image_url} alt={products[index].name} />
+        </div>
         <div className="content">
           <div className="product-content">
             <span className="product-title" onClick={goTo(products[index].name)} style={{ marginTop: "auto", marginBottom: "auto" }}>

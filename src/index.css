@@ -68,6 +68,19 @@ code {
   padding   : 1rem;
 }
 
+.product-container  .image-container {
+  height: 90px;
+  width: 90px;
+  margin-right: 20px;
+  padding: 3px;
+}
+
+.product-container  .image-container img{
+  height: 85px;
+  width: 85px;
+}
+
+
 .feature-container .content {
   display       : flex;
   flex-direction: column;
