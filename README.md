@@ -5,18 +5,35 @@ Stop letting ideas slip through the cracks. Collect, analyze, and organize feedb
 Feature Hunt is a platform that allows you to do just that. Users can share/vote/discuss feature requests and product owners can organize them to make better product decisions 🎯.
 
 The following technologies were used for the development of this project:  
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
-<code><img height="20" src="https://raw.githubusercontent.com/github/explore/5c058a388828bb5fde0bcafd4bc867b5bb3f26f3/topics/python/python.png"></code>  
+
+<p align="left">
+  <a href="https://www.reactjs.org" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="react" width="30" height="30"/>
+  </a>
+  <a href="https://www.javascript.com" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="js" width="30" height="30"/>
+  </a> 
+  <a href="https://www.mongodb.com" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="mongo" width="30" height="30"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg" alt="js" width="30" height="30"/>
+  </a>
+  <a href="https://www.python.org" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-plain.svg" alt="python" width="30" height="30"/>
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS" target="_blank"> 
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain.svg" alt="css" width="30" height="30"/>
+  </a>
+</p>  
+
 React (P.S. we use hooks)  
 JavaScript  
-HTML  
-CSS  
 Python3  
 Flask  
 MongoDB  
+HTML  
+CSS  
 
 Although we haven't used any CSS library for the FrontEnd, the users can easily merge it with any CSS library of their choice (e.g. Tailwind CSS, react-bootstrap).
 
