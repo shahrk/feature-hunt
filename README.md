@@ -37,6 +37,18 @@ CSS
 
 Although we haven't used any CSS library for the FrontEnd, the users can easily merge it with any CSS library of their choice (e.g. Tailwind CSS, react-bootstrap).
 
+## Preview
+The **Home** Page - It has a list of different products for which you can provide feature requests
+<img width="1200" alt="Screen Shot 2021-09-19 at 5 24 43 PM" src="https://user-images.githubusercontent.com/11090612/133943516-d55244b5-9f5e-4166-a18e-af35cf020146.png">  
+
+The **Product** Page - It has a list of feature requests added by users
+<img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="https://user-images.githubusercontent.com/11090612/133944169-5529ea32-40c8-4786-b198-6e5c1eecd64f.png">  
+
+The **Comment** Section - Each product page has a comment section (Powered by [utteranc.es](https://utteranc.es))
+<img width="830" alt="Screen Shot 2021-09-19 at 5 25 15 PM" src="https://user-images.githubusercontent.com/11090612/133943532-1a834e0e-2ea5-477f-a09f-122b05f7de7a.png">
+
+
+
 ## Getting Started with Feature Hunt
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
