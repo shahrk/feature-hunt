@@ -9,7 +9,7 @@ const Feature = ({ features, index, setFeatures }) => {
     updatedFeature.downVoted = false;
     let newVote = updatedFeature.upVoted ? 1 : (updatedFeature.downVoted ? -1 : 0);
     updatedFeature.votes = updatedFeature.votes - currentVote + newVote;
-    setFeatures(features.map((feature) => feature.id === features[index].id ? updatedFeature : feature));
+    setFeatures(features.map((feature) => feature._id === features[index]._id ? updatedFeature : feature));
   }
   const downVote = () => {
     const updatedFeature = { ...features[index] };
@@ -18,7 +18,7 @@ const Feature = ({ features, index, setFeatures }) => {
     updatedFeature.upVoted = false;
     let newVote = updatedFeature.upVoted ? 1 : (updatedFeature.downVoted ? -1 : 0);
     updatedFeature.votes = updatedFeature.votes - currentVote + newVote;
-    setFeatures(features.map((feature) => feature.id === features[index].id ? updatedFeature : feature));
+    setFeatures(features.map((feature) => feature._id === features[index]._id ? updatedFeature : feature));
   }
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
