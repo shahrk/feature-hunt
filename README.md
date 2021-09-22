@@ -1,5 +1,6 @@
 # FEATURE HUNT
 [![Build Status](https://app.travis-ci.com/shahrk/feature-hunt.svg?branch=main)](https://app.travis-ci.com/shahrk/feature-hunt)
+[![DOI](https://zenodo.org/badge/400052443.svg)](https://zenodo.org/badge/latestdoi/400052443)
 
 ## INTRODUCTION ⚡️
 
