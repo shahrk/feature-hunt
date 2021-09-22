@@ -51,21 +51,22 @@ The **Comment** Section - Each product page has a comment section (Powered by [u
 
 ## Getting Started with Feature Hunt
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## First Time Setup
 
-## Setup
+In the project directory run `git config --local core.hooksPath hooks` to make sure you have access to the Git Hooks.
+Run the following commands in order:
 
-In the project directory run `git config --local core.hooksPath hooks` to make sure you have access to the Git Hooks
+### `npm install`
 
-Make sure you run `npm install` before trying to run any of the [available scripts](#available-scripts).
+Installs the dependencies for the React App
 
-## Available Scripts
+### `pip install -r api/requirements.txt`
 
-In the project directory, you can run:
+Installs the requirements for the Flask API
 
 ### `yarn start`
 
-Runs the app in the development mode.\
+Runs the React app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
@@ -81,6 +82,8 @@ Requests made to [http://localhost:3000](http://localhost:3000) that don't exist
 ###  `yarn start-api-win`
 
 Does the same thing as 'yarn start-api' but for windows users (not tested).
+
+## Other Available Scripts
 
 ### `yarn test`
 
