@@ -1,6 +1,9 @@
 # FEATURE HUNT
 [![Build Status](https://app.travis-ci.com/shahrk/feature-hunt.svg?branch=main)](https://app.travis-ci.com/shahrk/feature-hunt)
 [![DOI](https://zenodo.org/badge/400052443.svg)](https://zenodo.org/badge/latestdoi/400052443)
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-blue)](https://www.javascript.com)
+[![GitHub license](https://img.shields.io/github/license/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/blob/main/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/issues)
 
 ## INTRODUCTION ⚡️
 
