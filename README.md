@@ -1,3 +1,6 @@
+# FEATURE HUNT
+[![Build Status](https://app.travis-ci.com/shahrk/feature-hunt.svg?branch=main)](https://app.travis-ci.com/shahrk/feature-hunt)
+
 ## INTRODUCTION ⚡️
 
 Stop letting ideas slip through the cracks. Collect, analyze, and organize feedback and feature requests in your product's feedback board to make better product decisions.  
