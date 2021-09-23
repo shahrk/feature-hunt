@@ -43,7 +43,7 @@ function Header({setQuery}) {
             </div>
             <div className="links">
               <ul>
-                <li onClick={goTo('new')}>Submit Project</li>
+                <li onClick={()=> window.open("http://tiny.cc/new-project", "_blank")}>Submit Project</li>
                 <li onClick={goTo('feature-hunt')}>RoadMap</li>
                 <li onClick={goTo('feedback')}>Feedback</li>
               </ul>
