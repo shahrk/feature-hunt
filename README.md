@@ -54,11 +54,15 @@ The **Product** Page - It has a list of feature requests added by users
 The **Comment** Section - Each product page has a comment section (Powered by [utteranc.es](https://utteranc.es))
 <img width="830" alt="Screen Shot 2021-09-19 at 5 25 15 PM" src="https://user-images.githubusercontent.com/11090612/133943532-1a834e0e-2ea5-477f-a09f-122b05f7de7a.png">
 
+## Add Your Project 
 
+> Want to gather feedback and maintain your project's roadmap more efficiently?  
 
-## Getting Started with Feature Hunt
+You can add your project to Feature Hunt by filling [this](http://tiny.cc/new-project) form, our team will review the response and add it to our database after doing our due diligence.
 
-## First Time Setup
+## Getting Started with (Feature Hunt) Development
+
+### First Time Setup
 
 In the project directory run `git config --local core.hooksPath hooks` to make sure you have access to the Git Hooks.
 Run the following commands in order:
@@ -106,12 +110,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### Add new Project 
-
-You can add more projects to the website by filling below form, our team will review the response and add it to our database after checks:
-
-https://docs.google.com/forms/d/e/1FAIpQLSebSFgJS3ppxNyCby31eiZcxq5QRwj7POOar1I1lV9MoKWRVA/viewform?usp=sf_link
 
 ## Team Members
 
