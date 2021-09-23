@@ -11,6 +11,12 @@ Stop letting ideas slip through the cracks. Collect, analyze, and organize feedb
   
 Feature Hunt is a platform that allows you to do just that. Users can share/vote/discuss feature requests and product owners can organize them to make better product decisions 🎯.
 
+### Click on the video to know more:
+
+https://user-images.githubusercontent.com/26930183/134577498-bb9e7235-27b4-4855-a850-bea899d9e626.mp4
+
+
+
 The following technologies were used for the development of this project:  
 
 <p align="left">
