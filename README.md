@@ -109,7 +109,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### Add new Project 
 
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSebSFgJS3ppxNyCby31eiZcxq5QRwj7POOar1I1lV9MoKWRVA/viewform?embedded=true" width="640" height="1095" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+You can add more projects to the website by filling below form, our team will review the response and add it to our database after checks:
+
+https://docs.google.com/forms/d/e/1FAIpQLSebSFgJS3ppxNyCby31eiZcxq5QRwj7POOar1I1lV9MoKWRVA/viewform?usp=sf_link
 
 ## Team Members
 
