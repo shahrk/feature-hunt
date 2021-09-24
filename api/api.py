@@ -67,3 +67,6 @@ def features(productname):
         result = db.products.find({"name":productname},{"features":1})
     client.close()
     return dumps(result)
+
+if __name__ == '__main__':
+    app.run(debug=False, host='0.0.0.0')
