@@ -68,18 +68,13 @@ You can add your project to Feature Hunt by filling [this](http://tiny.cc/new-pr
 
 ## Getting Started with (Feature Hunt) Development
 
-### First Time Setup
+## Frontend
 
-In the project directory run `git config --local core.hooksPath hooks` to make sure you have access to the Git Hooks.
 Run the following commands in order:
 
 ### `npm install`
 
 Installs the dependencies for the React App
-
-### `pip install -r api/requirements.txt`
-
-Installs the requirements for the Flask API
 
 ### `yarn start`
 
@@ -89,12 +84,41 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+## Backend
+
+If you don't plan to make any changes to the backend and just want to run the API you can directly skip to the [next](#running-backend-with-docker) part.
+Otherwise run the following commands in order:
+
+### `pip install -r api/requirements.txt`
+
+Installs the requirements for the Flask API
+
 ###  `yarn start-api`
 
 Runs the flask API in development mode.\
 The API runs on [http://localhost:5000](http://localhost:5000).
 
 Requests made to [http://localhost:3000](http://localhost:3000) that don't exist on the react server are automatically forwarded to this API
+
+## Backend (Docker)
+
+You can also directly run the backend using Docker by following these steps:
+
+### `docker build -t feature-hunt:latest ./api`
+
+Builds a docker image using the latest code
+
+### `docker run --name fh-api -d -p 5000:5000 feature-hunt`
+
+Creates a container for the image you just created and starts it in detached mode.
+
+### `docker start fh-api`
+
+Unless there are changes you don't need to rebuild and run the container every time. You can simply run this command to start the existing container.
+
+### `docker stop fh-api`
+
+Stop the container
 
 ## Other Available Scripts
 
@@ -124,5 +148,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 [Nirav Patel](https://www.github.com/Nirav1929)  
 [Mithil Dave](https://www.github.com/mithildave)  
 [Bhargav Jethwa](https://www.github.com/BhargavJethwa)
-&#x200B;&#x200B;&#x200B;&#x200B;
-&#x200B;&#x200B;&#x200B;&#x200B;
