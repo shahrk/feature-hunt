@@ -1,4 +1,5 @@
 import time
+import certifi
 from flask import Flask, Response
 from flask import request
 import json
@@ -22,7 +23,7 @@ def get_current_time():
 def get_projects():
     CONFIG = yaml.safe_load(open("config.yaml","r"))["DATABASE"]
     uri = "mongodb://%s:%s@%s" % (CONFIG["USERNAME"], CONFIG["PASSWORD"], CONFIG["HOST"])
-    client = pymongo.MongoClient(uri)
+    client = pymongo.MongoClient(uri,  tlsCAFile=certifi.where())
     db = client.DB1
     if request.method == 'GET':
         result = db.products.find()
@@ -42,7 +43,7 @@ def get_projects():
 def get_feature(productname):
     CONFIG = yaml.safe_load(open("config.yaml","r"))["DATABASE"]
     uri = "mongodb://%s:%s@%s" % (CONFIG["USERNAME"], CONFIG["PASSWORD"], CONFIG["HOST"])
-    client = pymongo.MongoClient(uri)
+    client = pymongo.MongoClient(uri,  tlsCAFile=certifi.where())
     db = client.DB1
     if request.method == 'GET':
         result = db.products.find({"name":productname},{"features":1})
@@ -52,7 +53,7 @@ def get_feature(productname):
 def features(productname):
     CONFIG = yaml.safe_load(open("config.yaml","r"))["DATABASE"]
     uri = "mongodb://%s:%s@%s" % (CONFIG["USERNAME"], CONFIG["PASSWORD"], CONFIG["HOST"])
-    client = pymongo.MongoClient(uri)
+    client = pymongo.MongoClient(uri,  tlsCAFile=certifi.where())
     db = client.DB1
     if request.method == 'POST':
         data = request.json
