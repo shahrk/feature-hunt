@@ -117,12 +117,15 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## Team Members
 
-[Raj Shah](https://www.github.com/shahrk)  
-[Parth Kanakiya](https://www.github.com/Parth59)  
-[Nirav Patel](https://www.github.com/Nirav1929)  
-[Mithil Dave](https://www.github.com/mithildave)  
-[Bhargav Jethwa](https://www.github.com/BhargavJethwa)
-&#x200B;&#x200B;&#x200B;&#x200B;
-&#x200B;&#x200B;&#x200B;&#x200B;
+## Contributors 🎯
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/shahrk/"><img src="https://avatars.githubusercontent.com/u/11090612?v=4" width="100px;" alt=""/><br /><sub><b>Raj Shah</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Nirav1929/"><img src="https://avatars.githubusercontent.com/u/11133468?v=4" width="100px;" alt=""/><br /><sub><b>Nirav Patel</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Parth59/"><img src="https://avatars.githubusercontent.com/u/22288099?v=4" width="100px;" alt=""/><br /><sub><b>Parth Kanakiya</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/mithildave/"><img src="https://avatars.githubusercontent.com/u/26930183?v=4" width="100px;" alt=""/><br /><sub><b>Mithil Dave</b></sub></a><br /></td>
+    <td align="center"><a href="https://www.github.com/BhargavJethwa"><img src="https://avatars.githubusercontent.com/u/70560970?v=4" width="100px;" alt=""/><br /><sub><b>Bhargav Jethwa</b></sub></a><br /></td>
+  </tr>
+</table>
