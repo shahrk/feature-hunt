@@ -3,12 +3,12 @@ services:
  backend:
   build: ./backend
   ports:
-   - "4000:4000"
+   - "5000:5000"
   volumes:
-   - .:/backend/app
+   - ./backend:/usr/src/app
   environment:
    - ENV=development
-   - PORT=4000
+   - PORT=5000
    - DB=mongodb+srv://bot:bot123@feature-hunt.6gqvj.mongodb.net/feature-hunt?retryWrites=true&w=majority
    #- DB=mongodb://mongodb:27017/todoDev
    
@@ -16,7 +16,9 @@ services:
  frontend:
   build: .
   volumes:
-    - '/usr/src/app'
+    - ./src:/usr/src/app/src
+    - ./public:/usr/src/app/public
+    - ./test:/usr/src/app/test
   ports:
     - 8080:3000
   stdin_open: true
@@ -24,4 +26,4 @@ services:
 
 networks:
  default:
-  name: web_dev
+  name: feature_hunt
