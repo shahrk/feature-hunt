@@ -66,32 +66,70 @@ The **Comment** Section - Each product page has a comment section (Powered by [u
 
 You can add your project to Feature Hunt by filling [this](http://tiny.cc/new-project) form, our team will review the response and add it to our database after doing our due diligence.
 
-## Getting Started with (Feature Hunt) Development
+## Getting Started with Development
+There are two ways to install and develop for featurehunt 
+
+Method 1) Using Docker containers.
+
+Method 2) Using Local machine.
+
+## Installation With Dockers.
+
+#### STEP 1)  Follow the steps to install Docker for your OS
+ https://docs.docker.com/get-docker
+
+#### STEP 2) Git clone the Repository using 
+
+`git clone https://github.com/shahrk/feature-hunt.git`
+
+
+#### STEP 3) Run the following Commands
+
+`cd feature-hunt`
+
+`docker-compose up`
+
+
+This will start create two docker interfaces. The  frontend will listen on 3000 and backend start on 5000
+
+## Installation in Local Machine without Dockers.
 
 ### First Time Setup
 
+
+#### STEP 1) Git clone the Repository using 
+
+`git clone https://github.com/shahrk/feature-hunt.git`
+
+
+#### STEP 2) Run the following Commands
+
+`cd feature-hunt`
+
+
+#### STEP 3)
 In the project directory run `git config --local core.hooksPath hooks` to make sure you have access to the Git Hooks.
 Run the following commands in order:
 
-### `npm install`
+#### STEP 4) `npm install`
 
 Installs the dependencies for the React App
 
-### `pip install -r api/requirements.txt`
+#### STEP 5) `pip install -r api/requirements.txt`
 
 Installs the requirements for the Flask API
 
-### `yarn start`
+#### STEP 6) `yarn start`
 
-Runs the React app in the development mode.\
+Runs the frontend React app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-###  `yarn start-api`
+#### STEP 7) `yarn start-api`
 
-Runs the flask API in development mode.\
+Runs the backend flask API in development mode.\
 The API runs on [http://localhost:5000](http://localhost:5000).
 
 Requests made to [http://localhost:3000](http://localhost:3000) that don't exist on the react server are automatically forwarded to this API
