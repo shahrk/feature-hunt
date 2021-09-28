@@ -1,6 +1,6 @@
 ''' controller and routes for users '''
 import os
-from sys import stdout
+from sys import stderr
 from flask import request, jsonify
 from app import app, mongo
 import logger
@@ -18,6 +18,7 @@ def products():
         query = request.args
         #db = mongo.feature-hunt
         data = mongo.db.products.find()
+        #print("Hello",data, file=stderr)
         return dumps(data)
 
     data = request.get_json()
