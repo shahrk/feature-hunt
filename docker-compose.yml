@@ -20,7 +20,7 @@ services:
     - ./public:/usr/src/app/public
     - ./test:/usr/src/app/test
   ports:
-    - 8080:3000
+    - "3000:3000"
   stdin_open: true
 
 
