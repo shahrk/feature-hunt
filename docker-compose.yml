@@ -1,11 +1,11 @@
 version: '3'
 services:
  backend:
-  build: ./modules
+  build: ./backend
   ports:
    - "4000:4000"
   volumes:
-   - .:/modules/app
+   - .:/backend/app
   environment:
    - ENV=development
    - PORT=4000
