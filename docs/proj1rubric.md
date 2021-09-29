@@ -33,3 +33,13 @@ but nevertheless, here is a track record that everyone is contributing a lot)|2|
 | evidence that the whole team is using the same tools (e.g. tutor can ask anyone to share screen, they demonstrate the system running on their computer)|2||
 | evidence that the members of the team are working across multiple places in the code base|2||
 |short release cycles | 2||
+|Documentation provide a clear, high-level overview of your software||
+|Documentation clearly describes the type of user who should use your software||
+|case studies to show how your software has been used by yourself and others||
+|Documentation includes a "quick start" guide that provides a short overview of how to use your software with some basic examples of use.||
+|Documentation provides clear, step-by-step instructions on how to deploy and use your software.||
+|A comprehensive guide to all your software’s commands, functions and options.||
+|If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation?||
+|Troubleshooting information that describes the symptoms and solutions for problems.||
+|Documentation stored under revision control with your source code.||
+|Do you publish your release history e.g. release data, version numbers, key features of each release etc. on your web site or in your documentation?|| 

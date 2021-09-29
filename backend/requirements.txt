@@ -17,3 +17,4 @@ requests==2.18.1
 six==1.16.0
 urllib3==1.21.1
 Werkzeug==2.0.1
+pylint==2.11.1
