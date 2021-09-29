@@ -9,6 +9,8 @@
 [![GitHub license](https://img.shields.io/github/license/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/issues)
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ## INTRODUCTION ⚡️
 
 Stop letting ideas slip through the cracks. Collect, analyze, and organize feedback and feature requests in your product's feedback board to make better product decisions.  
