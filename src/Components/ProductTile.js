@@ -1,9 +1,9 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router';
 
 const ProductTile = ({ products, index, setProducts }) => {
-  const history = useHistory()
+  const history = useHistory();
   const upVote = () => {
     const updatedProduct = { ...products[index] };
     let currentVote = updatedProduct.upVoted ? 1 : (updatedProduct.downVoted ? -1 : 0);
@@ -12,7 +12,7 @@ const ProductTile = ({ products, index, setProducts }) => {
     let newVote = updatedProduct.upVoted ? 1 : (updatedProduct.downVoted ? -1 : 0);
     updatedProduct.votes = updatedProduct.votes - currentVote + newVote;
     setProducts(products.map((product) => product.id === products[index].id ? updatedProduct : product));
-  }
+  };
   const downVote = () => {
     const updatedProduct = { ...products[index] };
     let currentVote = updatedProduct.upVoted ? 1 : (updatedProduct.downVoted ? -1 : 0);
@@ -21,22 +21,22 @@ const ProductTile = ({ products, index, setProducts }) => {
     let newVote = updatedProduct.upVoted ? 1 : (updatedProduct.downVoted ? -1 : 0);
     updatedProduct.votes = updatedProduct.votes - currentVote + newVote;
     setProducts(products.map((product) => product.id === products[index].id ? updatedProduct : product));
-  }
+  };
   const goTo = (product) => () => {
-    history.push(`/${product}`)
-  }
+    history.push(`/${product}`);
+  };
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+  };
   return (
     <div className="child product">
       <div className="product-container">
         <div className="image-container">
-             <img src={products[index].image_url} alt={products[index].name} />
+          <img src={products[index].image_url} alt={products[index].name} />
         </div>
         <div className="content">
           <div className="product-content">
-            <span className="product-title" onClick={goTo(products[index].name)} style={{ marginTop: "auto", marginBottom: "auto" }}>
+            <span className="product-title" onClick={goTo(products[index].name)} style={{ marginTop: 'auto', marginBottom: 'auto' }}>
               {capitalizeFirstLetter(products[index].name)}
             </span>
             <p className="product-description">
@@ -54,18 +54,18 @@ const ProductTile = ({ products, index, setProducts }) => {
         </div>
         <div className="votes-container">
           <span>
-            <FontAwesomeIcon icon={faChevronUp} size="lg" className={products[index].upVoted ? "votedUp" : "voteup"} onClick={upVote} />
+            <FontAwesomeIcon icon={faChevronUp} size="lg" className={products[index].upVoted ? 'votedUp' : 'voteup'} onClick={upVote} />
           </span>
           <span>
             {products[index].votes}
           </span>
           <span>
-            <FontAwesomeIcon icon={faChevronDown} size="lg" className={products[index].downVoted ? "votedDown" : "votedown"} onClick={downVote} />
+            <FontAwesomeIcon icon={faChevronDown} size="lg" className={products[index].downVoted ? 'votedDown' : 'votedown'} onClick={downVote} />
           </span>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default ProductTile
+export default ProductTile;
