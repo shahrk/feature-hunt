@@ -7,15 +7,6 @@ from flask import Flask
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 
-mongo = None
-def init_db(app, db, uri=os.environ.get('DB')):
-    global mongo
-    app.config["MONGO_URI"] = uri
-    print(app.config["MONGO_URI"])
-    mongo = PyMongo(app)
-    print("here1")
-
-
 def create_app():
     return Flask(__name__)  
     
@@ -25,4 +16,4 @@ CORS(app)
 app.config['MONGO_URI'] = os.environ.get('DB')
 mongo = PyMongo(app)
 
-from .controllers import *
+from app.controllers import *
