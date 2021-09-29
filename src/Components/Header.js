@@ -1,18 +1,18 @@
-import React from "react";
-import "../styles/header.scss";
-import { useHistory, useLocation } from "react-router-dom";
+import React from 'react';
+import '../styles/header.scss';
+import { useHistory, useLocation } from 'react-router-dom';
 function Header({setQuery}) {
   const history = useHistory();
   const goTo = (page) => () => {
-    history.push("/"+page)
-  }
+    history.push('/' + page);
+  };
   const location = useLocation();
-  const inputPlaceholder = location.pathname === '/' ? "Discover Projects..." : "Search Features...";
+  const inputPlaceholder = location.pathname === '/' ? 'Discover Projects...' : 'Search Features...';
   const search = (event) => {
     if (event.key === 'Enter') {
-      setQuery(event.target.value)
+      setQuery(event.target.value);
     }
-  }
+  };
   return (
     <div className="header_div">
       <div className="header_container">
@@ -43,7 +43,7 @@ function Header({setQuery}) {
             </div>
             <div className="links">
               <ul>
-                <li onClick={()=> window.open("http://tiny.cc/new-project", "_blank")}>Submit Project</li>
+                <li onClick={() => window.open('http://tiny.cc/new-project', '_blank')}>Submit Project</li>
                 <li onClick={goTo('feature-hunt')}>RoadMap</li>
                 <li onClick={goTo('feedback')}>Feedback</li>
               </ul>
