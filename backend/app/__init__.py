@@ -15,4 +15,4 @@ CORS(app)
 app.config['MONGO_URI'] = os.environ.get('DB')
 mongo = PyMongo(app)
 
-from app.controllers import *
+from .controllers import *

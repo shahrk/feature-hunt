@@ -8,11 +8,11 @@ ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 os.environ.update({'ROOT_PATH': ROOT_PATH})
 sys.path.append(os.path.join(ROOT_PATH, 'modules'))
 
-import logger
-from app import app
+from backend.logger import get_root_logger
+from backend.app import app
 
 # Create a logger object to log the info and debug
-LOG = logger.get_root_logger(os.environ.get(
+LOG = get_root_logger(os.environ.get(
     'ROOT_LOGGER', 'root'), filename=os.path.join(ROOT_PATH, 'output.log'))
 
 # Port variable to run the server on.
