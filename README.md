@@ -138,6 +138,21 @@ The API runs on [http://localhost:5000](http://localhost:5000).
 
 Requests made to [http://localhost:3000](http://localhost:3000) that don't exist on the react server are automatically forwarded to this API
 
+
+## Getting Started with Database Development/Connection
+
+#### STEP 1) Make an account on Mongo Cloud Atlas 
+<img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/Mongo.png">
+
+
+#### STEP 2) Make a Database and grab the credentials by clicking on connect
+<img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/Db.png">  
+
+
+#### STEP 3) Make the corresponding changes in the config.yaml file located in api folder
+
+<img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/DbYaml.png"> 
+
 ## Other Available Scripts
 
 ### `yarn test`
