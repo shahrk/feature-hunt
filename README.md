@@ -1,4 +1,8 @@
-# FEATURE HUNT
+# FEATURE HUNT, Build It Better!
+<p align="center"><img width="250" length="400" src="./docs/image-2.png">
+  
+  
+
 [![Build Status](https://app.travis-ci.com/shahrk/feature-hunt.svg?branch=main)](https://app.travis-ci.com/shahrk/feature-hunt)
 [![DOI](https://zenodo.org/badge/400052443.svg)](https://zenodo.org/badge/latestdoi/400052443)
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-blue)](https://www.javascript.com)
