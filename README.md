@@ -5,6 +5,7 @@
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-blue)](https://www.javascript.com)
 [![GitHub license](https://img.shields.io/github/license/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/issues)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## INTRODUCTION ⚡️
 
