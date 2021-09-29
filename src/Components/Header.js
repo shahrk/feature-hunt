@@ -50,7 +50,7 @@ function Header({setQuery}) {
             </div>
           </div>
           <div className="auth_button">
-            <button onClick={goTo('login')} className="signup_button">Login</button>
+            <button onClick={()=>alert('Coming soon!')} className="signup_button">Login</button>
           </div>
         </header>
       </div>
