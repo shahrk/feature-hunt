@@ -6,6 +6,7 @@ from app import app, mongo
 import logger
 from mongoengine import Document, StringField, FloatField
 from bson.json_util import dumps
+from bson.objectid import ObjectId
 
 
 ROOT_PATH = os.environ.get('ROOT_PATH')
@@ -52,4 +53,25 @@ def products():
         else:
             return jsonify({'ok': False, 'message': 'Bad request parameters!'}), 400
 
-       
+@app.route('/<productname>', methods=['GET', 'POST'])    
+def get_feature(productname):
+    if request.method == 'GET':
+        data = mongo.db.products.find({"name":productname},{"features":1})
+    return dumps(data)
+
+
+@app.route('/<productname>/features', methods=['GET', 'POST'])    
+def features(productname):  
+    if request.method == 'POST':
+        data = request.json
+        data['_id'] = ObjectId()
+        print(data)
+        if data is None or data == {}:
+            return Response(response=json.dumps({"Error": "Please provide connection information"}),
+                        status=400,
+                        mimetype='application/json')
+        result = mongo.db.products.find_one_and_update({"name": productname}, {"$push": {"features": data}})
+    
+    elif request.method == 'GET':
+        result = mongo.db.products.find({"name":productname},{"features":1})
+    return dumps(result)
