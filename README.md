@@ -1,7 +1,4 @@
-# FEATURE HUNT, Build It Better!
-<p align="center"><img width="250" length="400" src="./docs/image-2.png">
-  
-  
+<img width="657" alt="Feature Hunt" src="https://user-images.githubusercontent.com/11090612/135201949-a1f1de9d-f80a-4adf-a7ac-886c77c4c226.png">
 
 [![Build Status](https://app.travis-ci.com/shahrk/feature-hunt.svg?branch=main)](https://app.travis-ci.com/shahrk/feature-hunt)
 [![DOI](https://zenodo.org/badge/400052443.svg)](https://zenodo.org/badge/latestdoi/400052443)
