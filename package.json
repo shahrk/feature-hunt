@@ -44,9 +44,6 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-strongloop": "^2.1.0",
     "json-server": "^0.16.3"
   }
 }
