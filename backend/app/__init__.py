@@ -22,6 +22,7 @@ def create_app():
 # create the flask object
 app = create_app()
 CORS(app)
+<<<<<<< HEAD
 init_db(app,1)
 print("here")
 from app.controllers import *
@@ -34,3 +35,9 @@ app
 
 
 
+=======
+app.config['MONGO_URI'] = os.environ.get('DB')
+mongo = PyMongo(app)
+
+from .controllers import *
+>>>>>>> ed41873b2fa0508ac8ed2d63e55323d58a39a48b
