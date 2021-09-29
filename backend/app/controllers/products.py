@@ -9,7 +9,7 @@ from bson.json_util import dumps
 
 
 ROOT_PATH = os.environ.get('ROOT_PATH')
-print('ROOT_PATH', ROOT_PATH)
+# print('ROOT_PATH', ROOT_PATH)
 LOG = logger.get_root_logger(__name__, filename=os.path.join(ROOT_PATH, 'output.log'))
 
 @app.route('/products', methods=['GET', 'POST', 'DELETE', 'PATCH'])
