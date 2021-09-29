@@ -8,7 +8,7 @@ const requestOptionsBuilder = (method, body, headers) => {
   if (headers) options.headers = headers;
   return options;
 };
-const get = async(path, params) => {
+const get = async (path, params) => {
   path = sanitizePath(path);
   if (params) path += new URLSearchParams(params);
   const response = await fetch(baseUrl + path);
@@ -18,7 +18,7 @@ const get = async(path, params) => {
   }
   return data;
 };
-const post = async(path, body) => {
+const post = async (path, body) => {
   path = sanitizePath(path);
   const response = await fetch(
     baseUrl + path,
@@ -30,7 +30,7 @@ const post = async(path, body) => {
   }
   return data;
 };
-const put = async(path, body) => {
+const put = async (path, body) => {
   path = sanitizePath(path);
   const response = await fetch(
     baseUrl + path,
@@ -42,7 +42,7 @@ const put = async(path, body) => {
   }
   return data;
 };
-const remove = async(path) => {
+const remove = async (path) => {
   path = sanitizePath(path);
   const response = await fetch(baseUrl + path, requestOptionsBuilder('DELETE'));
   const data = await response.json();
