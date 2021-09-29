@@ -2,14 +2,14 @@
 import os
 from sys import stderr
 from flask import request, jsonify
-from backend.app import app, mongo
-from backend.logger import get_root_logger
+from app import app, mongo
+import logger
 from mongoengine import Document, StringField, FloatField
 from bson.json_util import dumps
 
 
 ROOT_PATH = os.environ.get('ROOT_PATH')
-LOG = get_root_logger(
+LOG = logger.get_root_logger(
     __name__, filename=os.path.join(ROOT_PATH, 'output.log'))
 
 @app.route('/products', methods=['GET', 'POST', 'DELETE', 'PATCH'])
