@@ -1,3 +1,9 @@
+#################################################################################
+##                                              
+##       Description: Connect to the MongoDB dataset for feature hunt 
+##       
+#################################################################################
+
 import pymongo
 from pprint import pprint
 import certifi
