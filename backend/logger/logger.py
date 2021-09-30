@@ -1,7 +1,15 @@
 ''' wrapper around logging module '''
 import os
 import logging
-
+#################################################################################
+##       Function: get_root_logger                                                 
+##       Description: Get the logger object 
+##       Inputs:
+##           - logger_name: Name of the logger
+##           - file name : the file which is used for logging
+##       Outputs:
+##           - logger: The logger instance
+#################################################################################
 
 def get_root_logger(logger_name, filename=None):
     ''' get the logger object '''
