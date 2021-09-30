@@ -12,7 +12,7 @@ jobs:
 
     language: python
     python:
-      - "3.6"
+      - "3.8"
     services:
       - docker
     # command to install dependencies
@@ -20,7 +20,7 @@ jobs:
       - pip install -r backend/requirements.txt
     # command to run tests
     script:
-      - docker-compose up
+      - docker-compose start backend
       - pytest
 
 

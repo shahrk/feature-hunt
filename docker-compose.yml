@@ -1,23 +1,5 @@
 version: '3'
 services:
- 
-
- tests:
-  build: ./backend
-  # ports:
-  #  - "5000:5000"
-  volumes:
-   - ./backend:/usr/src/app
-  environment:
-   - ENV=development
-   - PORT=5000
-   - DB=mongodb+srv://bot:bot123@feature-hunt.6gqvj.mongodb.net/feature-hunt?retryWrites=true&w=majority
-   #- DB=mongodb://mongodb:27017/todoDev
-  
-  command: ["pytest"]
- 
- 
- 
  backend:
   build: ./backend
   ports:
@@ -38,10 +20,10 @@ services:
     - ./public:/usr/src/app/public
     - ./test:/usr/src/app/test
   ports:
-    - "3000:3000"
+    - 8080:3000
   stdin_open: true
 
 
 networks:
  default:
-  # name: feature_hunt
+  name: feature_hunt
