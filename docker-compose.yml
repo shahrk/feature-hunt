@@ -26,4 +26,4 @@ services:
 
 networks:
  default:
-  name: feature_hunt
+  # name: feature_hunt
