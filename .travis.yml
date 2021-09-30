@@ -20,6 +20,7 @@ jobs:
       - pip install -r backend/requirements.txt
     # command to run tests
     script:
+      - docker-compose build
       - docker-compose start backend
       - pytest
 
