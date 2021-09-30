@@ -175,8 +175,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
 ## Future Scope
-1. Product owner dashboard: There can be a separate dashboard to manager product feature feedback. Owners will be allowed to prioritize any feature for development.
-2. Owner can download the data about the product and feature feedbacks in a CSV format. It can be used for analysis of the user responses. 
+1. Product owner dashboard: There can be a separate dashboard to manage product feature feedback. Owners will be allowed to prioritize any feature for development.
+2. Owners can download the data about the product and feature feedbacks in a CSV format. It can be used for analysis of the user responses. 
 3. Can have a separate page to show "Trending" products. Several filters i.e "Newest", "Most Popular", "Trending" etc can be applied. 
 4. Product owners can have a separte page to track the progress of development of any feature. They can decide timelines, select developers or assign reviewers.  
 5. Users will be allowed to see if their feature suggestions are "Under consideration" or have been "Rejected". 
