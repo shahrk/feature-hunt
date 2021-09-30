@@ -39,7 +39,16 @@ def get_current_time():
 #        result = db.products.insert_one(data).inserted_id
 #    client.close()
 #    return dumps(result)
-@app.route('/<productname>', methods=['GET', 'POST'])    
+@app.route('/<productname>', methods=['GET', 'POST'])  
+
+#################################################################################
+##       Function: get_feature                                                  
+##       Description: Get the list of all features for given product name
+##       Inputs:
+##           - productName: Name of the product
+##       Outputs:
+##           - results: List of features that are available in that product
+#################################################################################
 def get_feature(productname):
     CONFIG = yaml.safe_load(open("config.yaml","r"))["DATABASE"]
     uri = "mongodb://%s:%s@%s" % (CONFIG["USERNAME"], CONFIG["PASSWORD"], CONFIG["HOST"])
@@ -50,6 +59,15 @@ def get_feature(productname):
     client.close()
     return dumps(result)
 @app.route('/<productname>/features', methods=['GET', 'POST'])    
+
+#################################################################################
+##       Function: features                                                  
+##       Description: You can add/get features of a product
+##       Inputs:
+##           - productName: Name of the product
+##       Outputs:
+##           - results: Add features to that product or return feature list
+#################################################################################
 def features(productname):
     CONFIG = yaml.safe_load(open("config.yaml","r"))["DATABASE"]
     uri = "mongodb://%s:%s@%s" % (CONFIG["USERNAME"], CONFIG["PASSWORD"], CONFIG["HOST"])
