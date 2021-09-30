@@ -16,6 +16,16 @@ sys.path.insert(1, os.getcwd())
 app = Flask(__name__)
 CORS(app)
 
+#################################################################################
+##       Function: get_current_time                                                  
+##       Description: Get current time of the system
+##       Inputs:
+##           - N/A
+##       Outputs:
+##           - time: Return python dictionary object having current time as value
+#################################################################################
+
+
 @app.route('/time')
 def get_current_time():
     return {'time': time.time()}
