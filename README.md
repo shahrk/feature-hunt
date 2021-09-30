@@ -128,6 +128,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+To run backend flask api in development mode 
+ export DB="mongodb+srv://bot:bot123@feature-hunt.6gqvj.mongodb.net/feature-hunt?retryWrites=true&w=majority"
+
+ export ROOT_PATH="./"
+
 #### 6. `yarn start-api`
 
 Runs the backend flask API in development mode.\
