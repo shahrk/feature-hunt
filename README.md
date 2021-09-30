@@ -8,7 +8,7 @@
 [![GitHub license](https://img.shields.io/github/license/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/issues)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![Known Vulnerabilities](https://snyk.io/test/github/shahrk/feature-hunt/badge.svg)](https://snyk.io)
+[![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
 
 ## INTRODUCTION ⚡️
 
@@ -71,29 +71,29 @@ The **Comment** Section - Each product page has a comment section (Powered by [u
 
 You can add your project to Feature Hunt by filling [this](http://tiny.cc/new-project) form, our team will review the response and add it to our database after doing our due diligence.
 
-## Getting Started with Development
+## Getting Started
 There are two ways to install and develop for featurehunt 
 
-Method 1) Using Docker
+1. Using Docker
 
-Method 2) Using Local machine
+2. Using Local machine
 
 ## Installation With Docker.
 
-#### STEP 1)  Follow the steps to install Docker for your OS
- https://docs.docker.com/get-docker
+#### 1.  Follow the steps to install Docker for your OS
+```
+https://docs.docker.com/get-docker
+```
+#### 2. Git clone the Repository using 
+```
+git clone https://github.com/shahrk/feature-hunt.git
+```
 
-#### STEP 2) Git clone the Repository using 
-
-`git clone https://github.com/shahrk/feature-hunt.git`
-
-
-#### STEP 3) Run the following Commands
-
-`cd feature-hunt`
-
-`docker-compose up`
-
+#### 3. Run the following Commands
+```
+cd feature-hunt
+docker-compose up
+```
 
 This will run two docker containers. The frontend will run on port 3000 and the backend will run on port 5000
 
@@ -101,26 +101,26 @@ This will run two docker containers. The frontend will run on port 3000 and the 
 
 ### First Time Setup
 
-#### STEP 1) Git clone the Repository using 
-
-`git clone https://github.com/shahrk/feature-hunt.git`
-
-#### STEP 2) Run the following Commands
-
-`cd feature-hunt`
-
+#### 1. Git clone the Repository using 
+```
+git clone https://github.com/shahrk/feature-hunt.git
+```
+#### 2. Run the following Commands
+```
+cd feature-hunt
+```
 >Optional: In the project directory run `git config --local core.hooksPath hooks` to make sure you have access to the Git Hooks.
 Run the following commands in order:
 
-#### STEP 3) `npm install`
+#### 3. `npm install`
 
 Installs the dependencies for the React App
 
-#### STEP 4) `pip install -r api/requirements.txt`
+#### 4. `pip install -r api/requirements.txt`
 
 Installs the requirements for the Flask API
 
-#### STEP 5) `yarn start`
+#### 5. `yarn start`
 
 Runs the frontend React app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -128,7 +128,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-#### STEP 6) `yarn start-api`
+#### 6. `yarn start-api`
 
 Runs the backend flask API in development mode.\
 The API runs on [http://localhost:5000](http://localhost:5000).
@@ -140,14 +140,14 @@ Requests made to [http://localhost:3000](http://localhost:3000) that don't exist
 
 > We use Mongo Cloud Atlas for our project as we find it very convenient. You may choose to use a local mongodb instance or run a docker container
 
-#### STEP 1) Make an account on Mongo Cloud Atlas 
+#### 1. Make an account on Mongo Cloud Atlas 
 <img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/Mongo.png">
 
 
-#### STEP 2) Make a Database and grab the credentials by clicking on connect
+#### 2. Make a Database and grab the credentials by clicking on connect
 <img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/Db.png">  
 
-#### STEP 3) Make the corresponding changes in the config.yaml file located in api folder
+#### 3. Make the corresponding changes in the config.yaml file located in api folder
 
 <img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/DbYaml.png"> 
 
