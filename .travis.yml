@@ -1,9 +1,29 @@
-language: node_js
-node_js:
-  - "stable"
-cache:
-  directories:
-  - node_modules
-script:
-  - npm test
-  - npm run build
+jobs:
+  include:
+    language: node_js
+    node_js:
+      - "stable"
+    cache:
+      directories:
+      - node_modules
+    script:
+      - npm test
+      - npm run build
+
+    language: python
+    python:
+      - "3.6"
+    services:
+      - docker
+    # command to install dependencies
+    install:
+      - pip install -r backend/requirements.txt
+    # command to run tests
+    script:
+      - docker-compose up
+      - pytest
+
+
+notifications:
+  email:
+    - bhargavjethwa8@gmail.com
