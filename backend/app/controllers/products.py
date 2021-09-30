@@ -13,6 +13,16 @@ LOG = logger.get_root_logger(
     __name__, filename=os.path.join(ROOT_PATH, 'output.log'))
 
 @app.route('/products', methods=['GET', 'POST', 'DELETE', 'PATCH'])
+
+#################################################################################
+##       Function: products                                                  
+##       Description: Get/ Add/ Update/ Delete the products from the database 
+##       Inputs:
+##           - NA
+##       Outputs:
+##           - NA
+#################################################################################
+
 def products():
     if request.method == 'GET':
         query = request.args
