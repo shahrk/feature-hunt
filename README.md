@@ -140,16 +140,7 @@ Requests made to [http://localhost:3000](http://localhost:3000) that don't exist
 
 > We use Mongo Cloud Atlas for our project as we find it very convenient. You may choose to use a local mongodb instance or run a docker container
 
-#### 1. Make an account on Mongo Cloud Atlas 
-<img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/Mongo.png">
-
-
-#### 2. Make a Database and grab the credentials by clicking on connect
-<img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/Db.png">  
-
-#### 3. Make the corresponding changes in the config.yaml file located in api folder
-
-<img width="1148" alt="Screen Shot 2021-09-19 at 5 25 04 PM" src="./public/DbYaml.png"> 
+#### Make the corresponding changes in docker-compose.yml and backend/config.yml
 
 > You can also connect to the database from your shell using [mongosh](https://docs.mongodb.com/mongodb-shell/)
 
@@ -174,15 +165,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## Future Scope
-1. Product owner dashboard: There can be a separate dashboard to manage product feature feedback. Owners will be allowed to prioritize any feature for development.
-2. Owners can download the data about the product and feature feedbacks in a CSV format. It can be used for analysis of the user responses. 
-3. Can have a separate page to show "Trending" products. Several filters i.e "Newest", "Most Popular", "Trending" etc can be applied. 
-4. Product owners can have a separte page to track the progress of development of any feature. They can decide timelines, select developers or assign reviewers.  
-5. Users will be allowed to see if their feature suggestions are "Under consideration" or have been "Rejected". 
-6. The product feature review dashboard can be modified to allow only selected group of users to post a review.  
-7. The website can allow Anonymous posting & upvoting to gather honest reviews. 
-8. Recieveing feedback from a specific customers groups i.e students, commuters, doctors etc should be available. One can send out personalized invite to these groups, asking for a product review.  
 
 ## Contributors 🎯
 
