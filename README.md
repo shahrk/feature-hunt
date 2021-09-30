@@ -91,7 +91,8 @@ git clone https://github.com/shahrk/feature-hunt.git
 #### 3. Run the following Commands
 ```
 cd feature-hunt
-docker-compose up
+
+docker-compose up ---build (This is only needed when you're running the project for the first time. Upon building once, you can run this command without providing --build option)
 ```
 
 This will run two docker containers. The frontend will run on port 3000 and the backend will run on port 5000
