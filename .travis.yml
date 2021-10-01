@@ -5,7 +5,9 @@ cache:
   directories:
   - node_modules
 script:
-  - npm test
+  - npm test -- --coverage
   - npm run build
 after_script:
   - npm run coveralls
+notifications:
+  webhooks: https://coveralls.io/webhook
