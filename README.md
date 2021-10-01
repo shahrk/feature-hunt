@@ -9,6 +9,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/issues)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
+[![Coverage Status](https://coveralls.io/repos/github/shahrk/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/shahrk/feature-hunt?branch=main)
 
 ## INTRODUCTION ⚡️
 
