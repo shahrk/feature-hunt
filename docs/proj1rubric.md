@@ -60,7 +60,7 @@ Total Score = (250)/(96-10) = 2.9
 51| Is Software’s architecture and design is modular | 3 | in GH |
 52| Software uses an accepted coding standard or convention | 3 | https://github.com/shahrk/feature-hunt/blob/main/CODE_OF_CONDUCT.md|
 53| Do software allows data to be imported and exported using open data formats | 2 | Currently we support data sourcing by CSV and JSON.|
-54| Does it allow communications using open communications protocols | 0|N/A|
+54| Does it allow communications using open communications protocols | 2| Have used CRUD operations with REST APIs|
 55| cross-platform compatibility | 3| Can run on any platform |
 56| Software adhere to appropriate accessibility conventions or standards | 3| It is easily accessible by all people |
 57| Documentation adheres to appropriate accessibility conventions or standards | 3 |It is easily accessible by all people|
@@ -75,11 +75,11 @@ Total Score = (250)/(96-10) = 2.9
 66| Does the documentation lists the version number for all third-party dependencies | 3| We have it in the requirement.txt|
 67| Software list the web address, and licences for all third-party dependencies and say whether the dependencies are mandatory or optional |3| in requirements.txt|
 68| Download dependencies using a dependency management tool or package manager | 3| Stated in Readme: pip install -r api/requirements.txt |
-69| Tests that can be run after your software has been built or deployed to show whether the build or deployment has been successful | | N/A|
+69| Tests that can be run after your software has been built or deployed to show whether the build or deployment has been successful |3 | Test and build check is being done in travis.yml|
 70| Automated test suite for your software | 3 | https://github.com/shahrk/feature-hunt/tree/main/test |
 71| Framework to periodically (e.g. nightly) run your tests on the latest version of the source code | 3 | Workflow in GH|
 72| Using continuous integration, automatically running tests whenever changes are made to your source code | 3 | workflow in GH |
-73| Test results publicly visible | 2 |  |
+73| Test results publicly visible | 2 | Proof in travis |
 74| Manually-run tests documented | |N/A|
 75| Does Project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software | 3| https://github.com/shahrk/feature-hunt/wiki/Feature-Hunt|
 76| Documentation states how many projects and users are associated with your project | 3 | Contributors are listed |
@@ -87,19 +87,19 @@ Total Score = (250)/(96-10) = 2.9
 78| Have listed the important partners and collaborators in our documentation | 3 | https://github.com/shahrk/feature-hunt/actions/workflows/codeql-analysis.yml |
 79| Listing the project's publications on our website or link to a resource where these are available ||N/A|
 80| Listing third-party publications that refer to the software on our website or link to a resource where these are available | |N/A|
-81| Users can subscribe to notifications to changes to your source code repository | 3 | notified when issues are assigned to the team|
+81| Users can subscribe to notifications to changes to your source code repository | 3 | notified when issues are assigned to the team or users can be notified when they star github repo|
 82| Since the software is developed as an open source project (and, not just a project developing open source software), do we have a governance model ||N/A|
 83| Do we accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project? | 3 | It is open for all kinds of contribution| 
 84| Do you have a contributions policy | 3 | https://github.com/shahrk/feature-hunt/blob/main/CONTRIBUTING.md|
 85| Is your contributions' policy publicly available? | 3 | https://github.com/shahrk/feature-hunt/blob/main/CONTRIBUTING.md|
 86| Do contributors keep the copyright/IP of their contributions |3|https://github.com/shahrk/feature-hunt/commit/bb9897e785cb197a29f0fb160982173c45d20bea|
-87| Website and documentation clearly states the copyright owners of your software and documentation |  ||
+87| Website and documentation clearly states the copyright owners of your software and documentation | 3 ||proof in licence 
 88| Do each of your source code files include a copyright statement | 2 | All main modules have it |
 89| The website and documentation clearly state the licence of your software | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
 90| Software released under an open source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
 91| Software released under an OSI-approved open-source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
 92| Do your source code files include a licence header | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
-93| Do you have a Recommended citation for your software | |N/A|
+93| Do you have a Recommended citation for your software | 3| Added DOI badge
 94| Does your Documentation includes a project roadmap (a list of project and development milestones for the next 3, 6 months) | 3| Roadmap exist in GH|
 95| Does your Documentation describe how the project is funded, and the period over which funding is guaranteed? |||
 96| Do you make timely announcements of the deprecation of components, APIs, etc. |3| If needed, we can raise it using issues |
