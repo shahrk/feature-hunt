@@ -83,5 +83,22 @@ Total = ()/ =
 75| Does Project have resources (e.g. blog, Twitter, RSS feed, Facebook page, wiki, mailing list) that are regularly updated with information about your software | 3| https://github.com/shahrk/feature-hunt/wiki/Feature-Hunt|
 76| Documentation states how many projects and users are associated with your project | 3 | Contributors are listed |
 77| Provide success stories on your website | ||
-
-
+78| Have listed the important partners and collaborators in our documentation | 3 | https://github.com/shahrk/feature-hunt/actions/workflows/codeql-analysis.yml |
+79| Listing the project's publications on our website or link to a resource where these are available ||N/A|
+80| Listing third-party publications that refer to the software on our website or link to a resource where these are available | |N/A|
+81| Users can subscribe to notifications to changes to your source code repository | 3 | notified when issues are assigned to the team|
+82| Since the software is developed as an open source project (and, not just a project developing open source software), do we have a governance model ||N/A|
+83| Do we accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project? | 3 | It is open for all kinds of contribution| 
+84| Do you have a contributions policy | 3 | https://github.com/shahrk/feature-hunt/blob/main/CONTRIBUTING.md|
+85| Is your contributions' policy publicly available? | 3 | https://github.com/shahrk/feature-hunt/blob/main/CONTRIBUTING.md|
+88| Do contributors keep the copyright/IP of their contributions |3|https://github.com/shahrk/feature-hunt/commit/bb9897e785cb197a29f0fb160982173c45d20bea|
+89| Website and documentation clearly states the copyright owners of your software and documentation |  ||
+90| Do each of your source code files include a copyright statement | 2 | All main modules have it |
+91| The website and documentation clearly state the licence of your software | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+92| Software released under an open source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+93| Software released under an OSI-approved open-source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+94| Source code files include a licence header | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+95| Recommended citation for your software | |N/A|
+96| Documentation includes a project roadmap (a list of project and development milestones for the next 3, 6 months) | 3| Roadmap exist in GH|
+97| Documentation describe how the project is funded, and the period over which funding is guaranteed? |||
+98| Do you make timely announcements of the deprecation of components, APIs, etc. |3| If needed, we can raise it using issues |
