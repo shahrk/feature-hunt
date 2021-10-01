@@ -18,8 +18,7 @@ Feature Hunt is a platform that allows you to do just that. Users can share/vote
 
 ### Watch this short video to know more:
 
-https://user-images.githubusercontent.com/26930183/134577498-bb9e7235-27b4-4855-a850-bea899d9e626.mp4
-
+https://user-images.githubusercontent.com/26930183/135515516-d84f3a28-6d8c-49de-8068-50748e2a76b0.mp4
 
 
 The following technologies were used for the development of this project:  
@@ -92,7 +91,8 @@ git clone https://github.com/shahrk/feature-hunt.git
 #### 3. Run the following Commands
 ```
 cd feature-hunt
-docker-compose up
+
+docker-compose up ---build (This is only needed when you're running the project for the first time. Upon building once, you can run this command without providing --build option)
 ```
 
 This will run two docker containers. The frontend will run on port 3000 and the backend will run on port 5000
