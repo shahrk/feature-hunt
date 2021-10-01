@@ -31,7 +31,7 @@ const Product = ({query}) => {
 
   useEffect(() => {
     console.log(window.location.pathname);
-    Service.get(window.location.pathname).then(data => setFeatures(data[0].features));
+    Service.get(window.location.pathname).then(data => setFeatures(data[0] ? data[0].features : []));
   }, []);
 
   return (
