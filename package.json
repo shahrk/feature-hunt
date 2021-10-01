@@ -57,7 +57,8 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!src/index.js",
-      "!src/Components/Comments.js"
+      "!src/Components/Comments.js",
+      "!src/reportWebVitals.js"
     ]
   }
 }
