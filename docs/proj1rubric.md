@@ -17,11 +17,11 @@ Total = ()/ =
 9|Docs: how: for common use cases X,Y,Z mini-tutorials showing worked examples on how to do X,Y,Z|3|Added Screenshots/Video explainign the worked example|
 10|Docs: why: docs tell a story, motivate the whole thing, deliver a punchline that makes you want to rush out and use the thing|3| Logo, Description amd story telling is done in Readme|
 11|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code.|3| in GH Readme|
-12| Use of version control tools|0| Small scale project, can use in future |
+12| Use of version control tools|3| Used Git as version control tool |
 13| Use of  style checkers |3| in GH|
 14| Use of code  formatters. |3| in GH|
 15| Use of syntax checkers. |3|in GH|
-16| Use of code coverage |0||
+16| Use of code coverage |3| in GH|
 17| other automated analysis tools|2|in GH|
 18| test cases exist|3| https://github.com/shahrk/feature-hunt/tree/main/test|
 19| test cases are routinely executed|3|in GH|
@@ -42,7 +42,7 @@ Total = ()/ =
 34|A comprehensive guide to all your software’s commands, functions and options.|3|https://github.com/shahrk/feature-hunt/blob/main/README.md|
 35|If your software can be used as a library, package or service by other software, do you provide comprehensive API documentation?|3|Yes, Full documentation is present in GH readme|
 36|Troubleshooting information that describes the symptoms and solutions for problems.|1|Kept as future scope|
-37|Documentation stored under revision control with your source code.|1|Its considered as Future Scope|
+37|Documentation stored under revision control with your source code.|3 | The docs are present in Git version control |
 38|Do you publish your release history e.g. release data, version numbers, key features of each release etc. on your web site or in your documentation?|2| Roadmap defined the features being developed under current release| 
 39| Describe how a user can get help with using your software | 3 | https://github.com/shahrk/feature-hunt/blob/main/README.md |
 40| Documentation describes what support we provide to users and developers | 3 | https://github.com/shahrk/feature-hunt/blob/main/README.md  |
