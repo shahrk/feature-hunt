@@ -1,7 +1,8 @@
 
 # Project 1 Rubric
 
-Total = ()/ = 
+Not Applicable 10:
+Total Score = (250)/(96-10) = 2.9
 
 
 |Number | Notes|Self-assement|evidence|
@@ -91,14 +92,14 @@ Total = ()/ =
 83| Do we accept contributions (e.g. bug fixes, enhancements, documentation updates, tutorials) from people who are not part of your project? | 3 | It is open for all kinds of contribution| 
 84| Do you have a contributions policy | 3 | https://github.com/shahrk/feature-hunt/blob/main/CONTRIBUTING.md|
 85| Is your contributions' policy publicly available? | 3 | https://github.com/shahrk/feature-hunt/blob/main/CONTRIBUTING.md|
-88| Do contributors keep the copyright/IP of their contributions |3|https://github.com/shahrk/feature-hunt/commit/bb9897e785cb197a29f0fb160982173c45d20bea|
-89| Website and documentation clearly states the copyright owners of your software and documentation |  ||
-90| Do each of your source code files include a copyright statement | 2 | All main modules have it |
-91| The website and documentation clearly state the licence of your software | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
-92| Software released under an open source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
-93| Software released under an OSI-approved open-source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
-94| Source code files include a licence header | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
-95| Recommended citation for your software | |N/A|
-96| Documentation includes a project roadmap (a list of project and development milestones for the next 3, 6 months) | 3| Roadmap exist in GH|
-97| Documentation describe how the project is funded, and the period over which funding is guaranteed? |||
-98| Do you make timely announcements of the deprecation of components, APIs, etc. |3| If needed, we can raise it using issues |
+86| Do contributors keep the copyright/IP of their contributions |3|https://github.com/shahrk/feature-hunt/commit/bb9897e785cb197a29f0fb160982173c45d20bea|
+87| Website and documentation clearly states the copyright owners of your software and documentation |  ||
+88| Do each of your source code files include a copyright statement | 2 | All main modules have it |
+89| The website and documentation clearly state the licence of your software | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+90| Software released under an open source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+91| Software released under an OSI-approved open-source licence | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+92| Do your source code files include a licence header | 3 | https://github.com/shahrk/feature-hunt/blob/main/LICENSE |
+93| Do you have a Recommended citation for your software | |N/A|
+94| Does your Documentation includes a project roadmap (a list of project and development milestones for the next 3, 6 months) | 3| Roadmap exist in GH|
+95| Does your Documentation describe how the project is funded, and the period over which funding is guaranteed? |||
+96| Do you make timely announcements of the deprecation of components, APIs, etc. |3| If needed, we can raise it using issues |
