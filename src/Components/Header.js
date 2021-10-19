@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/header.scss';
 import { useHistory, useLocation } from 'react-router-dom';
+import Login from './Login';
 function Header({setQuery}) {
   const history = useHistory();
   const goTo = (page) => () => {
@@ -13,6 +14,7 @@ function Header({setQuery}) {
       setQuery(event.target.value);
     }
   };
+  const [loggedin, setLoggedin] = useState(false);
   return (
     <div className="header_div">
       <div className="header_container">
@@ -49,9 +51,13 @@ function Header({setQuery}) {
               </ul>
             </div>
           </div>
-          <div className="auth_button">
-            <button onClick={()=>alert('Coming soon!')} className="signup_button">Login</button>
-          </div>
+
+          {!loggedin && <div className="auth_button">
+            <Login setLoggedin={setLoggedin}/>
+          </div>}
+          {loggedin && <div className="auth_button">
+            <button onClick={() => setLoggedin(false)} className="signup_button">LogOut</button>
+          </div>}
         </header>
       </div>
     </div>
