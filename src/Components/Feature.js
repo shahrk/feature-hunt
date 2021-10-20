@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { TextField } from '@mui/material';
 
 const Feature = ({ features, index, setFeatures }) => {
   const upVote = () => {

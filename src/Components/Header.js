@@ -48,6 +48,7 @@ function Header({setQuery}) {
                 <li onClick={() => window.open('http://tiny.cc/new-project', '_blank')}>Submit Project</li>
                 <li onClick={goTo('feature-hunt')}>RoadMap</li>
                 <li onClick={goTo('feedback')}>Feedback</li>
+                {<li onClick={goTo('dashboard')}>Your Projects</li>}
               </ul>
             </div>
           </div>
