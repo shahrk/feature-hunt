@@ -3,11 +3,14 @@ import os
 import sys
 from flask import jsonify, make_response, send_from_directory
 import logger
+from dotenv import load_dotenv
 
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 os.environ.update({'ROOT_PATH': ROOT_PATH})
 sys.path.append(os.path.join(ROOT_PATH, 'modules'))
+
+load_dotenv(os.path.join(ROOT_PATH, 'envars.env'))
 
 from app import app
 
