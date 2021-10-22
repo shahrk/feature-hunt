@@ -11,6 +11,7 @@ const Dashboard = ({query}) => {
   const [features, setFeatures] = useState([]);
   const [user, setUser] = useState(['']);
 
+  /* TODO : add filter to get only the project that a user owns */
   useEffect(() => {
     Service.get('products').then(products => setProducts(products));
     setUser(ReactSession.get("username"));
