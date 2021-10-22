@@ -9,7 +9,7 @@ services:
   environment:
    - ENV=development
    - PORT=5000
-   - DB=mongodb+srv://bot:bot123@feature-hunt.6gqvj.mongodb.net/feature-hunt?retryWrites=true&w=majority
+   - DB=mongodb+srv://bot:bot123@cluster0.xph5e.mongodb.net/feature-hunt?retryWrites=true&w=majority
    #- DB=mongodb://mongodb:27017/todoDev
    
 

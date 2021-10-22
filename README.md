@@ -2,14 +2,14 @@
 <img width="657" alt="Feature Hunt" src="https://user-images.githubusercontent.com/11090612/135201949-a1f1de9d-f80a-4adf-a7ac-886c77c4c226.png">
 </p>
 
-[![Build Status](https://app.travis-ci.com/shahrk/feature-hunt.svg?branch=main)](https://app.travis-ci.com/shahrk/feature-hunt)
-[![DOI](https://zenodo.org/badge/400052443.svg)](https://zenodo.org/badge/latestdoi/400052443)
+[![Build Status](https://app.travis-ci.com/CSC510-Group-25/feature-hunt.svg?branch=main)](https://app.travis-ci.com/CSC510-Group-25/feature-hunt)
+[![DOI](https://zenodo.org/badge/413987683.svg)](https://zenodo.org/badge/latestdoi/413987683)
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-blue)](https://www.javascript.com)
 [![GitHub license](https://img.shields.io/github/license/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/issues)
+[![GitHub issues](https://img.shields.io/github/issues/CSC510-Group-25/feature-hunt)](https://github.com/CSC510-Group-25/feature-hunt/issues)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
-[![Coverage Status](https://coveralls.io/repos/github/shahrk/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/shahrk/feature-hunt?branch=main)
+[![Coverage Status](https://coveralls.io/repos/github/CSC510-Group-25/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/CSC510-Group-25/feature-hunt?branch=main)
 
 ## INTRODUCTION ⚡️
 
@@ -117,7 +117,7 @@ Run the following commands in order:
 
 Installs the dependencies for the React App
 
-#### 4. `pip install -r api/requirements.txt`
+#### 4. `pip install -r backend/requirements.txt`
 
 Installs the requirements for the Flask API
 
@@ -129,7 +129,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-To run backend flask api in development mode 
+To run backend flask api in development mode:  
+ 
  export DB="mongodb+srv://bot:bot123@feature-hunt.6gqvj.mongodb.net/feature-hunt?retryWrites=true&w=majority"
 
  export ROOT_PATH="./"
@@ -173,22 +174,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ## Future Scope
 1. Product owner dashboard: There can be a separate dashboard to manage product feature feedback. Owners will be allowed to prioritize any feature for development.
-2. Owners can download the data about the product and feature feedbacks in a CSV format. It can be used for analysis of the user responses. 
+2. Owners can download the data about the product and feature feedback in a CSV format. It can be used for analysis of the user responses. 
 3. Can have a separate page to show "Trending" products. Several filters i.e "Newest", "Most Popular", "Trending" etc can be applied. 
-4. Product owners can have a separate page to track the progress of development of any feature. They can decide timelines, select developers or assign reviewers.  
+4. Product owners can have a separate page to track the progress of development of any feature. They can decide timelines, select developers, or assign reviewers.  
 5. Users will be allowed to see if their feature suggestions are "Under consideration" or have been "Rejected". 
-6. The product feature review dashboard can be modified to allow only selected group of users to post a review.  
+6. The product feature review dashboard can be modified to allow only selected groups of users to post a review.  
 7. The website can allow anonymous posting & upvoting to gather honest reviews. 
-8. Recieving feedback from a specific customers groups i.e students, commuters, doctors etc should be available. One can send out personalized invite to these groups automatically, asking for a product review.  
+8. Receiving feedback from a specific customers groups i.e students, commuters, doctors, etc should be available. One can send out personalized invite to these groups automatically, asking for a product review.  
 
 ## Contributors 🎯
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/shahrk/"><img src="https://avatars.githubusercontent.com/u/11090612?v=4" width="100px;" alt=""/><br /><sub><b>Raj Shah</b></sub></a></td>
-    <td align="center"><a href="https://github.com/Nirav1929/"><img src="https://avatars.githubusercontent.com/u/11133468?v=4" width="100px;" alt=""/><br /><sub><b>Nirav Patel</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/Parth59/"><img src="https://avatars.githubusercontent.com/u/22288099?v=4" width="100px;" alt=""/><br /><sub><b>Parth Kanakiya</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/mithildave/"><img src="https://avatars.githubusercontent.com/u/26930183?v=4" width="100px;" alt=""/><br /><sub><b>Mithil Dave</b></sub></a><br /></td>
-    <td align="center"><a href="https://www.github.com/BhargavJethwa"><img src="https://avatars.githubusercontent.com/u/70560970?v=4" width="100px;" alt=""/><br /><sub><b>Bhargav Jethwa</b></sub></a><br /></td>
+    <td>Group 27</td>
+    <td align="center"><a href="https://github.com/shahrk/"><img src="https://avatars.githubusercontent.com/u/11090612?v=4" width="80px;" alt=""/><br /><sub><b>Raj Shah</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Nirav1929/"><img src="https://avatars.githubusercontent.com/u/11133468?v=4" width="80px;" alt=""/><br /><sub><b>Nirav Patel</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Parth59/"><img src="https://avatars.githubusercontent.com/u/22288099?v=4" width="80px;" alt=""/><br /><sub><b>Parth Kanakiya</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/mithildave/"><img src="https://avatars.githubusercontent.com/u/26930183?v=4" width="80px;" alt=""/><br /><sub><b>Mithil Dave</b></sub></a><br /></td>
+    <td align="center"><a href="https://www.github.com/BhargavJethwa"><img src="https://avatars.githubusercontent.com/u/70560970?v=4" width="80px;" alt=""/><br /><sub><b>Bhargav Jethwa</b></sub></a><br /></td>   
+  </tr>
+  
+  <tr>
+    <td>Group 25</td>
+    <td align="center"><a href="https://github.com/etracey7/"><img src="https://avatars.githubusercontent.com/u/78971563?v=4" width="80px;" alt=""/><br /><sub><b>Emily Tracey</b></sub></a></td>
+    <td align="center"><a href="https://github.com/peeyush10234/"><img src="https://avatars.githubusercontent.com/u/10905673?v=4" width="80px;" alt=""/><br /><sub><b>Peeyush Taneja</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/jhnguye4/"><img src="https://avatars.githubusercontent.com/u/42051115?v=4" width="80px;" alt=""/><br /><sub><b>Jonathan Nguyen</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/snapcat/"><img src="https://avatars.githubusercontent.com/u/89357283?v=4" width="80px;" alt=""/><br /><sub><b>Leila Moran</b></sub></a><br /></td>
+    <td align="center"><a href="https://www.github.com/shraddhamishra7"><img src="https://avatars.githubusercontent.com/u/7471821?v=4" width="80px;" alt=""/><br /><sub><b>Shraddha Mishra</b></sub></a><br /></td>
   </tr>
 </table>
