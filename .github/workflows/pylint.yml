@@ -49,6 +49,6 @@ jobs:
         path: pylint_complete.txt
       
     - name: pylint workflow status
-      run: pylint $(find . -name "*.py" | xargs)
-    # run: pylint --fail-under=1 $(find . -name "*.py" | xargs)
+      run: pylint --fail-under=5 $(find . -name "*.py" | xargs)
+    # run: pylint $(find . -name "*.py" | xargs)
     # note: set the failure threshold as indicated above
