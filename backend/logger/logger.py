@@ -2,8 +2,8 @@
 import os
 import logging
 #################################################################################
-##       Function: get_root_logger                                                 
-##       Description: Get the logger object 
+##       Function: get_root_logger
+##       Description: Get the logger object
 ##       Inputs:
 ##           - logger_name: Name of the logger
 ##           - file name : the file which is used for logging
@@ -31,6 +31,6 @@ def get_root_logger(logger_name, filename=None):
 
     return logger
 
-
 def get_child_logger(root_logger, name):
+    ''' docstr todo '''
     return logging.getLogger('.'.join([root_logger, name]))
