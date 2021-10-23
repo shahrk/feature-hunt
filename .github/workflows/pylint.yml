@@ -1,0 +1,54 @@
+name: Pylint
+
+on: ["push", "pull_request"]
+
+jobs:
+  build:
+  
+    name: pylint
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+        if [ -f ./backend/requirements.txt ]; then pip install -r ./backend/requirements.txt; fi
+    
+    - name: Analyze individual files
+      run: |
+         pylint ./backend/index.py |
+         tee pylint.txt
+         pylint ./backend/app/__init__.py |
+         tee -a pylint.txt
+         pylint ./backend/app/controllers/__init__.py |
+         tee -a pylint.txt
+         pylint ./backend/app/controllers/products.py |
+         tee -a pylint.txt
+         
+    - name: Analyze all files 
+      run: pylint --fail-under=10 `find -regextype egrep -regex '(.*.py)$'` |
+           tee pylint_complete.txt
+         
+    - name: Upload individual reports as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: pylint reports
+        path: pylint.txt
+
+    - name: Upload complete report as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: complete pylint report
+        path: pylint_complete.txt
+      
+    - name: pylint workflow status
+      run: pylint $(find . -name "*.py" | xargs)
+    # run: pylint --fail-under=1 $(find . -name "*.py" | xargs)
+    # note: set the failure threshold as indicated above
