@@ -26,7 +26,7 @@ jobs:
        
      - name: install npm and coveralls
        run: |
-         npm ci
+         npm install
          npm install coveralls
          
      - name: test with coverage
