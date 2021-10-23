@@ -21,15 +21,23 @@ jobs:
         pip install pylint
         if [ -f ./backend/requirements.txt ]; then pip install -r ./backend/requirements.txt; fi
     
+    # the files that matter the most
     - name: Analyze individual files
       run: |
          pylint ./backend/index.py |
-         tee pylint.txt
+         tee -a pylint.txt
          pylint ./backend/app/__init__.py |
          tee -a pylint.txt
          pylint ./backend/app/controllers/__init__.py |
          tee -a pylint.txt
          pylint ./backend/app/controllers/products.py |
+         tee -a pylint.txt
+         
+         pylint ./test/test_api.py |
+         tee -a pylint.txt
+         pylint ./test/test_get_feature.py |
+         tee -a pylint.txt
+         pylint ./test/test_features.py |
          tee -a pylint.txt
          
     - name: Analyze all files 
