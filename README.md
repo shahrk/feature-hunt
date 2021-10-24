@@ -3,6 +3,7 @@
 </p>
 
 [![Build Status](https://app.travis-ci.com/CSC510-Group-25/feature-hunt.svg?branch=main)](https://app.travis-ci.com/CSC510-Group-25/feature-hunt)
+[![Build](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs.yml)
 [![DOI](https://zenodo.org/badge/413987683.svg)](https://zenodo.org/badge/latestdoi/413987683)
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-blue)](https://www.javascript.com)
 [![GitHub license](https://img.shields.io/github/license/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/blob/main/LICENSE)
@@ -10,6 +11,9 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
 [![Coverage Status](https://coveralls.io/repos/github/CSC510-Group-25/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/CSC510-Group-25/feature-hunt?branch=main)
+[![CodeQL](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml)
+[![Pylint](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml)
+[![Tests](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml)
 
 ## INTRODUCTION ⚡️
 
@@ -86,7 +90,7 @@ https://docs.docker.com/get-docker
 ```
 #### 2. Git clone the Repository using 
 ```
-git clone https://github.com/shahrk/feature-hunt.git
+git clone https://github.com/CSC510-Group-25/feature-hunt.git
 ```
 
 #### 3. Run the following Commands
@@ -104,7 +108,7 @@ This will run two docker containers. The frontend will run on port 3000 and the 
 
 #### 1. Git clone the Repository using 
 ```
-git clone https://github.com/shahrk/feature-hunt.git
+git clone https://github.com/CSC510-Group-25/feature-hunt.git
 ```
 #### 2. Run the following Commands
 ```

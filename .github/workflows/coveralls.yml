@@ -5,7 +5,7 @@ name: Coveralls
 jobs:
 
   build:
-    name: Build
+
     runs-on: ubuntu-latest
     
     strategy:
@@ -23,12 +23,15 @@ jobs:
      - uses: actions/checkout@v2
      - name: Use Node.js ${{ matrix.node-version }}
        uses: actions/setup-node@v2
-
-     - name: script
+       
+     - name: install npm and coveralls
        run: |
          npm install
          npm install coveralls
-         npm test -- --coverage
+         
+     - name: test with coverage
+       run: npm test -- --coverage
+       
      - name: Coveralls
        uses: coverallsapp/github-action@v1.1.2
        with:
