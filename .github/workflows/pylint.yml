@@ -21,42 +21,36 @@ jobs:
         pip install pylint
         if [ -f ./backend/requirements.txt ]; then pip install -r ./backend/requirements.txt; fi
     
-    # the files that matter the most
-    - name: Analyze individual files
+    - name: Analyze files with pylint
       run: |
-         pylint ./backend/index.py |
-         tee -a pylint.txt
-         pylint ./backend/app/__init__.py |
-         tee -a pylint.txt
-         pylint ./backend/app/controllers/__init__.py |
-         tee -a pylint.txt
-         pylint ./backend/app/controllers/products.py |
-         tee -a pylint.txt
-         
-         pylint ./test/test_api.py |
-         tee -a pylint.txt
-         pylint ./test/test_get_feature.py |
-         tee -a pylint.txt
-         pylint ./test/test_features.py |
-         tee -a pylint.txt
-         
-    - name: Analyze all files 
-      run: pylint --fail-under=10 `find -regextype egrep -regex '(.*.py)$'` |
-           tee pylint_complete.txt
-         
-    - name: Upload individual reports as artifact
+       echo "::group::Skipped files"
+       echo "Skipping files" | tee -a pylint.txt
+       echo "backend/app/controllers/__init__.py" | tee -a pylint.txt
+       echo "backend/logger/__init__.py" | tee -a pylint.txt
+       echo "backend/linter.py" | tee -a pylint.txt
+       echo "See each individual file for pylint comments." | tee -a pylint.txt
+       echo "Be sure to update this workflow if any files are skipped/unskipped." | tee -a pylint.txt
+       echo "::endgroup::"
+       
+       pylint --fail-under=10 `find -regextype egrep -regex '(.*.py)$'` |
+       tee -a pylint.txt
+    
+    - name: Upload pylint report as artifact
       uses: actions/upload-artifact@v2
       with:
-        name: pylint reports
+        name: pylint report
         path: pylint.txt
-
-    - name: Upload complete report as artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: complete pylint report
-        path: pylint_complete.txt
-      
+        
     - name: pylint workflow status
-      run: pylint --fail-under=5 $(find . -name "*.py" | xargs)
-    # run: pylint $(find . -name "*.py" | xargs)
-    # note: set the failure threshold as indicated above
+      run: |
+       echo "::group::Skipped files"
+       echo "backend/app/controllers/__init__.py"
+       echo "backend/logger/__init__.py"
+       echo "backend/linter.py"
+       echo "::endgroup::"
+       echo "See each individual file for pylint comments."
+       echo "Be sure to update this workflow if any files are skipped/unskipped."
+       
+       pylint --fail-under=5 $(find . -name "*.py" | xargs)
+       # run: pylint $(find . -name "*.py" | xargs)
+       # note: set the failure threshold as indicated above
