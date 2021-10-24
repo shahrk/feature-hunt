@@ -1,4 +1,3 @@
-#pylint: skip-file
 ''' all controllers for various collections of database '''
 import os
 import glob
