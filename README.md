@@ -13,6 +13,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/CSC510-Group-25/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/CSC510-Group-25/feature-hunt?branch=main)
 [![CodeQL](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml)
 [![Pylint](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml)
+[![Tests](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml)
 
 ## INTRODUCTION ⚡️
 
