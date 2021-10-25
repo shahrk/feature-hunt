@@ -1,3 +1,5 @@
+
+# pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
 from app import *
 
 @app.route("/signup", methods=['post'])
@@ -14,7 +16,7 @@ def signup():
     user_input = {'name': user, 'email': email, 'password': hashed}
     records.insert_one(user_input)
 
-    return "User Successfully Entered"
+    return "Registration Successful"
 
 @app.route('/logged_in')
 def logged_in():
