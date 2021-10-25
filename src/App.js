@@ -11,13 +11,25 @@ import Product from './Components/Product';
 import Comments from './Components/Comments';
 import Header from './Components/Header';
 import Home from './Components/Home';
+import Dashboard from './Components/Dashboard';
 import {useState} from 'react';
+import {ReactSession} from 'react-client-session';
+
 
 function App() {
   const [query, setQuery] = useState('');
+  ReactSession.setStoreType("localStorage");
   return (
     <Router>
       <Switch>
+      <Route
+          path="/dashboard"
+          children={
+            <>
+              <Dashboard/>
+            </>
+          }
+        />
         <Route
           path="/:id"
           children={

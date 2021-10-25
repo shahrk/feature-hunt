@@ -1,5 +1,8 @@
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { Button, TextField } from '@mui/material';
+import {ReactSession} from 'react-client-session';
 
 const Feature = ({ features, index, setFeatures }) => {
   const upVote = () => {
@@ -23,6 +26,22 @@ const Feature = ({ features, index, setFeatures }) => {
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
+
+  /* TODO: check if user is logged in AND own the project the feature is related to */
+  const username = ReactSession.get("username");
+  const loggedin = useState(username !== '');
+  const [newTag, setNewTag] = useState('');
+
+  const handleTextChange = (e) => {
+    setNewTag(e.target.value);
+  }
+
+  /* TODO : save new tag to database */
+  const addNewTag = () => {
+    features[index]['tags'].push(newTag);
+    setNewTag('');
+  }
+
   return (
     <div className="child feature">
       <div className="feature-container">
@@ -39,6 +58,16 @@ const Feature = ({ features, index, setFeatures }) => {
                 <div>&nbsp;</div>
               </div>
             )}
+            {loggedin[0] && 
+            <div>
+              <TextField
+                label="Add New Tag"
+                value={newTag}
+                size="small"
+                onChange={handleTextChange}
+              />
+              <Button onClick={addNewTag}>Add</Button> 
+            </div> }
           </div>
         </div>
         <div className="votes-container">

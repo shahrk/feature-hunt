@@ -3,13 +3,11 @@ import os
 import sys
 from flask import jsonify, make_response, send_from_directory
 import logger
-
+from app import app
 
 ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
 os.environ.update({'ROOT_PATH': ROOT_PATH})
 sys.path.append(os.path.join(ROOT_PATH, 'modules'))
-
-from app import app
 
 # Create a logger object to log the info and debug
 LOG = logger.get_root_logger(os.environ.get(
