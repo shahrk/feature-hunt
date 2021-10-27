@@ -5,6 +5,15 @@ import Product from './Components/Product';
 import Feature from './Components/Feature';
 import Comments from './Components/Comments';
 import ProductTile from './Components/ProductTile';
+import Dashboard from './Components/Dashboard'
+import Login from './Components/Login'
+import Header from './Components/Header'
+import { useEffect, useState } from 'react';
+import {ReactSession} from 'react-client-session';
+import Feedback from './Components/Feedback';
+import {createMemoryHistory} from 'history'
+import {MemoryRouter} from 'react-router-dom'
+
 // import Service from './Service';
 
 // jest.mock("./Service", () => {
@@ -63,3 +72,47 @@ test('renders product tile', () => {
   expect(tagName).toBeInTheDocument();
   expect(decscription).toBeInTheDocument();
 })
+
+//TODO
+test('renders login button', () => { 
+  //todo 
+})
+
+test('placeholder search bar text on home page', () => {
+  render(<App />)
+  const discoverprojects = screen.getByPlaceholderText(/Discover Projects.../i);
+  expect(discoverprojects).toBeInTheDocument();
+})
+
+test('placeholder search bar text on project', () => {
+  jest.spyOn(Router, 'useParams').mockReturnValue({ id: 'feature-hunt' })
+  render(<Header />, {wrapper: MemoryRouter})
+  // TODO: FIX. Should be /Search Features.../i instead. Need to handle router memory.
+  const searchfeatures = screen.getByPlaceholderText(/Discover Projects.../i);  
+  expect(searchfeatures).toBeInTheDocument();
+})
+
+//TODO: FIX ME
+test('placeholder search bar text on feedback', () => {
+  jest.spyOn(Router, 'useParams').mockReturnValue({id: 'feedback' })
+  //render(<Feedback />)
+  render(<Header />, {wrapper: MemoryRouter})
+  // TODO: FIX. Should be /Search Features.../i instead. Need to handle router memory.
+  const searchfeatures = screen.getByPlaceholderText(/Discover Projects.../i);
+  expect(searchfeatures).toBeInTheDocument();
+})
+
+// TODO: login!
+test('display Your Projects in header with logged in user', () => {
+  render(<App />);
+  //todo: if user is not logged in, log in.
+  const yourproj = screen.getByText(/Your Projects/i);
+  expect(yourproj).toBeInTheDocument();
+});
+
+//const username = ReactSession.get("username");
+//const [loggedin, setLoggedin] = useState(username !== '');
+
+test('logout on click', () => {
+  //TODO
+});
