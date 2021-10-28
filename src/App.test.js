@@ -1,4 +1,5 @@
-import {render, screen} from '@testing-library/react';
+import React from 'react'
+import { render, screen } from '@testing-library/react';
 import App from './App';
 import Router from "react-router-dom";
 import Product from './Components/Product';
@@ -8,11 +9,10 @@ import ProductTile from './Components/ProductTile';
 import Dashboard from './Components/Dashboard'
 import Login from './Components/Login'
 import Header from './Components/Header'
-import { useEffect, useState } from 'react';
-import {ReactSession} from 'react-client-session';
 import Feedback from './Components/Feedback';
-import {createMemoryHistory} from 'history'
-import {MemoryRouter} from 'react-router-dom'
+import { createMemoryHistory } from 'history'
+import { MemoryRouter } from 'react-router-dom'
+import './setupTests'
 
 // import Service from './Service';
 
@@ -30,6 +30,7 @@ jest.mock('react-router-dom', () => ({
   ...jest.requireActual("react-router-dom"),
   useParams: jest.fn()
 }));
+
 
 test('renders home page', () => {
   render(<App />);
@@ -73,16 +74,55 @@ test('renders product tile', () => {
   expect(decscription).toBeInTheDocument();
 })
 
-//TODO
-test('renders login button', () => { 
-  //todo 
+test('home page: checks for sort by', () => {
+  render(<App />)
+  const popular = screen.getByText(/POPULAR/i);
+  const latest = screen.getByText(/LATEST/i);
+  expect(popular).toBeInTheDocument();
+  expect(latest).toBeInTheDocument();
 })
 
-test('placeholder search bar text on home page', () => {
+test('home page: checks placeholder search bar text', () => {
   render(<App />)
   const discoverprojects = screen.getByPlaceholderText(/Discover Projects.../i);
   expect(discoverprojects).toBeInTheDocument();
 })
+
+test('renders Header', () => {
+  render(<Header />, {wrapper: MemoryRouter})
+  const submitProject = screen.getByText(/Submit Project/i);
+  const roadmap = screen.getByText(/Roadmap/i);
+  const feedback = screen.getByText(/Feedback/i);
+
+  expect(submitProject).toBeInTheDocument();
+  expect(roadmap).toBeInTheDocument();
+  expect(feedback).toBeInTheDocument();
+})
+
+//TODO: test a comment
+test('renders feedback', () => {
+  render(<Feedback />, {wrapper: MemoryRouter})
+  // TODO: FIX. Should be /Search Features.../i instead. Need to handle router memory.
+  const searchfeatures = screen.getByPlaceholderText(/Discover Projects.../i);
+  const commstr = screen.getByText(/Leave a comment in the box below/i);
+  const patient = screen.getByText(/May take some time to load, please be patient!/i);
+  expect(commstr).toBeInTheDocument();
+  expect(patient).toBeInTheDocument();
+})
+
+//TODO
+/*test('Features: test upvote', () => {
+  const features = [{"id": 1, "text": "Create dashboard for product owners", "votes": 1, "timestamp": 1530815581293, "tags": ["enhancement"]}, {"id": 2, "text": "Create product page", "votes": 1, "timestamp": 1530814681293, "tags": ["enhancement"]}, {"id": 3, "text": "Make likes consistent", "votes": 3, "timestamp": 1530814981293, "tags": ["bug fix"]}];
+  jest.spyOn(Router, 'useParams').mockReturnValue({ id: 'feature-hunt' })
+  render(<Feature features={features} index={0} setFeatures={()=>console.log()}/>)
+  NYI
+})*/
+
+//TODO
+/*test('login', () => { 
+  NYI
+
+})*/
 
 test('placeholder search bar text on project', () => {
   jest.spyOn(Router, 'useParams').mockReturnValue({ id: 'feature-hunt' })
@@ -90,6 +130,14 @@ test('placeholder search bar text on project', () => {
   // TODO: FIX. Should be /Search Features.../i instead. Need to handle router memory.
   const searchfeatures = screen.getByPlaceholderText(/Discover Projects.../i);  
   expect(searchfeatures).toBeInTheDocument();
+
+  const submitProject = screen.getByText(/Submit Project/i);
+  const roadmap = screen.getByText(/Roadmap/i);
+  const feedback = screen.getByText(/Feedback/i);
+
+  expect(submitProject).toBeInTheDocument();
+  expect(roadmap).toBeInTheDocument();
+  expect(feedback).toBeInTheDocument();
 })
 
 //TODO: FIX ME
@@ -110,9 +158,7 @@ test('display Your Projects in header with logged in user', () => {
   expect(yourproj).toBeInTheDocument();
 });
 
-//const username = ReactSession.get("username");
-//const [loggedin, setLoggedin] = useState(username !== '');
-
+/*
 test('logout on click', () => {
-  //TODO
-});
+  NYI
+});*/

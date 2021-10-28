@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/header.scss';
 import { useHistory, useLocation } from 'react-router-dom';
-import {ReactSession} from 'react-client-session';
+import { ReactSession } from 'react-client-session';
 import Login from './Login';
+
 
 function Header({setQuery}) {
   const history = useHistory();

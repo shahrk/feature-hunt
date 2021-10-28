@@ -1,10 +1,11 @@
 import { useEffect} from 'react';
 import Header from './Header';
+import Service from '../Service';
 
 const Feedback = () => {
     useEffect(() => {
-        console.log(window.location.pathname);
-    }, []);
+      Service.get(window.location.pathname);
+     });
   
   return (
     <div><Header/>

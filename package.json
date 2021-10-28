@@ -25,6 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start-api": "cd backend && flask run --no-debugger",
+    "start-db": "cd backend && flask run",
     "lint": "./node_modules/.bin/prettier --single-quote --trailing-comma es5 --print-width 80 --write --no-bracket-spacing **/*.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
