@@ -7,7 +7,6 @@ this file. If not, please write to: featurehuntteam@gmail.com
 
 # pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
 
-
 ''' flask app with mongo '''
 import os
 import json
@@ -18,7 +17,6 @@ import bcrypt
 from bson.objectid import ObjectId
 from flask_pymongo import PyMongo
 from flask_cors import CORS
-from app.controllers import *
 
 def create_app():
     return Flask(__name__)
@@ -29,13 +27,10 @@ CORS(app)
 app.config['MONGO_URI'] = os.environ.get('DB')
 mongo = PyMongo(app)
 
-
 app.secret_key = "testing"
 records = mongo.db.users
-
 
 from app.controllers import *
 
 #if __name__ == "__main__":
 #    app.run(debug=True)
-
