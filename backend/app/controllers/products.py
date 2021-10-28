@@ -5,7 +5,7 @@ You should have received a copy of the XYZ license with
 this file. If not, please write to: featurehuntteam@gmail.com
 """
 
-# pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
+# pylint: disable=wrong-import-position,poiackend-lontless-string-statement,undefined-variable,line-too-long
 
 import os
 from sys import stderr
@@ -31,7 +31,7 @@ LOG = logger.get_root_logger(__name__, filename=os.path.join(ROOT_PATH, 'output.
 #################################################################################
 @app.route('/products', methods=['GET', 'POST', 'DELETE', 'PATCH'])
 def products():
-    
+    ''' see above '''
     if request.method == 'GET':
         query = request.args
         #db = mongo.feature-hunt
@@ -81,7 +81,7 @@ def products():
 #################################################################################
 @app.route('/<productname>', methods=['GET', 'POST'])
 def get_feature(productname):
-    
+    ''' see above '''
     if request.method == 'GET':
         data = mongo.db.products.find({"name":productname},{"features":1})
     return dumps(data)
@@ -98,7 +98,7 @@ def get_feature(productname):
 #################################################################################
 @app.route('/<productname>/features', methods=['GET', 'POST'])
 def features(productname):
-    
+    ''' see above '''
     if request.method == 'POST':
         data = request.json
         data['_id'] = ObjectId()

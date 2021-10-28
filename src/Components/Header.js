@@ -4,7 +4,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { ReactSession } from 'react-client-session';
 import Login from './Login';
 
-
 function Header({setQuery}) {
   const history = useHistory();
   const goTo = (page) => () => {
@@ -55,6 +54,7 @@ function Header({setQuery}) {
                 <li onClick={goTo('feature-hunt')}>RoadMap</li>
                 <li onClick={goTo('feedback')}>Feedback</li>
                 {loggedin && <li onClick={goTo('dashboard')}>Your Projects</li>}
+
               </ul>
             </div>
           </div>
