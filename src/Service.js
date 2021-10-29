@@ -8,6 +8,17 @@ const baseUrl = 'http://localhost:5000/';
    if (headers) options.headers = headers;
    return options;
 };
+
+const postRequestOptionsBuilder = (method, body, headers) => {
+  let options = {
+    method: method,
+    headers: {},
+  };
+  if (body) options['body'] = body;
+  if (headers) options.headers = headers;
+  return options;
+};
+
 const get = async (path, params) => {
   path = sanitizePath(path);
   if (params) path += new URLSearchParams(params);
@@ -22,7 +33,7 @@ const post = async (path, body) => {
    path = sanitizePath(path);
    const response = await fetch(
           baseUrl + path,
-     requestOptionsBuilder('POST', body)
+     postRequestOptionsBuilder('POST', body)
       );
       const data = await response.json();
       if (response.status >= 400 && response.status < 600) {

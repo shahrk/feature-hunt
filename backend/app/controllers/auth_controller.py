@@ -2,7 +2,7 @@
 # pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
 from app import *
 
-@app.route("/signup", methods=['post'])
+@app.route("/signup", methods=['POST'])
 def signup():
     user = request.form.get("fullname")
     email = request.form.get("email")
@@ -15,7 +15,6 @@ def signup():
     hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     user_input = {'name': user, 'email': email, 'password': hashed}
     records.insert_one(user_input)
-
     return "Registration Successful"
 
 @app.route('/logged_in')
@@ -33,9 +32,9 @@ def logged_in():
 def login():
     message = 'Please login to your account'
 
-
     if request.method == "POST":
         email = request.form.get("email")
+        print(email, flush=True)
         password = request.form.get("password")
 
         email_found = records.find_one({"email": email})
