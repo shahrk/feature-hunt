@@ -54,7 +54,12 @@ def login():
                 message = '403 Error Wrong Password'
                 return message
         else:
-            message = '403 Error Email not Found'
+            sampleDict = {
+                "code": 403,
+                "message":"Bad email"
+            }
+            jsonData = json.dumps(sampleDict)
+            message = jsonData
             return message
     return message
 

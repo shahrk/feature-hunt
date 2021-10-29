@@ -7,10 +7,13 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {ReactSession} from 'react-client-session';
+import Service from '../Service';
 
 export default function Login({ setLoggedin }) {
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -20,15 +23,31 @@ export default function Login({ setLoggedin }) {
     setOpen(false);
   };
 
-  const handleTextChange = (e) => {
+  const handleEmailChange = (e) => {
     setEmail(e.target.value);
   }
 
-  const handleSubmit = () => {
-    setLoggedin(true);
-    ReactSession.set("username", email);
-    handleClose();
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   }
+
+  const handleSubmit = () => {
+    Service.post('login', {email, password})
+      .then(code => 
+        {setMessage(message);
+          if (code > 200) {
+            console.log(message)
+          } else {
+            setLoggedin(true);
+            ReactSession.set("username", email);
+            handleClose();
+          }
+        });
+  }
+
+  React.useEffect(()=> {
+    handleClickOpen();
+  }, [message]);
 
   return (
     <div>
@@ -43,7 +62,7 @@ export default function Login({ setLoggedin }) {
           </DialogContentText>
           <TextField
             autoFocus
-            onChange={handleTextChange}
+            onChange={handleEmailChange}
             margin="dense"
             id="name"
             label="Email Address"
@@ -53,14 +72,17 @@ export default function Login({ setLoggedin }) {
             value={email}
           />
           <TextField
+            onChange={handlePasswordChange}
             margin="dense"
             id="password"
             label="Passowrd"
             type="password"
+            value={password}
             fullWidth
             variant="standard"
           />
         </DialogContent>
+        {<DialogContentText>Message: {message}</DialogContentText>}
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleSubmit}>Sumbit</Button>
