@@ -12,9 +12,9 @@ import Comments from './Components/Comments';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import Dashboard from './Components/Dashboard';
+import Feedback from './Components/Feedback';
 import {useState} from 'react';
 import {ReactSession} from 'react-client-session';
-
 
 function App() {
   const [query, setQuery] = useState('');
@@ -30,6 +30,18 @@ function App() {
             </>
           }
         />
+
+
+        <Route
+          path="/feedback"
+          children={
+            <>
+              <Feedback/>
+              <Comments/>
+            </>
+          }
+        />
+
         <Route
           path="/:id"
           children={
