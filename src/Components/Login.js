@@ -33,9 +33,10 @@ export default function Login({ setLoggedin }) {
 
   const handleSubmit = () => {
     Service.post('login', {email, password})
-      .then(code => 
-        {setMessage(message);
-          if (code > 200) {
+      .then(data => 
+        {setMessage(data.message);
+          console.log(data.code);
+          if (data.code > 200) {
             console.log(message)
           } else {
             setLoggedin(true);
@@ -75,14 +76,14 @@ export default function Login({ setLoggedin }) {
             onChange={handlePasswordChange}
             margin="dense"
             id="password"
-            label="Passowrd"
+            label="Password"
             type="password"
             value={password}
             fullWidth
             variant="standard"
           />
         </DialogContent>
-        {<DialogContentText>Message: {message}</DialogContentText>}
+        {message !== "" && <DialogContentText >Error: {message}</DialogContentText>}
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleSubmit}>Sumbit</Button>

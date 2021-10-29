@@ -51,15 +51,18 @@ def login():
             else:
                 if "email" in session:
                     return redirect(url_for("logged_in"))
-                message = '403 Error Wrong Password'
+                errorDict = {
+                    "code": 403,
+                    "message":"Password is incorrect"
+                }
+                message = json.dumps(errorDict)
                 return message
         else:
-            sampleDict = {
+            errorDict = {
                 "code": 403,
-                "message":"Bad email"
+                "message":"We are unable to find a user with that email. Please double check you entered your email correctly"
             }
-            jsonData = json.dumps(sampleDict)
-            message = jsonData
+            message = json.dumps(errorDict)
             return message
     return message
 
