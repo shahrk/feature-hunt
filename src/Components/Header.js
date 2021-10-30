@@ -65,7 +65,11 @@ function Header({setQuery}) {
             <SignUp/>
           </div>}
           {loggedin && <div className="auth_button">
-            <button onClick={() => {setLoggedin(false); ReactSession.set("username", "")}} className="signup_button">LogOut</button>
+            <button onClick={() => {
+              setLoggedin(false); 
+              ReactSession.set("username", "");
+              history.push("/")
+              }} className="signup_button">LogOut</button>
           </div>}
         </header>
       </div>

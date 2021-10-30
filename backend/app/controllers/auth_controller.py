@@ -10,12 +10,23 @@ def signup():
     user_found = records.find_one({"name": user})
     email_found = records.find_one({"email": email})
     if user_found or email_found:
-        return 'Either User or Email Already Exists'
+        errorDict = {
+                    "code": 409,
+                    "message":"This email already is already registered.",
+                    "email":email
+                }
+        message = json.dumps(errorDict)
+        return message
 
     hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     user_input = {'name': user, 'email': email, 'password': hashed}
     records.insert_one(user_input)
-    return "Registration Successful"
+    errorDict = {
+                    "code": 200,
+                    "message":"Registration Successful"
+                }
+    message = json.dumps(errorDict)
+    return message
 
 @app.route('/logged_in')
 def logged_in():
@@ -23,7 +34,13 @@ def logged_in():
     if "email" in session:
         email = session["email"]
         name = session["name"]
-        return f"200 OK {email}, {name}"
+        loggedinDict = {
+                    "code": 200,
+                    "email":email,
+                    "name":name
+                }
+        message = json.dumps(loggedinDict)
+        return message
     else:
         return redirect(url_for("login"))
 
@@ -63,6 +80,11 @@ def login():
             }
             message = json.dumps(errorDict)
             return message
+    loggedinDict = {
+                    "code": 200,
+                    "message":"Sucessfully Logged In"
+                    }
+    message = json.dumps(loggedinDict)
     return message
 
 @app.route("/logout", methods=["POST", "GET"])

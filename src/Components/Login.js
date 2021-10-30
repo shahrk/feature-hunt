@@ -7,13 +7,16 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import {ReactSession} from 'react-client-session';
+import { useHistory } from 'react-router-dom';
 import Service from '../Service';
+import { Alert } from '@mui/material';
 
 export default function Login({ setLoggedin }) {
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [message, setMessage] = React.useState("");
+  const history = useHistory();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -44,14 +47,13 @@ export default function Login({ setLoggedin }) {
           } else {
             setLoggedin(true);
             ReactSession.set("username", email);
+            history.push("/dashboard");
             handleClose();
           }
         });
   }
 
-  React.useEffect(()=> {
-    handleClickOpen();
-  }, [message]);
+  React.useEffect(()=> {}, [message]);
 
   return (
     <div>
@@ -86,7 +88,7 @@ export default function Login({ setLoggedin }) {
             variant="standard"
           />
         </DialogContent>
-        {message !== "" && <DialogContentText >Error: {message}</DialogContentText>}
+        {message !== "" && <Alert severity="error" >Error: {message}</Alert>}
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleSubmit}>Sumbit</Button>

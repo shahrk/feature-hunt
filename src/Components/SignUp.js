@@ -7,6 +7,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Service from '../Service';
+import { Alert } from '@mui/material';
 
 export default function SignUp() {
   const [open, setOpen] = React.useState(false);
@@ -54,9 +55,7 @@ export default function SignUp() {
       });
   }
 
-  React.useEffect(()=> {
-    handleClickOpen();
-  }, [message]);
+  React.useEffect(()=> {}, [message]);
 
   return (
     <div>
@@ -100,7 +99,7 @@ export default function SignUp() {
             variant="standard"
           />
         </DialogContent>
-        {message !== "" && <DialogContentText >Error: {message}</DialogContentText>}
+        {message !== "" && <Alert severity='error'>{message}</Alert>}
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleSubmit}>Sumbit</Button>
