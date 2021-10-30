@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Button, TextField } from '@mui/material';
+import Service from '../Service';
 
 const Feature = ({ features, index, setFeatures, editable }) => {
   const upVote = () => {
@@ -35,6 +36,9 @@ const Feature = ({ features, index, setFeatures, editable }) => {
   /* TODO : save new tag to database */
   const addNewTag = () => {
     features[index]['tags'].push(newTag);
+    const form = new FormData();
+    form.append("features", JSON.stringify(features));
+    Service.post(window.location.pathname + "/features", form).then(data => {});
     setNewTag('');
   }
 

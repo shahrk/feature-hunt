@@ -10,8 +10,8 @@ this file. If not, please write to: featurehuntteam@gmail.com
 import os
 from sys import stderr
 from flask import request, jsonify
+from flask import json
 from app import app, mongo
-import logger
 
 from bson.json_util import dumps
 from bson.objectid import ObjectId
@@ -100,14 +100,15 @@ def get_feature(productname):
 def features(productname):
     ''' see above '''
     if request.method == 'POST':
-        data = request.json
-        data['_id'] = ObjectId()
-        print(data)
+        data = request.form.get('features')
+        data = json.loads(data)
+        #data['_id'] = ObjectId()
+        print(data, flush=True)
         if data is None or data == {}:
             return Response(response=json.dumps({"Error": "Please provide connection information"}),
                         status=400,
                         mimetype='application/json')
-        result = mongo.db.products.find_one_and_update({"name": productname}, {"$push": {"features": data}})
+        result = mongo.db.products.find_one_and_update({"name": productname}, {"$set": {"features": data}})
 
     elif request.method == 'GET':
         result = mongo.db.products.find({"name":productname},{"features":1})
