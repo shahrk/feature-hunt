@@ -19,7 +19,7 @@ from bson.objectid import ObjectId
 
 ROOT_PATH = os.environ.get('ROOT_PATH')
 # print('ROOT_PATH', ROOT_PATH)
-LOG = logger.get_root_logger(__name__, filename=os.path.join(ROOT_PATH, 'output.log'))
+# LOG = logger.get_root_logger(__name__, filename=os.path.join(ROOT_PATH, 'output.log'))
 
 #################################################################################
 ##       Function: products
@@ -83,7 +83,7 @@ def products():
 def get_feature(productname):
     ''' see above '''
     if request.method == 'GET':
-        data = mongo.db.products.find({"name":productname},{"features":1})
+        data = mongo.db.products.find({"name":productname})
     return dumps(data)
 
 

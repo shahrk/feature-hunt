@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Button, TextField } from '@mui/material';
-import {ReactSession} from 'react-client-session';
 
-const Feature = ({ features, index, setFeatures }) => {
+const Feature = ({ features, index, setFeatures, editable }) => {
   const upVote = () => {
     const updatedFeature = { ...features[index] };
     let currentVote = updatedFeature.upVoted ? 1 : (updatedFeature.downVoted ? -1 : 0);
@@ -27,9 +26,6 @@ const Feature = ({ features, index, setFeatures }) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  /* TODO: check if user is logged in AND own the project the feature is related to */
-  const username = ReactSession.get("username");
-  const loggedin = useState(username !== '');
   const [newTag, setNewTag] = useState('');
 
   const handleTextChange = (e) => {
@@ -58,7 +54,7 @@ const Feature = ({ features, index, setFeatures }) => {
                 <div>&nbsp;</div>
               </div>
             )}
-            {loggedin[0] && 
+            {editable && 
             <div>
               <TextField
                 label="Add New Tag"

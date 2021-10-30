@@ -66,7 +66,7 @@ export default function SignUp() {
         <DialogTitle>Sign Up</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter your name, email and password to get started with Feature Hunt
+            Enter your name, email and password to get started with Feature Hunt!
           </DialogContentText>
           <TextField
             autoFocus
