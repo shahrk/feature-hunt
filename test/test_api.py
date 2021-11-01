@@ -3,5 +3,5 @@ import requests
 from pprint import pprint
 
 def test_products():
-    response = requests.get("http://localhost:5000/products")
+    response = requests.get("https://damp-citadel-25681.herokuapp.com/")
     assert b'feature-hunt' in response.content

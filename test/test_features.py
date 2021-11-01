@@ -3,9 +3,9 @@ import requests
 from pprint import pprint
 
 def test_feature_1():
-    response = requests.get("http://localhost:5000/feature-hunt/features")
+    response = requests.get("https://damp-citadel-25681.herokuapp.com/features")
     assert b'Create product page' in response.content
 
 def test_feature_2():
-    response = requests.get("http://localhost:5000/disentry/features")
+    response = requests.get("https://damp-citadel-25681.herokuapp.com//features")
     assert b'Enable scheduling/reminders' in response.content
