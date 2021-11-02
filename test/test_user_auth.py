@@ -65,4 +65,4 @@ def test_login_wrong_input():
     login_url = f'{test_config.test_url}/login'
     response = requests.get(login_url, data=mock_user)
 
-    assert response.status_code == 200  ## Fix this it shoudl return 500 but returning 200
+    assert response.status_code == 200  ## Fix this it should return 500 but returning 200
