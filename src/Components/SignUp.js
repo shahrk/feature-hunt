@@ -6,17 +6,15 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import {ReactSession} from 'react-client-session';
-import { useHistory } from 'react-router-dom';
 import Service from '../Service';
 import { Alert } from '@mui/material';
 
-export default function Login({ setLoggedin }) {
+export default function SignUp() {
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [fullname, setFullname] = React.useState("");
   const [message, setMessage] = React.useState("");
-  const history = useHistory();
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -34,23 +32,27 @@ export default function Login({ setLoggedin }) {
     setPassword(e.target.value);
   }
 
+  const handleNameChange = (e) => {
+    setFullname(e.target.value);
+  }
+
   const handleSubmit = () => {
     const form = new FormData();
     form.append("email", email);
+    form.append("fullname", fullname);
     form.append("password", password);
-    Service.post('login', form)
+    Service.post('signup', form)
       .then(data => 
         {setMessage(data.message);
           console.log(data.code);
           if (data.code > 200) {
             console.log(message)
           } else {
-            setLoggedin(true);
-            ReactSession.set("username", email);
-            history.push("/dashboard");
             handleClose();
           }
-        });
+        }).catch(function(err){
+          setMessage("There was a problem with your registration. Please try again later.")
+      });
   }
 
   React.useEffect(()=> {}, [message]);
@@ -58,16 +60,25 @@ export default function Login({ setLoggedin }) {
   return (
     <div>
       <Button onClick={handleClickOpen}>
-        Login
+        SignUp
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Login</DialogTitle>
+        <DialogTitle>Sign Up</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Enter your email and password to view your projects
+            Enter your name, email and password to get started with Feature Hunt!
           </DialogContentText>
           <TextField
             autoFocus
+            onChange={handleNameChange}
+            margin="dense"
+            id="name"
+            label="Name"
+            value={fullname}
+            fullWidth
+            variant="standard"
+          />
+          <TextField
             onChange={handleEmailChange}
             margin="dense"
             id="name"
@@ -88,7 +99,7 @@ export default function Login({ setLoggedin }) {
             variant="standard"
           />
         </DialogContent>
-        {message !== "" && <Alert severity="error" >Error: {message}</Alert>}
+        {message !== "" && <Alert severity='error'>{message}</Alert>}
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleSubmit}>Sumbit</Button>

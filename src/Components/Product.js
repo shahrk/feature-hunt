@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { ReactSession } from 'react-client-session';
 import Feature from './Feature';
 import Service from '../Service';
 
@@ -28,11 +29,19 @@ const Product = ({query}) => {
     }
   };
   const [features, setFeatures] = useState([]);
+  const [user, setUser] = useState('');
+  const [editable, setEditable] = useState(false);
 
   useEffect(() => {
     console.log(window.location.pathname);
-    Service.get(window.location.pathname).then(data => setFeatures(data[0] ? data[0].features : []));
-  }, []);
+    setUser(ReactSession.get("username"));
+    Service.get(window.location.pathname).then(data => {
+      setFeatures(data[0] ? data[0].features : []);
+      if (data[0] && data[0].users && data[0].users.includes(user)) {
+        setEditable(true);
+      }
+    });
+  }, [user]);
 
   return (
     <div className="container">
@@ -52,7 +61,7 @@ const Product = ({query}) => {
         </form>
       </div>
       {features.map((f, index) => { f['index'] = index; return f; }).filter(f => query ? f.tags.includes(query.toLowerCase()) || f.text.toLowerCase().includes(query.toLowerCase()) : true).sort((f1, f2) => f2[sortBy] - f1[sortBy]).map(
-        (feature) => <Feature key={feature.id} features={features} index={feature.index} setFeatures={setFeatures} />
+        (feature) => <Feature key={feature.id} features={features} index={feature.index} setFeatures={setFeatures} editable={editable}/>
         , setFeatures)}
     </div>
   );
