@@ -1,9 +1,7 @@
+# pylint: skip-file
 # pylint: disable=pointless-string-statement,undefined-variable,line-too-long
 
-from flask import Flask, render_template, request, url_for, redirect, session
-import pymongo
-import bcrypt
-import json
+from flask import Flask
 from os import environ
 
 app = Flask(__name__)
