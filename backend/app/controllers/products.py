@@ -5,21 +5,21 @@ You should have received a copy of the XYZ license with
 this file. If not, please write to: featurehuntteam@gmail.com
 """
 
-# pylint: disable=line-too-long
+# pylint: disable=wrong-import-position,poiackend-lontless-string-statement,undefined-variable,line-too-long
 
 import os
 from sys import stderr
 from flask import request, jsonify
+from flask import json
 from app import app, mongo
-import logger
-from mongoengine import Document, StringField, FloatField
+
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 
 
 ROOT_PATH = os.environ.get('ROOT_PATH')
 # print('ROOT_PATH', ROOT_PATH)
-LOG = logger.get_root_logger(__name__, filename=os.path.join(ROOT_PATH, 'output.log'))
+# LOG = logger.get_root_logger(__name__, filename=os.path.join(ROOT_PATH, 'output.log'))
 
 #################################################################################
 ##       Function: products
@@ -31,7 +31,7 @@ LOG = logger.get_root_logger(__name__, filename=os.path.join(ROOT_PATH, 'output.
 #################################################################################
 @app.route('/products', methods=['GET', 'POST', 'DELETE', 'PATCH'])
 def products():
-    ''' docstr todo '''
+    ''' see above '''
     if request.method == 'GET':
         query = request.args
         #db = mongo.feature-hunt
@@ -81,9 +81,9 @@ def products():
 #################################################################################
 @app.route('/<productname>', methods=['GET', 'POST'])
 def get_feature(productname):
-    ''' docstr todo '''
+    ''' see above '''
     if request.method == 'GET':
-        data = mongo.db.products.find({"name":productname},{"features":1})
+        data = mongo.db.products.find({"name":productname})
     return dumps(data)
 
 
@@ -98,16 +98,17 @@ def get_feature(productname):
 #################################################################################
 @app.route('/<productname>/features', methods=['GET', 'POST'])
 def features(productname):
-    ''' docstr todo '''
+    ''' see above '''
     if request.method == 'POST':
-        data = request.json
-        data['_id'] = ObjectId()
-        print(data)
+        data = request.form.get('features')
+        data = json.loads(data)
+        #data['_id'] = ObjectId()
+        print(data, flush=True)
         if data is None or data == {}:
             return Response(response=json.dumps({"Error": "Please provide connection information"}),
                         status=400,
                         mimetype='application/json')
-        result = mongo.db.products.find_one_and_update({"name": productname}, {"$push": {"features": data}})
+        result = mongo.db.products.find_one_and_update({"name": productname}, {"$set": {"features": data}})
 
     elif request.method == 'GET':
         result = mongo.db.products.find({"name":productname},{"features":1})

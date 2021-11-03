@@ -31,3 +31,6 @@ __pycache__
 
 .venv
 .vscode
+.idea
+.coverage
+.netlify

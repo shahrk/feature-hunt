@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/header.scss';
 import { useHistory, useLocation } from 'react-router-dom';
-import {ReactSession} from 'react-client-session';
+import { ReactSession } from 'react-client-session';
 import Login from './Login';
+import SignUp from './SignUp';
 
 function Header({setQuery}) {
   const history = useHistory();
@@ -53,16 +54,22 @@ function Header({setQuery}) {
                 <li onClick={() => window.open('http://tiny.cc/new-project', '_blank')}>Submit Project</li>
                 <li onClick={goTo('feature-hunt')}>RoadMap</li>
                 <li onClick={goTo('feedback')}>Feedback</li>
-                {loggedin && <li onClick={goTo('dashboard')}>Yourn<br/>Projects</li>}
+                {loggedin && <li onClick={goTo('dashboard')}>Your Projects</li>}
+
               </ul>
             </div>
           </div>
 
           {!loggedin && <div className="auth_button">
             <Login setLoggedin={setLoggedin}/>
+            <SignUp/>
           </div>}
           {loggedin && <div className="auth_button">
-            <button onClick={() => {setLoggedin(false); ReactSession.set("username", "")}} className="signup_button">LogOut</button>
+            <button onClick={() => {
+              setLoggedin(false); 
+              ReactSession.set("username", "");
+              history.push("/")
+              }} className="signup_button">LogOut</button>
           </div>}
         </header>
       </div>
