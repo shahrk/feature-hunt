@@ -1,9 +1,13 @@
-from app import *
+# pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
+
 from flask import jsonify
+from flask import request
+from app import app
+from db_init import product_records
 
 
 @app.route("/addProduct", methods=['Post'])
-def addProduct():
+def add_product():
     try:
         product_name = request.form.get("productName")
         product_description = request.form.get("productDescription")
@@ -26,10 +30,13 @@ def addProduct():
 #         data['_id'] = ObjectId()
 #         print(data)
 #         if data is None or data == {}:
-#             return Response(response=json.dumps({"Error": "Please provide connection information"}),
+#             return Response(response=json.dumps({"Error":
+#                             "Please provide connection information"}),
 #                             status=400,
 #                             mimetype='application/json')
-#         result = product_records.find_one_and_update({"project_name": productName}, {"$push": {"features": data}})
+#         result = product_records.find_one_and_update(
+#             {"project_name": productName}, {"$push": {"features": data}}
+#         )
 #
 #         return jsonify(success=True)
 #

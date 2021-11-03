@@ -1,10 +1,9 @@
 # pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
-
-from app import app
+import json
 from flask import request, session, redirect, url_for
 from flask import Response
 import bcrypt
-import json
+from app import app
 from db_init import records
 
 
