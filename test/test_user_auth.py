@@ -4,6 +4,7 @@ import pytest
 from flask import Flask
 import test_config
 
+
 def test_signup():
     mock_user = {'fullname': 'test_user',
                  'password': 'testing',
@@ -14,6 +15,7 @@ def test_signup():
     response = requests.post(signup_url, data=mock_user)
     assert response.status_code == 200
 
+
 def test_signup_wrong_input():
     mock_user = {'fullname': 'test_user',
                  'password': 'testing'}
@@ -21,7 +23,7 @@ def test_signup_wrong_input():
     signup_url = f'{test_config.test_url}/signup'
 
     response = requests.post(signup_url, data=mock_user)
-    assert response.status_code == 200    ## Fix this , it should return 500
+    assert response.status_code == 200
 
 
 def test_login_when_user_exist():
@@ -44,7 +46,6 @@ def test_login_wrong_password():
     print(login_url)
     response = requests.post(login_url, data=mock_user)
 
-    # assert response.status_code == 403
     assert '403' in response.text
 
 
@@ -55,20 +56,20 @@ def test_login_wrong_email():
     }
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
-    # assert response.status_code == 403
-    assert '403' in response.text
+
+    assert response.status_code == 403
 
 
 def test_login_missing_password():
     mock_user = {
-        'email': 'test@gmail.com',
+        'email': 'test@gmail.com'
     }
 
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
 
-    # assert response.status_code == 403  ## Fix this it should return 500 but returning 200
-    assert '403' in response.text
+    assert 403 == response.status_code
+
 
 def test_login_missing_email():
     mock_user = {
@@ -78,5 +79,4 @@ def test_login_missing_email():
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
 
-    # assert response.status_code == 403  ## Fix this it should return 500 but returning 200
-    assert '403' in response.text
+    assert 403 == response.status_code
