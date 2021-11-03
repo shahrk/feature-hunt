@@ -44,7 +44,6 @@ def test_login_wrong_password():
     print(login_url)
     response = requests.post(login_url, data=mock_user)
 
-    # assert response.status_code == 403
     assert '403' in response.text
 
 
@@ -55,20 +54,19 @@ def test_login_wrong_email():
     }
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
-    # assert response.status_code == 403
+
     assert '403' in response.text
 
 
 def test_login_missing_password():
     mock_user = {
-        'email': 'test@gmail.com',
+        'email': 'test@gmail.com'
     }
 
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
 
-    # assert response.status_code == 403  ## Fix this it should return 500 but returning 200
-    assert '403' in response.text
+    assert 403 == response.status_code
 
 def test_login_missing_email():
     mock_user = {
@@ -78,5 +76,4 @@ def test_login_missing_email():
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
 
-    # assert response.status_code == 403  ## Fix this it should return 500 but returning 200
-    assert '403' in response.text
+    assert 403 == response.status_code
