@@ -12,7 +12,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "bcrypt": "^5.0.1",
     "prettier": "^2.4.1",
     "react": "^17.0.2",
     "react-client-session": "^0.0.7",
@@ -64,6 +63,7 @@
       "src/**/*.{js,jsx}",
       "!src/index.js",
       "!src/Components/Comments.js",
+      "!src/Service.js",
       "!src/reportWebVitals.js"
     ]
   }

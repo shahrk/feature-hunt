@@ -1,4 +1,5 @@
 # pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
+
 from app import app
 from flask import request, session, redirect, url_for
 from flask import Response
@@ -15,6 +16,7 @@ def signup():
     user_found = records.find_one({"name": user})
     email_found = records.find_one({"email": email})
     if user_found or email_found:
+
         error_dict = {
             "code": 409,
             "message": "This email already is already registered.",
@@ -40,6 +42,7 @@ def logged_in():
     if "email" in session:
         email = session["email"]
         name = session["name"]
+
         logged_in_dict = {
             "code": 200,
             "email": email,
@@ -53,13 +56,13 @@ def logged_in():
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
-
     if request.method == "POST":
         email = request.form.get("email", None)
         print(email, flush=True)
         password = request.form.get("password", None)
 
         if password is None or email is None:
+
             return Response(status=403)
 
         email_found = records.find_one({"email": email})

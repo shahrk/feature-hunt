@@ -46,39 +46,51 @@ const Feature = ({ features, index, setFeatures, editable }) => {
     <div className="child feature">
       <div className="feature-container">
         <div className="content">
-          <div className="feature-content">
+          <div className="feature-content" data-testid={"feature_content:"+features[index].id}>
             <span style={{ marginTop: 'auto', marginBottom: 'auto' }}>
               {capitalizeFirstLetter(features[index].text)}
             </span>
           </div>
-          <div className="tag-container">
+          <div className="tag-container" data-testid={"feature_tag_container:"+features[index].id}>
             {features[index]['tags'].map(tag =>
               <div key={tag}>
-                <span className="tag">{tag.toUpperCase()}</span>
+                <span className="tag" data-testid="feature_tag">{tag.toUpperCase()}</span>
                 <div>&nbsp;</div>
               </div>
             )}
             {editable && 
             <div>
               <TextField
+                data-testid={"feature_addtag:"+ features[index].id}
                 label="Add New Tag"
+                inputProps={{ "data-testid": "newTag-input:" + features[index].id }}
                 value={newTag}
                 size="small"
                 onChange={handleTextChange}
               />
-              <Button onClick={addNewTag}>Add</Button> 
+              <Button 
+              data-testid={"feature_tagbutton:" + features[index].id}
+              onClick={addNewTag}>Add</Button> 
             </div> }
           </div>
         </div>
         <div className="votes-container">
           <span>
-            <FontAwesomeIcon icon={faChevronUp} size="lg" className={features[index].upVoted ? 'votedUp' : 'voteup'} onClick={upVote} />
+            <FontAwesomeIcon icon={faChevronUp} 
+            size="lg" 
+            className={features[index].upVoted ? 'votedUp' : 'voteup'} 
+            data-testid={"feature_upvote:"+features[index].id}
+            onClick={upVote} />
           </span>
-          <span>
+          <span data-testid={"fvoteval:" + features[index].id}>
             {features[index].votes}
           </span>
           <span>
-            <FontAwesomeIcon icon={faChevronDown} size="lg" className={features[index].downVoted ? 'votedDown' : 'votedown'} onClick={downVote} />
+            <FontAwesomeIcon icon={faChevronDown} 
+            size="lg" 
+            className={features[index].downVoted ? 'votedDown' : 'votedown'} 
+            data-testid={"feature_downvote:" + features[index].id}
+            onClick={downVote} />
           </span>
         </div>
       </div>

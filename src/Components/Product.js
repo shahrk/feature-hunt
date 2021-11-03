@@ -22,7 +22,7 @@ const Product = ({query}) => {
         votes: 1,
         upVoted: true,
         timestamp: Date.now(),
-        tags: ['enahancement'],
+        tags: ['enhancement'],
       };
       setFeatures(features.concat(addedFeature));
       setNewFeature('');
@@ -49,15 +49,21 @@ const Product = ({query}) => {
         <div className="product-title">
           <h3>{id.toUpperCase()}</h3>
           <div className="sort">
-            <p className={sortBy === 'votes' ? 'highlight' : ''} onClick={() => setSortBy('votes')}>POPULAR</p>
+            <p className={sortBy === 'votes' ? 'highlight' : ''} data-testid="prod_sortpop" onClick={() => setSortBy('votes')}>POPULAR</p>
             <p> | </p>
-            <p className={sortBy === 'timestamp' ? 'highlight' : ''} onClick={() => setSortBy('timestamp')}>LATEST</p>
+            <p className={sortBy === 'timestamp' ? 'highlight' : ''} data-testid="prod_sorttime" onClick={() => setSortBy('timestamp')}>LATEST</p>
           </div>
         </div>
       </div>
       <div className="child inputContainer">
-        <form onSubmit={addFeature}>
-          <input className="inputBar" value={newFeature} onChange={handleNewFeatureChange} placeholder="Enter a feature that you'd love to see"></input>
+        <form data-testid="prod_form" onSubmit={addFeature}>
+          <input 
+          className="inputBar" 
+          data-testid="prod_input"
+          value={newFeature} 
+          onChange={handleNewFeatureChange} 
+          placeholder="Enter a feature that you'd love to see">
+          </input>
         </form>
       </div>
       {features.map((f, index) => { f['index'] = index; return f; }).filter(f => query ? f.tags.includes(query.toLowerCase()) || f.text.toLowerCase().includes(query.toLowerCase()) : true).sort((f1, f2) => f2[sortBy] - f1[sortBy]).map(

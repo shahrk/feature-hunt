@@ -1,6 +1,7 @@
 from app import *
 from flask import jsonify
 
+
 @app.route("/addProduct", methods=['Post'])
 def addProduct():
     try:
@@ -17,7 +18,6 @@ def addProduct():
         return jsonify(success=True)
     except:
         return jsonify(success=False)
-
 
 # @app.route("/<productName>/addFeature", method=['Post'])
 # def addFeature(productName):
@@ -36,4 +36,3 @@ def addProduct():
 #     elif request.method == 'GET':
 #         result = mongo.db.products.find({"name": productname}, {"features": 1})
 #     return dumps(result)
-
