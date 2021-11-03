@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {ReactSession} from 'react-client-session';
+import { ReactSession } from 'react-client-session';
 import ProductTile from './ProductTile';
 import Service from '../Service';
 import Header from './Header';
@@ -17,25 +17,35 @@ const Dashboard = ({query}) => {
     setUser(ReactSession.get("username"));
   }, []);
 
-  // This function checks whether the signed in user is associated with the product
+  /**
+   * This function checks whether the signed in user is associated with the product.
+   * @param {any} product
+   * @returns {boolean} boolean
+   */
   const isProductOwner = (product) => {
-    
     return product.users && product.users.includes(user);
   }
 
   return (
     <div>
       <Header/>
-      <Alert severity="success">You are logged in</Alert>
+      <Alert data-testid="dash_alert" severity="success">You are logged in as {user}</Alert>
       <div className="container">
         <div className="child">
           <div className="product-title">
-            <h3>YOUR PRODUCTS-</h3>
-            <h3>{user}</h3>
+            <h3 data-testid="dash_proj">YOUR PROJECTS-</h3>
+            <h3 data-testid="dash_user">{user}</h3>
             <div className="sort">
-              <p className={sortBy === 'votes' ? 'highlight' : ''} onClick={() => setSortBy('votes')}>POPULAR</p>
+              <p 
+              className={sortBy === 'votes' ? 'highlight' : ''} 
+              data-testid="dash_sortpop"
+              onClick={() => setSortBy('votes')}>POPULAR</p>
               <p> | </p>
-              <p className={sortBy === 'timestamp' ? 'highlight' : ''} onClick={() => setSortBy('timestamp')}>LATEST</p>
+              <p 
+              className={sortBy === 'timestamp' ? 'highlight' : ''}
+              data-testid="dash_sorttime" 
+              onClick={() => setSortBy('timestamp')}>LATEST</p>
+
             </div>
           </div>
         </div>

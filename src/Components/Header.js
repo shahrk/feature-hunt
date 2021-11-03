@@ -26,7 +26,7 @@ function Header({setQuery}) {
       <div className="header_container">
         <header className="header">
           <div className="nav">
-            <div onClick={goTo('')} className="logo">
+            <div onClick={goTo('')} className="logo" data-testid="header_home">
               <img src="../logo512.png" alt="" />
             </div>
             <div className="search_box">
@@ -45,22 +45,23 @@ function Header({setQuery}) {
               </span>
               <input
                 type="text"
+                data-testid="header_input"
                 placeholder={inputPlaceholder}
                 onKeyPress={search}
               />
             </div>
             <div className="links">
-              <ul>
-                <li onClick={() => window.open('http://tiny.cc/new-project', '_blank')}>Submit Project</li>
-                <li onClick={goTo('feature-hunt')}>RoadMap</li>
-                <li onClick={goTo('feedback')}>Feedback</li>
-                {loggedin && <li onClick={goTo('dashboard')}>Your Projects</li>}
+              <ul data-testid="header_links">
+                <li data-testid="header_sub" onClick={() => window.open('http://tiny.cc/new-project', '_blank')}>Submit Project</li>
+                <li data-testid="header_rm" onClick={goTo('feature-hunt')}>RoadMap</li>
+                <li data-testid="header_fb" onClick={goTo('feedback')}>Feedback</li>
+                {loggedin && <li data-testid="header_dash" onClick={goTo('dashboard')}>Your Projects</li>}
 
               </ul>
             </div>
           </div>
 
-          {!loggedin && <div className="auth_button">
+          {!loggedin && <div className="auth_button" data-testid="login_header">
             <Login setLoggedin={setLoggedin}/>
             <SignUp/>
           </div>}
@@ -69,7 +70,9 @@ function Header({setQuery}) {
               setLoggedin(false); 
               ReactSession.set("username", "");
               history.push("/")
-              }} className="signup_button">LogOut</button>
+              }} 
+              data-testid="logout_header"
+              className="signup_button">LogOut</button>
           </div>}
         </header>
       </div>

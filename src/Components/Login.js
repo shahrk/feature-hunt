@@ -57,17 +57,18 @@ export default function Login({ setLoggedin }) {
 
   return (
     <div>
-      <Button onClick={handleClickOpen}>
+      <Button data-testid="login_button" onClick={handleClickOpen}>
         Login
       </Button>
-      <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Login</DialogTitle>
+      <Dialog data-testid="login_dialog" open={open} onClose={handleClose}>
+        <DialogTitle data-testid="login_title">Login</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText data-testid="login_text">
             Enter your email and password to view your projects
           </DialogContentText>
           <TextField
             autoFocus
+            data-testid="login_email"
             onChange={handleEmailChange}
             margin="dense"
             id="name"
@@ -75,23 +76,26 @@ export default function Login({ setLoggedin }) {
             type="email"
             fullWidth
             variant="standard"
+            inputProps={{ "data-testid": "login_inputEmail" }}
             value={email}
           />
           <TextField
+            data-testid="login_password"  
             onChange={handlePasswordChange}
             margin="dense"
             id="password"
             label="Password"
             type="password"
+            inputProps={{ "data-testid": "login_inputPassword" }}
             value={password}
             fullWidth
             variant="standard"
           />
         </DialogContent>
-        {message !== "" && <Alert severity="error" >Error: {message}</Alert>}
+        {message !== "" && <Alert severity="error" data-testid="login_error">Error: {message}</Alert>}
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Sumbit</Button>
+          <Button data-testid="login_cancel" onClick={handleClose}>Cancel</Button>
+          <Button data-testid="login_submit" onClick={handleSubmit}>Submit</Button>
         </DialogActions>
       </Dialog>
     </div>

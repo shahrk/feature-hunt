@@ -59,26 +59,31 @@ export default function SignUp() {
 
   return (
     <div>
-      <Button onClick={handleClickOpen}>
+      <Button 
+      data-testid="signup_button"
+      onClick={handleClickOpen}>
         SignUp
       </Button>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>Sign Up</DialogTitle>
+        <DialogTitle data-testid="signup_dialog_title">Sign Up</DialogTitle>
         <DialogContent>
-          <DialogContentText>
+          <DialogContentText data-testid="signup_dialog_text">
             Enter your name, email and password to get started with Feature Hunt!
           </DialogContentText>
           <TextField
             autoFocus
+            data-testid="signup_name"
             onChange={handleNameChange}
             margin="dense"
             id="name"
             label="Name"
+            inputProps={{ "data-testid": "signup_inputName" }}
             value={fullname}
             fullWidth
             variant="standard"
           />
           <TextField
+            data-testid="signup_email"
             onChange={handleEmailChange}
             margin="dense"
             id="name"
@@ -86,23 +91,26 @@ export default function SignUp() {
             type="email"
             fullWidth
             variant="standard"
+            inputProps={{ "data-testid": "signup_inputEmail" }}
             value={email}
           />
           <TextField
+            data-testid="signup_password"
             onChange={handlePasswordChange}
             margin="dense"
             id="password"
             label="Password"
             type="password"
             value={password}
+            inputProps={{ "data-testid": "signup_inputPassword" }}
             fullWidth
             variant="standard"
           />
         </DialogContent>
-        {message !== "" && <Alert severity='error'>{message}</Alert>}
+        {message !== "" && <Alert severity='error' data-testid="signup_error">{message}</Alert>}
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleSubmit}>Sumbit</Button>
+          <Button data-testid="signup_cancel" onClick={handleClose}>Cancel</Button>
+          <Button data-testid="signup_submit" onClick={handleSubmit}>Submit</Button>
         </DialogActions>
       </Dialog>
     </div>
