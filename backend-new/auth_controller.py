@@ -1,8 +1,9 @@
 
 # pylint: disable=wrong-import-position,pointless-string-statement,undefined-variable,line-too-long
 from app import *
+from flask import Response
 
-@app.route("/signup", methods=['post'])
+@app.route("/signup", methods=['POST'])
 def signup():
     user = request.form.get("fullname")
     email = request.form.get("email")
@@ -10,13 +11,23 @@ def signup():
     user_found = records.find_one({"name": user})
     email_found = records.find_one({"email": email})
     if user_found or email_found:
-        return 'Either User or Email Already Exists'
+        errorDict = {
+                    "code": 409,
+                    "message":"This email already is already registered.",
+                    "email":email
+                }
+        message = json.dumps(errorDict)
+        return message
 
     hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     user_input = {'name': user, 'email': email, 'password': hashed}
     records.insert_one(user_input)
-
-    return "Registration Successful"
+    errorDict = {
+                    "code": 200,
+                    "message":"Registration Successful"
+                }
+    message = json.dumps(errorDict)
+    return message
 
 @app.route('/logged_in')
 def logged_in():
@@ -24,7 +35,13 @@ def logged_in():
     if "email" in session:
         email = session["email"]
         name = session["name"]
-        return f"200 OK {email}, {name}"
+        loggedinDict = {
+                    "code": 200,
+                    "email":email,
+                    "name":name
+                }
+        message = json.dumps(loggedinDict)
+        return message
     else:
         return redirect(url_for("login"))
 
@@ -33,10 +50,13 @@ def logged_in():
 def login():
     message = 'Please login to your account'
 
-
     if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
+        email = request.form.get("email", None)
+        print(email, flush=True)
+        password = request.form.get("password", None)
+
+        if len(password) == 0 or len(email) == 0:
+            return Response(status=403)
 
         email_found = records.find_one({"email": email})
         if email_found:
@@ -51,11 +71,24 @@ def login():
             else:
                 if "email" in session:
                     return redirect(url_for("logged_in"))
-                message = '403 Error Wrong Password'
+                errorDict = {
+                    "code": 403,
+                    "message":"Password is incorrect"
+                }
+                message = json.dumps(errorDict)
                 return message
         else:
-            message = '403 Error Email not Found'
+            errorDict = {
+                "code": 403,
+                "message":"We are unable to find a user with that email. Please double check you entered your email correctly"
+            }
+            message = json.dumps(errorDict)
             return message
+    loggedinDict = {
+                    "code": 200,
+                    "message":"Sucessfully Logged In"
+                    }
+    message = json.dumps(loggedinDict)
     return message
 
 @app.route("/logout", methods=["POST", "GET"])
