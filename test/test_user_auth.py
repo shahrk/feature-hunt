@@ -1,6 +1,7 @@
 import requests
 import test_config
 
+
 def test_signup():
     mock_user = {'fullname': 'test_user',
                  'password': 'testing',
@@ -10,6 +11,7 @@ def test_signup():
 
     response = requests.post(signup_url, data=mock_user)
     assert response.status_code == 200
+
 
 def test_signup_wrong_input():
     mock_user = {'fullname': 'test_user',
@@ -63,7 +65,9 @@ def test_login_missing_password():
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
 
+
     assert response.status_code == 403
+
 
 
 def test_login_missing_email():
@@ -75,3 +79,4 @@ def test_login_missing_email():
     response = requests.post(login_url, data=mock_user)
 
     assert response.status_code == 403
+
