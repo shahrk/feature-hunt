@@ -14,7 +14,9 @@
 [![Tests](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/CSC510-Group-25/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/CSC510-Group-25/feature-hunt?branch=main)
 [![CodeQL](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/618e353a1b27465d9cfa5c46bcf06f90)](https://www.codacy.com/gh/CSC510-Group-25/feature-hunt/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CSC510-Group-25/feature-hunt&amp;utm_campaign=Badge_Grade)
 [![Pylint](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml)
+[![Netlify](https://img.shields.io/netlify/dbecc37c-c273-4b45-bfff-3fd33d20cae0)](https://feature-hunt-25.netlify.app/)
 
 ## INTRODUCTION ⚡️
 
@@ -163,6 +165,10 @@ Requests made to [http://localhost:3000](http://localhost:3000) that don't exist
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `yarn lint`
+
+Applies Prettier to all .js files.
+
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
@@ -186,6 +192,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 6. The product feature review dashboard can be modified to allow only selected groups of users to post a review.  
 7. The website can allow anonymous posting & upvoting to gather honest reviews. 
 8. Receiving feedback from a specific customers groups i.e students, commuters, doctors, etc should be available. One can send out personalized invite to these groups automatically, asking for a product review.  
+
+#### See more here: [Future scope](https://github.com/CSC510-Group-25/feature-hunt/issues?q=is%3Aopen+is%3Aissue+label%3A%22future+scope%22)
 
 ## Contributors 🎯
 
