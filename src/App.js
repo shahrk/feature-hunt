@@ -8,11 +8,13 @@ this file. If not, please write to: featurehuntteam@gmail.com
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Product from './Components/Product';
+import ProjectForm from "./Components/ProjectForm";
 import Comments from './Components/Comments';
 import Header from './Components/Header';
 import Home from './Components/Home';
 import Dashboard from './Components/Dashboard';
 import Feedback from './Components/Feedback';
+
 import {useState} from 'react';
 import {ReactSession} from 'react-client-session';
 
@@ -42,6 +44,15 @@ function App() {
           }
         />
 
+        <Route
+          path="/submit-project"
+          children={
+            <>
+              <Header setQuery={setQuery} />
+                <ProjectForm query={query} />
+            </>
+          }
+        />
         <Route
           path="/:id"
           children={

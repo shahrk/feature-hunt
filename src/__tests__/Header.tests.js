@@ -87,7 +87,7 @@ describe("Header tests", () => {
     expect(submittext).toBeInTheDocument();
 
     // links
-    const submit = getByTestId("header_sub"); // don't click, causes error
+    const submit = getByTestId("header_sub");
     const dash = getByTestId("header_dash");
     const feedback = getByTestId("header_fb");
     const roadmap = getByTestId("header_rm");
@@ -102,36 +102,21 @@ describe("Header tests", () => {
     expect(history.length).toBe(4);
     fireEvent.click(roadmap);
     expect(history.length).toBe(5);
-    fireEvent.click(feedback);
+    fireEvent.click(submit);
     expect(history.length).toBe(6);
+    fireEvent.click(feedback);
+    expect(history.length).toBe(7);
     expect(history.location.pathname).toBe("/feedback");
 
     const logout = getByRole("button", { name: /LogOut/i }); // id: "logout_header"
     expect(logout).toBeInTheDocument();
 
     fireEvent.click(logout);
-    expect(history.length).toBe(7);
+    expect(history.length).toBe(8);
     expect(history.location.pathname).toBe("/");
 
     const nothere = queryByText(/Your Projects/i); // ensure is absent
     expect(nothere).not.toBeInTheDocument();
-  });
-
-  it("header tests: tests opening a window on submit project", () => {
-    window.open = jest.fn();
-    const history = createMemoryHistory();
-    history.push("/:id");
-    const { getByTestId } = render(
-      <RRouter history={history}>
-        <Header />
-      </RRouter>
-    );
-    const page = "http://tiny.cc/new-project";
-    const submit = getByTestId("header_sub");
-    fireEvent.click(submit);
-
-    expect(window.open).toHaveBeenCalledTimes(1);
-    expect(window.open).toHaveBeenCalledWith(page, "_blank");
   });
 
   it("header tests: tests search", () => {
