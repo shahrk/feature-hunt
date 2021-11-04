@@ -60,7 +60,7 @@ MongoDB
 HTML  
 CSS  
 
-We have started using [MaterialUI] for styled components.  
+We have started using [MaterialUI](https://mui.com/) for styled components.  
 
 ## Preview
 
@@ -74,12 +74,12 @@ The **Comment** Section - Each product page has a comment section (Powered by [u
 <img width="830" alt="Screen Shot 2021-09-19 at 5 25 15 PM" src="https://user-images.githubusercontent.com/11090612/133943532-1a834e0e-2ea5-477f-a09f-122b05f7de7a.png">
 
 ### Newest Features:
-You can now create an account and mange the products you are a part of! This includes - 
+You can now create an account and manage the products you are a part of! This includes - 
 
 **Project Submital** - You can instantly add new products to be reviewed by the community. 
 <img width="1200" alt="Screen Shot 2021-09-19 at 5 24 43 PM" src="https://github.com/CSC510-Group-25/feature-hunt/blob/group25-improvements/docs/component-screenshots/Screenshot%202021-11-04%20submitform.png">  
 
-**Tag Management** - You can now give feature feedback though tags. Want to say that you are working on a feature? Add a `IN DEVELOPMENT` tag!
+**Tag Management** - You can now give feature feedback though tags. Want to say that you are working on a feature? Add a `IN DEV` tag!
 <img width="1200" alt="Screen Shot 2021-09-19 at 5 24 43 PM" src="https://user-images.githubusercontent.com/78971563/140238752-a6ebe8ab-942f-462e-94b6-5d3d4064115e.png"> 
 
 ## Getting Started
