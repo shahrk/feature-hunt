@@ -1,7 +1,4 @@
-from flask_cors import CORS
 import requests
-import pytest
-from flask import Flask
 import test_config
 
 
@@ -68,7 +65,9 @@ def test_login_missing_password():
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
 
-    assert 403 == response.status_code
+
+    assert response.status_code == 403
+
 
 
 def test_login_missing_email():
@@ -79,4 +78,5 @@ def test_login_missing_email():
     login_url = f'{test_config.test_url}/login'
     response = requests.post(login_url, data=mock_user)
 
-    assert 403 == response.status_code
+    assert response.status_code == 403
+

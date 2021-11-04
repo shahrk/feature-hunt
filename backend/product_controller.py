@@ -4,24 +4,30 @@ from flask import jsonify
 from flask import request
 from app import app
 from db_init import product_records
+import datetime
 
 
 @app.route("/addProduct", methods=['Post'])
 def add_product():
-    try:
-        product_name = request.form.get("productName")
-        product_description = request.form.get("productDescription")
-        image_url = request.form.get("imageUrl")
-        email = request.form.get("email")
 
-        product_input = {'name': product_name, 'description': product_description,
-                         'image_url': image_url, 'users': [email]}
+        try:
+            product_name = request.form.get("productName")
+            product_description = request.form.get("productDescription")
+            image_url = request.form.get("imageUrl")
+            email = request.form.get("email")
+            tags = request.form.get("tags").split(' ')
 
-        product_records.insert_one(product_input)
+            feature_dict = {'id': 2, 'text': 'feature-1', 'votes': 1, 'timestamp': '1234567', 'tags': ['tag1']}
 
-        return jsonify(success=True)
-    except:
-        return jsonify(success=False)
+            product_input = {'name': product_name, 'description': product_description,
+                             'image_url': image_url, 'users': [email], 'tags': tags, 'features': feature_dict}
+
+
+            product_records.insert_one(product_input)
+
+            return jsonify(success=True)
+        except:
+            return jsonify(success=False)
 
 # @app.route("/<productName>/addFeature", method=['Post'])
 # def addFeature(productName):
