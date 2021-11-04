@@ -73,9 +73,9 @@ CONTRIBUTING.md - We added more to [CONTRIBUTING.md](https://github.com/CSC510-G
 
 Issues are being closed - ![GitHub closed issues](https://img.shields.io/github/issues-closed/CSC510-Group-25/feature-hunt?color=red)
 
-Use of style checkers - On top of Prettier, we added PyLint
+Use of style checkers - On top of Prettier, we added PyLint, Codacy
 
-other automated analysis tools - Dependabot, Snyk, CodeQL
+other automated analysis tools - Dependabot, Snyk, CodeQL, Coveralls, Codacy
 
 test cases exist: test cases are more than 30% of the code base - We improved coverage from 33% to 72%
 
