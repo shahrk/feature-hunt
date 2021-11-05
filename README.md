@@ -30,6 +30,11 @@ https://user-images.githubusercontent.com/26930183/135515516-d84f3a28-6d8c-49de-
 https://user-images.githubusercontent.com/42051115/140450152-61fcce18-c307-41bc-bfa4-92afe4fc1c40.mp4
 
 
+https://user-images.githubusercontent.com/78971563/140450270-8782b2f8-3634-4bdc-86d6-4e4bbcf19a4a.mp4
+
+
+
+
 The following technologies were used for the development of this project:  
 
 <p align="left">
@@ -190,6 +195,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Deployment
 
 This app has been deployed using Netlify and Heroku. Check it out [here!](https://feature-hunt-25.netlify.app/)
+
+You can now run and test the project locally and in deployments. More info about our deplyments and switching between production and devlopment can be found in our [Wiki](https://github.com/CSC510-Group-25/feature-hunt/wiki/Deployment:-Heroku-and-Netlify)
 
 ## Future Scope
 We believe in the ability to add new features in any project (including our own). 
