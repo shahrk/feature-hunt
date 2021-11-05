@@ -190,6 +190,8 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 This app has been deployed using Netlify and Heroku. Check it out [here!](https://feature-hunt-25.netlify.app/)
 
+You can now run and test the project locally and in deployments. More info about our deplyments and switching between production and devlopment can be found in our [Wiki](https://github.com/CSC510-Group-25/feature-hunt/wiki/Deployment:-Heroku-and-Netlify)
+
 ## Future Scope
 We believe in the ability to add new features in any project (including our own). 
 
