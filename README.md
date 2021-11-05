@@ -10,7 +10,6 @@
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
 [![GitHub issues](https://img.shields.io/github/issues/CSC510-Group-25/feature-hunt)](https://github.com/CSC510-Group-25/feature-hunt/issues)
 [![GitHub closed issues](https://img.shields.io/github/issues-closed/CSC510-Group-25/feature-hunt?color=red)](https://github.com/CSC510-Group-25/feature-hunt/issues?q=is%3Aissue+is%3Aclosed)
-[![Build Status](https://app.travis-ci.com/CSC510-Group-25/feature-hunt.svg?branch=main)](https://app.travis-ci.com/CSC510-Group-25/feature-hunt)
 [![Build](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs.yml)
 [![Tests](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml)
 [![Coverage Status](https://coveralls.io/repos/github/CSC510-Group-25/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/CSC510-Group-25/feature-hunt?branch=main)
