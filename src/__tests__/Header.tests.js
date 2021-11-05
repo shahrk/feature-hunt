@@ -35,10 +35,6 @@ data-testid="TEXT" -- short description
 
 */
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useParams: jest.fn(),
-}));
 
 describe("Header tests", () => {
   it("renders header: screen checks 1", () => {

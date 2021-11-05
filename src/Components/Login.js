@@ -11,6 +11,14 @@ import { useHistory } from 'react-router-dom';
 import Service from '../Service';
 import { Alert } from '@mui/material';
 
+//
+//       Component: Login
+//       Description: This component displays the login page which requires the user to input an email and a password
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 export default function Login({ setLoggedin }) {
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = React.useState("");

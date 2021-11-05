@@ -62,12 +62,21 @@ const Styles = styled.div`
    margin: 20px 0px;
 `;
 
+//
+//       Component: ProjectFrom
+//       Description: This component displays the form for a user to submit a new project
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 function ProjectForm() {
   const [name, setName] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [imageURL, setImageURL] = React.useState("");
   const [message, setMessage] = React.useState("");
   const [user, setUser] = React.useState([""]);
+  const [tags, setTags] = React.useState("");
 
   React.useEffect(() => {
     setUser(ReactSession.get("username"));
@@ -85,12 +94,17 @@ function ProjectForm() {
     setImageURL(e.target.value);
   }
 
+  const handleTagsChange = (e) => {
+    setTags(e.target.value);
+  }
+
   const handleSubmit = (event) => {
     const form = new FormData();
     form.append("productName", name);
     form.append("productDescription", description);
     form.append("imageUrl", imageURL);
     form.append("email", user);
+    form.append("tags", tags);
     Service.post("addProduct", form)
       .then((data) =>
         {setMessage(data.message);
@@ -146,8 +160,19 @@ function ProjectForm() {
                   onChange={handleImageURLChange}
                   fullWidth
                 />
+              <label>Tags</label>
+                <TextField
+                  id="tags"
+                  label=""
+                  multiline
+                  maxRows={1}
+                  inputProps={{ "data-testid": "form-Tags" }}
+                  value={tags}
+                  onChange={handleTagsChange}
+                  fullWidth
+                />
 
-            <button data-testid="submit_button" type="submit">Submit</button>
+            <button data-testid="submit_button" onClick={handleSubmit}>Submit</button>
           </form>
     </div>
   );

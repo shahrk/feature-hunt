@@ -27,6 +27,7 @@ data-testid="submit_form" -- submit project from
 "data-testid": "form-Name" -- 
 "data-testid": "form-Desc" -- 
 "data-testid": "form-Img" -- 
+"data-testid": "form-Tags" --
 data-testid="TEXT" -- short description
 
 */
@@ -47,11 +48,13 @@ describe("ProjectForm tests", () => {
     const desc = getByText(/Description/i);
     const img = getByText(/Image URL/i);
     const sub = getByText(/submit/i);
+    const tags = getByText(/tags/i);
 
     expect(form).toBeInTheDocument();
     expect(name).toBeInTheDocument();
     expect(desc).toBeInTheDocument();
     expect(img).toBeInTheDocument();
+    expect(tags).toBeInTheDocument();
     expect(sub).toBeInTheDocument();
   });
 
@@ -69,10 +72,12 @@ describe("ProjectForm tests", () => {
     const nuval = getByTestId("form-inputName");
     const desc = getByTestId("form-Desc");
     const img = getByTestId("form-Img");
+    const tags = getByTestId("form-Tags");
 
     fireEvent.change(nuval, { target: { value: "testname" } });
     fireEvent.change(desc, { target: { value: "testDesc" } });
     fireEvent.change(img, { target: { value: "testImg" } });
+    fireEvent.change(tags, { target: { value: "testTag" } });
 
     const subbutton = getByTestId("submit_button");
     fireEvent.submit(subbutton);
@@ -83,6 +88,8 @@ describe("ProjectForm tests", () => {
     expect(nudesc).toBeInTheDocument();
     const nuImg = getByText(/testimg/i);
     expect(nuImg).toBeInTheDocument();
+    const nuTag = getByText(/testtag/i);
+    expect(nuTag).toBeInTheDocument();
   });
 
 });

@@ -3,7 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { Button, TextField } from '@mui/material';
 import Service from '../Service';
-
+//
+//       Component: Feature
+//       Description: This component is the specific feature which has the up and down votes
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const Feature = ({ features, index, setFeatures, editable }) => {
   const upVote = () => {
     const updatedFeature = { ...features[index] };

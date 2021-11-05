@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import ProductTile from './ProductTile';
 import Service from '../Service';
 
+//
+//       Component: Home
+//       Description: This component is the homepage which contains all the projects
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const Home = ({query}) => {
   const [sortBy, setSortBy] = useState('timestamp');
   const [products, setProducts] = useState([]);

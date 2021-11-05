@@ -6,7 +6,15 @@ from app import app
 from db_init import product_records
 import datetime
 
-
+#################################################################################
+##       Function: add_product
+##       Description: This post request is used to gather all the information from
+##                    the project form and send it to the database to be stored
+##       Inputs:
+##           - NA
+##       Outputs:
+##           - Returns true or false if new project is able to be added
+#################################################################################
 @app.route("/addProduct", methods=['Post'])
 def add_product():
 

@@ -2,6 +2,14 @@ import { useEffect} from 'react';
 import Header from './Header';
 import Service from '../Service';
 
+//
+//       Component: Feedback
+//       Description: This component displays all the feedback
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const Feedback = () => {
     useEffect(() => {
       Service.get(window.location.pathname);

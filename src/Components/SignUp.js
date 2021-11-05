@@ -9,6 +9,14 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Service from '../Service';
 import { Alert } from '@mui/material';
 
+//
+//       Component: SignUp
+//       Description: This component displays the signup registration form
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 export default function SignUp() {
   const [open, setOpen] = React.useState(false);
   const [email, setEmail] = React.useState("");
