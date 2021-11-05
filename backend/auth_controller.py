@@ -6,7 +6,15 @@ import bcrypt
 from app import app
 from db_init import records
 
-
+#################################################################################
+##       Function: signup
+##       Description: Post request to register a new user, will give error if user is already
+##                    registered
+##       Inputs:
+##           - NA
+##       Outputs:
+##           - message: output if user is registered successful or not
+#################################################################################
 @app.route("/signup", methods=['POST'])
 def signup():
     user = request.form.get("fullname")
@@ -34,8 +42,17 @@ def signup():
     message = json.dumps(error_dict)
     return message
 
+redirect_url = 'https://damp-citadel-25681.herokuapp.com/'
 
-@app.route('/logged_in')
+#################################################################################
+##       Function: logged_in
+##       Description: Checks if there is a session
+##       Inputs:
+##           - NA
+##       Outputs:
+##           - Sends a valid message or redirects to login url
+#################################################################################
+@app.route('/logged_in', methods=["POST", "GET"])
 def logged_in():
     print(session)
     if "email" in session:
@@ -50,9 +67,16 @@ def logged_in():
         message = json.dumps(logged_in_dict)
         return message
     else:
-        return redirect(url_for("login"))
+        return redirect(redirect_url + 'login')
 
-
+#################################################################################
+##       Function: login
+##       Description: Checks if user and email is in database to login
+##       Inputs:
+##           - NA
+##       Outputs:
+##           - Returns valid or invalid message if user can login
+#################################################################################
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if request.method == "POST":
@@ -73,10 +97,10 @@ def login():
             if bcrypt.checkpw(password.encode('utf-8'), password_check):
                 session["email"] = email_val
                 session["name"] = name
-                return redirect(url_for('logged_in'))
+                return redirect(redirect_url + 'logged_in')
             else:
                 if "email" in session:
-                    return redirect(url_for("logged_in"))
+                    return redirect(redirect_url + 'logged_in')
                 error_dict = {
                     "code": 403,
                     "message": "Password is incorrect"
@@ -98,7 +122,14 @@ def login():
     message = json.dumps(loggedin_dict)
     return message
 
-
+#################################################################################
+##       Function: logout
+##       Description: Checks if user is in session and removes them from it
+##       Inputs:
+##           - NA
+##       Outputs:
+##           - Successful or Unsuccessful Message
+#################################################################################
 @app.route("/logout", methods=["POST", "GET"])
 def logout():
     if "email" in session:

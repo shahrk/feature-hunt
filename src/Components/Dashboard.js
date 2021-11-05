@@ -6,6 +6,15 @@ import Header from './Header';
 import Feature from './Feature';
 import { Alert } from '@mui/material';
 
+//
+//       Component: Dashboard
+//       Description:This component is displayed when the user clicks on the “Your Projects”
+//       menu item. This component will display all projects that are associated with a user.
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const Dashboard = ({query}) => {
   const [sortBy, setSortBy] = useState('timestamp');
   const [products, setProducts] = useState([]);

@@ -2,6 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router';
 
+//
+//       Component: ProductTile
+//       Description: This component wraps the project in its separate box with an upvote and downvote.
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const ProductTile = ({ products, index, setProducts }) => {
   const history = useHistory();
   const upVote = () => {

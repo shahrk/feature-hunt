@@ -1,3 +1,12 @@
+//
+//       Component: Comments
+//       Description:This component displays all the comments of a particular product
+//       and also has a input display to take in more comments
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const Comments = () => {
   return <section
     ref={elem => {

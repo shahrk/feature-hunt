@@ -4,6 +4,15 @@ import { ReactSession } from 'react-client-session';
 import Feature from './Feature';
 import Service from '../Service';
 
+//
+//       Component: Product
+//       Description: This component allows the user to add specific features and
+//       allows the user to upvote or downvote the features
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const Product = ({query}) => {
   const { id } = useParams();
   const [newFeature, setNewFeature] = useState('');

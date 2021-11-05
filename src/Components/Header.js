@@ -5,6 +5,14 @@ import { ReactSession } from 'react-client-session';
 import Login from './Login';
 import SignUp from './SignUp';
 
+//
+//       Component: Header
+//       Description: This component is the menu bar at the top of each page
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 function Header({setQuery}) {
   const history = useHistory();
   const goTo = (page) => () => {
@@ -51,8 +59,9 @@ function Header({setQuery}) {
               />
             </div>
             <div className="links">
+
               <ul data-testid="header_links">
-                <li data-testid="header_sub" onClick={() => window.open('http://tiny.cc/new-project', '_blank')}>Submit Project</li>
+                {loggedin && <li data-testid="header_sub" onClick={goTo("submit-project")}>Submit Project</li>}
                 <li data-testid="header_rm" onClick={goTo('feature-hunt')}>RoadMap</li>
                 <li data-testid="header_fb" onClick={goTo('feedback')}>Feedback</li>
                 {loggedin && <li data-testid="header_dash" onClick={goTo('dashboard')}>Your Projects</li>}
