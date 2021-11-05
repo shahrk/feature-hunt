@@ -45,8 +45,9 @@ This page is intended for users to leave comments and suggestions for the websit
 
 Next, we changed how new projects are added.
 
-Originally when the user clicked on the submit project tab, it would send the user to a google form to fill out. This was changed so that developers are not forced to add
-and review products and to make future development easier.
+Originally when the user clicked on the submit project tab, it would send the user to a google form to fill out, which would then be sent to the developers. This was changed so that developers will not be forced to review and manually add projects to the database, and to make future development easier.
+
+Although this feature is not yet fully functional, it has both [backend support](https://github.com/CSC510-Group-25/feature-hunt/blob/main/backend/product_controller.py) and [front end support](https://github.com/CSC510-Group-25/feature-hunt/blob/main/src/Components/ProjectForm.js). 
 
 ### Workflows
 
