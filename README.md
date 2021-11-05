@@ -29,6 +29,11 @@ Feature Hunt is a platform that allows you to do just that. Users can share/vote
 https://user-images.githubusercontent.com/26930183/135515516-d84f3a28-6d8c-49de-8068-50748e2a76b0.mp4
 
 
+https://user-images.githubusercontent.com/78971563/140450270-8782b2f8-3634-4bdc-86d6-4e4bbcf19a4a.mp4
+
+
+
+
 The following technologies were used for the development of this project:  
 
 <p align="left">
