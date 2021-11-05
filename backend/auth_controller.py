@@ -34,8 +34,10 @@ def signup():
     message = json.dumps(error_dict)
     return message
 
+redirect_url = 'https://damp-citadel-25681.herokuapp.com/'
 
-@app.route('/logged_in')
+
+@app.route('/logged_in', methods=["POST", "GET"])
 def logged_in():
     print(session)
     if "email" in session:
@@ -50,7 +52,7 @@ def logged_in():
         message = json.dumps(logged_in_dict)
         return message
     else:
-        return redirect(url_for("login"))
+        return redirect(redirect_url + 'login')
 
 
 @app.route("/login", methods=["POST", "GET"])
@@ -73,10 +75,10 @@ def login():
             if bcrypt.checkpw(password.encode('utf-8'), password_check):
                 session["email"] = email_val
                 session["name"] = name
-                return redirect(url_for('logged_in'))
+                return redirect(redirect_url + 'logged_in')
             else:
                 if "email" in session:
-                    return redirect(url_for("logged_in"))
+                    return redirect(redirect_url + 'logged_in')
                 error_dict = {
                     "code": 403,
                     "message": "Password is incorrect"
