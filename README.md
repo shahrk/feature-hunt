@@ -2,14 +2,20 @@
 <img width="657" alt="Feature Hunt" src="https://user-images.githubusercontent.com/11090612/135201949-a1f1de9d-f80a-4adf-a7ac-886c77c4c226.png">
 </p>
 
-[![Build Status](https://app.travis-ci.com/shahrk/feature-hunt.svg?branch=main)](https://app.travis-ci.com/shahrk/feature-hunt)
-[![DOI](https://zenodo.org/badge/400052443.svg)](https://zenodo.org/badge/latestdoi/400052443)
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-blue)](https://www.javascript.com)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb78c7431a71487595f3031af06dac4c)](https://app.codacy.com/gh/CSC510-Group-25/feature-hunt?utm_source=github.com&utm_medium=referral&utm_content=CSC510-Group-25/feature-hunt&utm_campaign=Badge_Grade_Settings)
+[![DOI](https://zenodo.org/badge/413987683.svg)](https://zenodo.org/badge/latestdoi/413987683)
 [![GitHub license](https://img.shields.io/github/license/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/blob/main/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/shahrk/feature-hunt)](https://github.com/shahrk/feature-hunt/issues)
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-blue)](https://www.javascript.com)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
-[![Coverage Status](https://coveralls.io/repos/github/shahrk/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/shahrk/feature-hunt?branch=main)
+[![GitHub issues](https://img.shields.io/github/issues/CSC510-Group-25/feature-hunt)](https://github.com/CSC510-Group-25/feature-hunt/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/CSC510-Group-25/feature-hunt?color=red)](https://github.com/CSC510-Group-25/feature-hunt/issues?q=is%3Aissue+is%3Aclosed)
+[![Build](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs.yml)
+[![Tests](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/nodejs_tests.yml)
+[![Coverage Status](https://coveralls.io/repos/github/CSC510-Group-25/feature-hunt/badge.svg?branch=main)](https://coveralls.io/github/CSC510-Group-25/feature-hunt?branch=main)
+[![CodeQL](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/codeql-analysis.yml)
+[![Pylint](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml/badge.svg)](https://github.com/CSC510-Group-25/feature-hunt/actions/workflows/pylint.yml)
+[![Netlify](https://img.shields.io/netlify/dbecc37c-c273-4b45-bfff-3fd33d20cae0)](https://feature-hunt-25.netlify.app/)
 
 ## INTRODUCTION ⚡️
 
@@ -20,6 +26,12 @@ Feature Hunt is a platform that allows you to do just that. Users can share/vote
 ### Watch this short video to know more:
 
 https://user-images.githubusercontent.com/26930183/135515516-d84f3a28-6d8c-49de-8068-50748e2a76b0.mp4
+https://user-images.githubusercontent.com/42051115/140450152-61fcce18-c307-41bc-bfa4-92afe4fc1c40.mp4
+
+
+https://user-images.githubusercontent.com/78971563/140450270-8782b2f8-3634-4bdc-86d6-4e4bbcf19a4a.mp4
+
+
 
 
 The following technologies were used for the development of this project:  
@@ -53,9 +65,12 @@ MongoDB
 HTML  
 CSS  
 
-Although we haven't used any CSS library for the FrontEnd, the users can easily merge it with any CSS library of their choice (e.g. Tailwind CSS, react-bootstrap).
+We have started using [MaterialUI] for styled components. 
+
+For more information, visit our [wiki page on tools, hooks, and services](https://github.com/CSC510-Group-25/feature-hunt/wiki/Tools,-Hooks,-Services).
 
 ## Preview
+
 The **Home** Page - It has a list of different products for which you can provide feature requests
 <img width="1200" alt="Screen Shot 2021-09-19 at 5 24 43 PM" src="https://user-images.githubusercontent.com/11090612/133943516-d55244b5-9f5e-4166-a18e-af35cf020146.png">  
 
@@ -65,13 +80,17 @@ The **Product** Page - It has a list of feature requests added by users
 The **Comment** Section - Each product page has a comment section (Powered by [utteranc.es](https://utteranc.es))
 <img width="830" alt="Screen Shot 2021-09-19 at 5 25 15 PM" src="https://user-images.githubusercontent.com/11090612/133943532-1a834e0e-2ea5-477f-a09f-122b05f7de7a.png">
 
-## Add Your Project 
+### Newest Features:
+You can now create an account and mange the products you are a part of! This includes - 
 
-> Want to gather feedback and maintain your project's roadmap more efficiently?  
+**Project Submittal** - You can instantly add new products to be reviewed by the community. 
+<img width="1200" alt="Screen Shot 2021-09-19 at 5 24 43 PM" src="https://github.com/CSC510-Group-25/feature-hunt/blob/group25-improvements/docs/component-screenshots/Screenshot%202021-11-04%20submitform.png">  
 
-You can add your project to Feature Hunt by filling [this](http://tiny.cc/new-project) form, our team will review the response and add it to our database after doing our due diligence.
+**Tag Management** - You can now give feature feedback though tags. Want to say that you are working on a feature? Add a `IN DEVELOPMENT` tag!
+<img width="1200" alt="Screen Shot 2021-09-19 at 5 24 43 PM" src="https://user-images.githubusercontent.com/78971563/140238752-a6ebe8ab-942f-462e-94b6-5d3d4064115e.png"> 
 
 ## Getting Started
+#### Before you get started, if you are using Windows, please visit our [wiki page on Windows development](https://github.com/CSC510-Group-25/feature-hunt/wiki/How-to-develop-with-Windows).
 There are two ways to install and develop for featurehunt 
 
 1. Using Docker
@@ -86,7 +105,7 @@ https://docs.docker.com/get-docker
 ```
 #### 2. Git clone the Repository using 
 ```
-git clone https://github.com/shahrk/feature-hunt.git
+git clone https://github.com/CSC510-Group-25/feature-hunt.git
 ```
 
 #### 3. Run the following Commands
@@ -104,7 +123,7 @@ This will run two docker containers. The frontend will run on port 3000 and the 
 
 #### 1. Git clone the Repository using 
 ```
-git clone https://github.com/shahrk/feature-hunt.git
+git clone https://github.com/CSC510-Group-25/feature-hunt.git
 ```
 #### 2. Run the following Commands
 ```
@@ -117,7 +136,7 @@ Run the following commands in order:
 
 Installs the dependencies for the React App
 
-#### 4. `pip install -r api/requirements.txt`
+#### 4. `pip install -r backend/requirements.txt`
 
 Installs the requirements for the Flask API
 
@@ -129,7 +148,8 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-To run backend flask api in development mode 
+To run backend flask api in development mode:  
+ 
  export DB="mongodb+srv://bot:bot123@feature-hunt.6gqvj.mongodb.net/feature-hunt?retryWrites=true&w=majority"
 
  export ROOT_PATH="./"
@@ -146,7 +166,7 @@ Requests made to [http://localhost:3000](http://localhost:3000) that don't exist
 
 > We use Mongo Cloud Atlas for our project as we find it very convenient. You may choose to use a local mongodb instance or run a docker container
 
-#### Make the corresponding changes in docker-compose.yml and backend/config.yml
+#### Check out our [tutorial](https://github.com/CSC510-Group-25/feature-hunt/wiki/Getting-Started-with-Database-Development:-Connection-and-Setup) to get started with creating and connecting to a database.
 
 > You can also connect to the database from your shell using [mongosh](https://docs.mongodb.com/mongodb-shell/)
 
@@ -156,6 +176,10 @@ Requests made to [http://localhost:3000](http://localhost:3000) that don't exist
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn lint`
+
+Applies Prettier to all .js files.
 
 ### `yarn build`
 
@@ -169,26 +193,33 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This app has been deployed using Netlify and Heroku. Check it out [here!](https://feature-hunt-25.netlify.app/)
+
+You can now run and test the project locally and in deployments. More info about our deplyments and switching between production and devlopment can be found in our [Wiki](https://github.com/CSC510-Group-25/feature-hunt/wiki/Deployment:-Heroku-and-Netlify)
 
 ## Future Scope
-1. Product owner dashboard: There can be a separate dashboard to manage product feature feedback. Owners will be allowed to prioritize any feature for development.
-2. Owners can download the data about the product and feature feedbacks in a CSV format. It can be used for analysis of the user responses. 
-3. Can have a separate page to show "Trending" products. Several filters i.e "Newest", "Most Popular", "Trending" etc can be applied. 
-4. Product owners can have a separate page to track the progress of development of any feature. They can decide timelines, select developers or assign reviewers.  
-5. Users will be allowed to see if their feature suggestions are "Under consideration" or have been "Rejected". 
-6. The product feature review dashboard can be modified to allow only selected group of users to post a review.  
-7. The website can allow anonymous posting & upvoting to gather honest reviews. 
-8. Recieving feedback from a specific customers groups i.e students, commuters, doctors etc should be available. One can send out personalized invite to these groups automatically, asking for a product review.  
+We believe in the ability to add new features in any project (including our own). 
+
+#### Check out our ideas for the future: [Future scope](https://github.com/CSC510-Group-25/feature-hunt/projects/3)
 
 ## Contributors 🎯
 
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/shahrk/"><img src="https://avatars.githubusercontent.com/u/11090612?v=4" width="100px;" alt=""/><br /><sub><b>Raj Shah</b></sub></a></td>
-    <td align="center"><a href="https://github.com/Nirav1929/"><img src="https://avatars.githubusercontent.com/u/11133468?v=4" width="100px;" alt=""/><br /><sub><b>Nirav Patel</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/Parth59/"><img src="https://avatars.githubusercontent.com/u/22288099?v=4" width="100px;" alt=""/><br /><sub><b>Parth Kanakiya</b></sub></a><br /></td>
-    <td align="center"><a href="https://github.com/mithildave/"><img src="https://avatars.githubusercontent.com/u/26930183?v=4" width="100px;" alt=""/><br /><sub><b>Mithil Dave</b></sub></a><br /></td>
-    <td align="center"><a href="https://www.github.com/BhargavJethwa"><img src="https://avatars.githubusercontent.com/u/70560970?v=4" width="100px;" alt=""/><br /><sub><b>Bhargav Jethwa</b></sub></a><br /></td>
+    <td>Group 27</td>
+    <td align="center"><a href="https://github.com/shahrk/"><img src="https://avatars.githubusercontent.com/u/11090612?v=4" width="80px;" alt=""/><br /><sub><b>Raj Shah</b></sub></a></td>
+    <td align="center"><a href="https://github.com/Nirav1929/"><img src="https://avatars.githubusercontent.com/u/11133468?v=4" width="80px;" alt=""/><br /><sub><b>Nirav Patel</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/Parth59/"><img src="https://avatars.githubusercontent.com/u/22288099?v=4" width="80px;" alt=""/><br /><sub><b>Parth Kanakiya</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/mithildave/"><img src="https://avatars.githubusercontent.com/u/26930183?v=4" width="80px;" alt=""/><br /><sub><b>Mithil Dave</b></sub></a><br /></td>
+    <td align="center"><a href="https://www.github.com/BhargavJethwa"><img src="https://avatars.githubusercontent.com/u/70560970?v=4" width="80px;" alt=""/><br /><sub><b>Bhargav Jethwa</b></sub></a><br /></td>   
+  </tr>
+  
+  <tr>
+    <td>Group 25</td>
+    <td align="center"><a href="https://github.com/etracey7/"><img src="https://avatars.githubusercontent.com/u/78971563?v=4" width="80px;" alt=""/><br /><sub><b>Emily Tracey</b></sub></a></td>
+    <td align="center"><a href="https://github.com/peeyush10234/"><img src="https://avatars.githubusercontent.com/u/10905673?v=4" width="80px;" alt=""/><br /><sub><b>Peeyush Taneja</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/jhnguye4/"><img src="https://avatars.githubusercontent.com/u/42051115?v=4" width="80px;" alt=""/><br /><sub><b>Jonathan Nguyen</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/snapcat/"><img src="https://avatars.githubusercontent.com/u/89357283?v=4" width="80px;" alt=""/><br /><sub><b>Leila Moran</b></sub></a><br /></td>
+    <td align="center"><a href="https://www.github.com/shraddhamishra7"><img src="https://avatars.githubusercontent.com/u/7471821?v=4" width="80px;" alt=""/><br /><sub><b>Shraddha Mishra</b></sub></a><br /></td>
   </tr>
 </table>

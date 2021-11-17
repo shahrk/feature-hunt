@@ -2,6 +2,14 @@ import { useEffect, useState } from 'react';
 import ProductTile from './ProductTile';
 import Service from '../Service';
 
+//
+//       Component: Home
+//       Description: This component is the homepage which contains all the projects
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const Home = ({query}) => {
   const [sortBy, setSortBy] = useState('timestamp');
   const [products, setProducts] = useState([]);
@@ -12,11 +20,19 @@ const Home = ({query}) => {
     <div className="container">
       <div className="child">
         <div className="product-title">
-          <h3>PRODUCTS</h3>
+          <h3 data-testid="home_header">PRODUCTS</h3>
           <div className="sort">
-            <p className={sortBy === 'votes' ? 'highlight' : ''} onClick={() => setSortBy('votes')}>POPULAR</p>
+            <p 
+            className={sortBy === 'votes' ? 'highlight' : ''}
+            data-testid="home_sortpop"
+            onClick={() => setSortBy('votes')}>POPULAR
+            </p>
             <p> | </p>
-            <p className={sortBy === 'timestamp' ? 'highlight' : ''} onClick={() => setSortBy('timestamp')}>LATEST</p>
+            <p 
+            className={sortBy === 'timestamp' ? 'highlight' : ''} 
+            data-testid="home_sorttime"
+            onClick={() => setSortBy('timestamp')}>LATEST
+            </p>
           </div>
         </div>
       </div>

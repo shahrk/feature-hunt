@@ -28,3 +28,9 @@ venv
 __pycache__
 *.yaml
 .yaml
+
+.venv
+.vscode
+.idea
+.coverage
+.netlify

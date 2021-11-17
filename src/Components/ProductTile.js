@@ -2,6 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import { useHistory } from 'react-router';
 
+//
+//       Component: ProductTile
+//       Description: This component wraps the project in its separate box with an upvote and downvote.
+//
+//       Inputs:
+//           - NA
+//       Outputs:
+//          - NA
 const ProductTile = ({ products, index, setProducts }) => {
   const history = useHistory();
   const upVote = () => {
@@ -36,7 +44,10 @@ const ProductTile = ({ products, index, setProducts }) => {
         </div>
         <div className="content">
           <div className="product-content">
-            <span className="product-title" onClick={goTo(products[index].name)} style={{ marginTop: 'auto', marginBottom: 'auto' }}>
+            <span className="product-title" 
+            data-testid={"ptnav:"+index}
+            onClick={goTo(products[index].name)} 
+            style={{ marginTop: 'auto', marginBottom: 'auto' }}>
               {capitalizeFirstLetter(products[index].name)}
             </span>
             <p className="product-description">
@@ -54,13 +65,20 @@ const ProductTile = ({ products, index, setProducts }) => {
         </div>
         <div className="votes-container">
           <span>
-            <FontAwesomeIcon icon={faChevronUp} size="lg" className={products[index].upVoted ? 'votedUp' : 'voteup'} onClick={upVote} />
+            <FontAwesomeIcon icon={faChevronUp} size="lg" 
+            className={products[index].upVoted ? 'votedUp' : 'voteup'} 
+            data-testid={"pt_up:"+index}
+            onClick={upVote} />
           </span>
           <span>
             {products[index].votes}
           </span>
           <span>
-            <FontAwesomeIcon icon={faChevronDown} size="lg" className={products[index].downVoted ? 'votedDown' : 'votedown'} onClick={downVote} />
+            <FontAwesomeIcon icon={faChevronDown} 
+            size="lg" 
+            className={products[index].downVoted ? 'votedDown' : 'votedown'} 
+            data-testid={"pt_down:"+index}
+            onClick={downVote} />
           </span>
         </div>
       </div>

@@ -1,0 +1,56 @@
+name: Pylint
+
+on: ["push", "pull_request"]
+
+jobs:
+  build:
+  
+    name: pylint
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+        if [ -f ./backend/requirements.txt ]; then pip install -r ./backend/requirements.txt; fi
+    
+    - name: Analyze files with pylint
+      run: |
+       echo "::group::Skipped files"
+       echo "Skipping files" | tee -a pylint.txt
+       echo "backend/app/controllers/__init__.py" | tee -a pylint.txt
+       echo "backend/logger/__init__.py" | tee -a pylint.txt
+       echo "backend/linter.py" | tee -a pylint.txt
+       echo "See each individual file for pylint comments." | tee -a pylint.txt
+       echo "Be sure to update this workflow if any files are skipped/unskipped." | tee -a pylint.txt
+       echo "::endgroup::"
+       
+       pylint --fail-under=10 `find -regextype egrep -regex '(.*.py)$'` |
+       tee -a pylint.txt
+    
+    - name: Upload pylint report as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: pylint report
+        path: pylint.txt
+        
+    - name: pylint workflow status
+      run: |
+       echo "::group::Skipped files"
+       echo "backend/app/controllers/__init__.py"
+       echo "backend/logger/__init__.py"
+       echo "backend/linter.py"
+       echo "::endgroup::"
+       echo "See each individual file for pylint comments."
+       echo "Be sure to update this workflow if any files are skipped/unskipped."
+       
+       pylint --fail-under=5 $(find . -name "*.py" | xargs)
+       # run: pylint $(find . -name "*.py" | xargs)
+       # note: set the failure threshold as indicated above
