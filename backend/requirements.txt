@@ -26,5 +26,5 @@ requests==2.18.1
 sentinels==1.0.0
 six==1.16.0
 toml==0.10.2
-urllib3==1.21.1
+urllib3==1.26.17
 Werkzeug==2.0.1
